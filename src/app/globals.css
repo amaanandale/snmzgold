@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================================
+   SNMZ Gold & Diamonds — Global Styles
+   See design.md for the complete design system.
+   ===================================================== */
+
+@layer base {
+  :root {
+    --color-emerald: #063926;
+    --color-emerald-dark: #042a1c;
+    --color-emerald-light: #0a5438;
+    --color-gold: #DFAF24;
+    --color-gold-antique: #B8860B;
+    --color-ivory: #F7F1E5;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-emerald-dark text-white font-body antialiased;
+  }
+
+  /* Focus rings — accessible, on-brand */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-emerald-dark;
+  }
+
+  /* Headings default to display font */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  /* Smooth image rendering */
+  img {
+    @apply max-w-full;
+  }
+}
+
+@layer components {
+  /* ---- Buttons ---- */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-gold text-emerald-dark font-semibold font-body
+           px-8 py-3.5 rounded-lg
+           shadow-gold hover:bg-gold-light hover:shadow-gold-lg
+           transition-all duration-300 ease-in-out
+           focus-visible:ring-2 focus-visible:ring-gold;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2
+           border border-gold text-gold font-semibold font-body
+           px-8 py-3.5 rounded-lg
+           hover:bg-gold/10
+           transition-all duration-300 ease-in-out;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2
+           text-white/80 hover:text-white font-body
+           underline underline-offset-4
+           transition-colors duration-200;
+  }
+
+  /* ---- Section wrapper ---- */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 lg:py-28;
+  }
+
+  /* ---- Section heading group ---- */
+  .section-label {
+    @apply text-gold text-xs font-semibold uppercase tracking-widest font-body;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-display leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-white/70 font-body leading-relaxed;
+  }
+
+  .gold-rule {
+    @apply w-16 h-0.5 bg-gradient-to-r from-gold to-gold-antique;
+  }
+
+  /* ---- Cards ---- */
+  .card-light {
+    @apply bg-white rounded-2xl p-6 lg:p-8 shadow-card
+           hover:shadow-card-hover transition-shadow duration-300;
+  }
+
+  .card-dark {
+    @apply bg-emerald-light/20 border border-gold/20 rounded-2xl p-6 lg:p-8
+           hover:border-gold/40 transition-colors duration-300;
+  }
+
+  .card-ivory {
+    @apply bg-ivory rounded-2xl p-6 lg:p-8 shadow-card
+           hover:shadow-card-hover transition-shadow duration-300;
+  }
+
+  /* ---- Badges ---- */
+  .badge {
+    @apply inline-flex items-center gap-1.5
+           bg-gold/10 text-gold-antique
+           text-xs font-semibold uppercase tracking-widest
+           px-3 py-1 rounded-full font-body;
+  }
+
+  /* ---- Gradient text ---- */
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #DFAF24 0%, #B8860B 50%, #ECC84A 100%);
+  }
+
+  /* ---- Placeholder markers ---- */
+  .placeholder-text {
+    @apply italic text-gold/60 text-sm;
+  }
+
+  /* ---- Skip to main ---- */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4
+           focus:z-[100] focus:bg-gold focus:text-emerald-dark
+           focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold;
+  }
+}
+
+@layer utilities {
+  /* Shimmer animation for gold text */
+  .shimmer-gold {
+    background: linear-gradient(
+      90deg,
+      #DFAF24 0%,
+      #F5DFA0 40%,
+      #DFAF24 60%,
+      #B8860B 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+  }
+
+  /* Glassmorphism surface */
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+
+  .glass-dark {
+    @apply bg-emerald-dark/80 backdrop-blur-md border border-gold/10;
+  }
+
+  /* Section divider with gold gradient */
+  .section-divider {
+    @apply w-full h-px;
+    background: linear-gradient(90deg, transparent, #DFAF24, transparent);
+  }
+}
