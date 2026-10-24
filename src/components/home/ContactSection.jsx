@@ -32,13 +32,16 @@ export function ContactSection() {
             className="font-display text-4xl sm:text-5xl text-white leading-tight"
           >
             Ready to Trade{' '}
-            <span className="text-gradient-gold">24K Gold?</span>
+            <span className="text-gradient-gold">Gold in Dubai?</span>
           </h2>
 
           <div className="w-16 h-0.5 bg-gradient-to-r from-gold to-gold-antique" />
 
           <p className="text-white/70 text-lg font-body leading-relaxed">
-            Whether you are a jeweller, institution or corporate buyer, SNMZ Gold & Diamonds is your professional counterparty for 24K gold TT bar transactions. Reach out to begin the conversation.
+            Whether you are a jeweller, institution or corporate buyer,
+            SNMZ Gold & Diamonds is your professional counterparty for
+            gold and precious metal transactions in the UAE.
+            Reach out to begin the conversation.
           </p>
 
           {/* Contact options */}

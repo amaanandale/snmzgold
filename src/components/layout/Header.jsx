@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { SiteConfig } from '@/config/site';
 import { Button } from '@/components/ui/Button';
+import { LogoIcon } from '@/components/ui/LogoIcon';
 import { whatsappUrl } from '@/lib/utils';
 
 export function Header() {
@@ -31,24 +32,16 @@ export function Header() {
       <div className="section-container">
         <div className="flex items-center justify-between h-18 lg:h-20">
 
-          {/* Logo */}
+          {/* Official logo — place file at: public/images/brand/snmz-logo.png */}
           <a
             href="/"
-            className="flex items-center gap-3 group"
-            aria-label="SNMZ Gold & Diamonds — Home"
+            className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded"
+            aria-label="SNMZ Gold &amp; Diamonds — Home"
           >
-            {/* Logo placeholder — replace with SVG from /public/logo/ */}
-            <div className="w-10 h-10 rounded-lg bg-gold-gradient flex items-center justify-center shadow-gold group-hover:scale-105 transition-transform duration-300">
-              <span className="text-emerald-dark font-display font-bold text-lg leading-none">S</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-display font-semibold text-white text-lg leading-tight tracking-tight">
-                SNMZ
-              </span>
-              <span className="text-gold text-xs font-body font-medium uppercase tracking-widest leading-none">
-                Gold & Diamonds
-              </span>
-            </div>
+            <LogoIcon
+              size="md"
+              className="group-hover:opacity-90 transition-opacity duration-300"
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -60,7 +53,7 @@ export function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-white/80 hover:text-gold text-sm font-body font-medium tracking-wide transition-colors duration-200"
+                className="text-white/75 hover:text-gold text-[12px] font-body font-medium tracking-wide transition-colors duration-200"
               >
                 {item.label}
               </a>

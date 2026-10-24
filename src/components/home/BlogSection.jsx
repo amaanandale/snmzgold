@@ -16,8 +16,8 @@ const placeholderPosts = [
   {
     id: 2,
     category: 'Compliance',
-    title: 'KYC & AML Requirements for Gold Trading in India',
-    excerpt: 'An introduction to the regulatory framework governing gold trading — what buyers and sellers need to know before transacting.',
+    title: 'KYC & AML Requirements for Gold Trading in the UAE',
+    excerpt: 'An introduction to the regulatory framework governing gold trading in the UAE — what buyers and sellers need to know before transacting.',
     readTime: '4 min read',
     date: null,
     featured: false,

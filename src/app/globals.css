@@ -129,6 +129,19 @@
     @apply italic text-gold/60 text-sm;
   }
 
+  /* ---- Blog article prose ---- */
+  .prose-snmz h2 {
+    @apply font-display text-2xl text-emerald mt-8 mb-4;
+  }
+
+  .prose-snmz h3 {
+    @apply font-display text-xl text-emerald/80 mt-6 mb-3;
+  }
+
+  .prose-snmz p, .prose-snmz li {
+    @apply text-emerald/80 font-body leading-relaxed;
+  }
+
   /* ---- Skip to main ---- */
   .skip-link {
     @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4

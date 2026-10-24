@@ -4,17 +4,20 @@ const pillars = [
   {
     icon: <ShieldIcon />,
     title: 'Verified Purity',
-    description: 'Every bar we trade undergoes rigorous purity verification. We deal exclusively in 999.9 fine, 24-karat gold that meets international bullion standards.',
+    description:
+      'We deal in investment-grade gold meeting internationally recognised bullion standards. Every product is subject to purity verification before transaction.',
   },
   {
     icon: <ScaleIcon />,
-    title: 'Compliant Trading',
-    description: 'Our trading practices are structured around regulatory compliance, transparent documentation and traceable supply chains—for your peace of mind.',
+    title: 'Transparent Trading',
+    description:
+      'Our trading practices are structured around regulatory compliance, transparent documentation and traceable supply chains — giving you complete peace of mind.',
   },
   {
     icon: <HandshakeIcon />,
-    title: 'Trusted Partners',
-    description: 'We build long-term relationships with institutional and corporate buyers, offering reliable supply, consistent quality and professional service.',
+    title: 'Professional Partnership',
+    description:
+      'We build long-term relationships with institutional and corporate counterparties, offering reliable supply, consistent quality and professional service.',
   },
 ];
 
@@ -33,33 +36,39 @@ export function AboutSection() {
             <SectionHeading
               label="About SNMZ"
               title={<span id="about-heading">Who We Are</span>}
-              subtitle="SNMZ Gold & Diamonds is a dedicated gold trading company focused exclusively on the supply and trade of 24K TT (Tola / Troy) gold bars — one of the most trusted gold bar formats in institutional bullion markets."
+              subtitle="SNMZ Gold & Diamonds is a premium precious-metals brand serving the UAE market — offering gold, diamonds and expert guidance for buyers, traders and institutions."
               align="left"
             />
 
             <div className="space-y-5 text-white/70 font-body leading-relaxed">
               <p>
-                Founded on the principles of transparency, purity and precision, SNMZ operates as a professional counterparty for corporate buyers, investors and institutions seeking consistent access to investment-grade physical gold.
+                Founded on the principles of transparency, purity and precision,
+                SNMZ operates as a professional counterparty for buyers seeking
+                consistent access to investment-grade physical gold and diamonds.
               </p>
               <p>
-                We understand that gold trading demands more than just product availability — it demands verified documentation, clear provenance, and a partner you can trust unconditionally.
+                Dubai is one of the world&apos;s foremost gold-trading centres.
+                We are proud to serve this market with integrity, verified product
+                quality and a commitment to professional standards.
               </p>
               <div className="border-l-2 border-gold pl-5 py-1">
                 <p className="text-white/50 text-sm italic">
-                  [Company history, founding year and additional background to be supplied by SNMZ]
+                  [Company background, founding year and additional history to be supplied by SNMZ]
                 </p>
               </div>
             </div>
 
-            {/* Placeholder for certifications */}
+            {/* Credentials placeholder */}
             <div className="glass rounded-xl p-5">
-              <p className="text-gold text-xs uppercase tracking-widest font-body mb-3">Company Credentials</p>
+              <p className="text-gold text-xs uppercase tracking-widest font-body mb-3">
+                Company Credentials
+              </p>
               <div className="grid grid-cols-2 gap-3">
                 {[
                   'Registration No.',
-                  'GST Number',
                   'Trade Licence',
                   'Regulatory Body',
+                  'VAT Registration',
                 ].map((item) => (
                   <div key={item} className="flex flex-col gap-0.5">
                     <span className="text-white/40 text-xs font-body">{item}</span>
@@ -72,7 +81,7 @@ export function AboutSection() {
 
           {/* Right — Pillars */}
           <div className="flex flex-col gap-5">
-            {pillars.map((pillar, i) => (
+            {pillars.map((pillar) => (
               <div
                 key={pillar.title}
                 className="card-dark flex gap-5 items-start group hover:scale-[1.01] transition-transform duration-300"
@@ -108,10 +117,8 @@ function ShieldIcon() {
 function ScaleIcon() {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <line x1="12" y1="3" x2="12" y2="21"/>
-      <polyline points="8 8 2 8 2 20 8 20"/>
-      <polyline points="16 8 22 8 22 20 16 20"/>
-      <line x1="2" y1="20" x2="22" y2="20"/>
+      <line x1="12" y1="3" x2="12" y2="21"/><polyline points="8 8 2 8 2 20 8 20"/>
+      <polyline points="16 8 22 8 22 20 16 20"/><line x1="2" y1="20" x2="22" y2="20"/>
     </svg>
   );
 }

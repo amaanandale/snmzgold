@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { SiteConfig } from '@/config/site';
 
 export function Footer() {
@@ -7,28 +8,26 @@ export function Footer() {
     {
       title: 'Company',
       links: [
-        { label: 'About SNMZ', href: '#about' },
-        { label: 'Gold Trading', href: '#trading' },
-        { label: 'Certifications', href: '#compliance' },
-        { label: 'Market Insights', href: '#insights' },
+        { label: 'About SNMZ',       href: '/#about' },
+        { label: 'Gold & Jewellery', href: '/#jewellery' },
+        { label: 'Knowledge Centre', href: '/#insights' },
+        { label: 'Contact Us',       href: '/#contact' },
       ],
     },
     {
-      title: 'Services',
+      title: 'Markets',
       links: [
-        { label: '24K Gold TT Bars', href: '#trading' },
-        { label: 'Purity Verification', href: '#compliance' },
-        { label: 'Corporate Trading', href: '#trading' },
-        { label: 'Compliance', href: '#compliance' },
+        { label: 'Gold Rates (AED)', href: '/gold-prices' },
+        { label: '24K TT Bars',      href: '/#jewellery' },
+        { label: 'Gold Calculator',  href: '/gold-prices#calculator' },
+        { label: 'Market Insights',  href: '/#insights' },
       ],
     },
     {
-      title: 'Resources',
+      title: 'Legal',
       links: [
-        { label: 'Blog & Insights', href: '#insights' },
-        { label: 'Gold News', href: '#news' },
-        { label: 'Contact Us', href: '#contact' },
         { label: 'Privacy Policy', href: '/privacy' },
+        { label: 'Terms of Use',   href: '/terms' },
       ],
     },
   ];
@@ -41,23 +40,27 @@ export function Footer() {
 
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-lg bg-gold-gradient flex items-center justify-center">
-                <span className="text-emerald-dark font-display font-bold text-lg">S</span>
-              </div>
-              <div>
-                <div className="font-display font-semibold text-white text-lg leading-tight">SNMZ</div>
-                <div className="text-gold text-xs uppercase tracking-widest">Gold & Diamonds</div>
-              </div>
+            {/* Official logo — place file at: public/images/brand/snmz-logo.png */}
+            <div className="mb-5">
+              <a href="/" aria-label="SNMZ Gold &amp; Diamonds — Home">
+                <Image
+                  src="/images/brand/snmz-logo.jpeg"
+                  alt="SNMZ Gold &amp; Diamonds"
+                  width={80}
+                  height={80}
+                  className="object-contain"
+                />
+              </a>
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
-              Premium 24K gold TT bar trading. Verified purity, transparent processes and trusted compliance standards.
+              Premium gold and diamonds for the UAE market. Verified purity,
+              transparent pricing and trusted professional standards.
             </p>
 
             {/* Placeholder for company registration */}
             <div className="space-y-2 text-xs text-white/40">
               <p><span className="text-gold/60">Reg. No.:</span> <em className="placeholder-text">[To be provided]</em></p>
-              <p><span className="text-gold/60">Address:</span> <em className="placeholder-text">[To be provided]</em></p>
+              <p><span className="text-gold/60">UAE Trade Licence:</span> <em className="placeholder-text">[To be provided]</em></p>
             </div>
 
             {/* Social links */}
@@ -113,7 +116,7 @@ export function Footer() {
             &copy; {currentYear} SNMZ Gold & Diamonds. All rights reserved.
           </p>
           <p className="text-white/30 text-xs font-body text-center">
-            Dealing in 24K Gold TT Bars &mdash; Premium Bullion Trading
+            Gold &amp; Diamonds &mdash; Dubai, UAE
           </p>
         </div>
       </div>

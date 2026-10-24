@@ -3,9 +3,9 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 const certifications = [
   {
     icon: <HallmarkIcon />,
-    title: 'BIS Hallmarking',
+    title: 'Purity Standards',
     status: 'pending',
-    description: 'Certification status and hallmark licence details to be provided by SNMZ.',
+    description: 'Purity certification and standards documentation to be confirmed by SNMZ in line with applicable UAE and international requirements.',
   },
   {
     icon: <DocumentIcon />,
@@ -21,9 +21,9 @@ const certifications = [
   },
   {
     icon: <FileIcon />,
-    title: 'GST & Taxation',
+    title: 'VAT & Taxation',
     status: 'pending',
-    description: 'All transactions are documented with appropriate GST invoicing. Registration details to be provided.',
+    description: 'All transactions are documented in compliance with applicable UAE VAT regulations. Registration details to be provided.',
   },
   {
     icon: <ChainIcon />,

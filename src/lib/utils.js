@@ -29,7 +29,7 @@ export function cn(...classes) {
  * @returns {string}
  */
 export function formatDate(date) {
-  return new Intl.DateTimeFormat('en-IN', {
+  return new Intl.DateTimeFormat('en-AE', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
