@@ -45,6 +45,6 @@ ehthumbs.db
 *.sln
 *.sw?
 
-# ---- Misc -----
+# ---- Misc ------
 *.pem
 coverage/
