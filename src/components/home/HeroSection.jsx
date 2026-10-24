@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 /**
  * Hero section — Dubai. The World of Gold.
@@ -72,19 +73,19 @@ export function HeroSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
+              <Link
                 href="/gold-prices"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gold-gradient text-emerald-dark font-body font-semibold rounded-xl hover:opacity-90 transition-opacity shadow-gold text-sm"
               >
                 Explore Live Gold Rates
                 <ArrowRightIcon />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/why-dubai"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-gold/35 text-white font-body font-medium rounded-xl hover:bg-white/5 hover:border-gold/60 transition-all text-sm"
               >
                 Discover Why Dubai Leads
-              </a>
+              </Link>
             </div>
 
             {/* Trust signals */}
@@ -131,13 +132,13 @@ export function HeroSection() {
                     <p className="text-gold text-[10px] uppercase tracking-[0.2em] font-body mb-0.5">Live Rate</p>
                     <p className="text-white font-display font-semibold text-sm">24K · AED / gram</p>
                   </div>
-                  <a
+                  <Link
                     href="/gold-prices"
                     className="text-gold/70 hover:text-gold text-xs font-body transition-colors"
                     aria-label="View live gold rates"
                   >
                     View →
-                  </a>
+                  </Link>
                 </div>
               </div>
 

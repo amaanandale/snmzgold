@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 /**
  * Homepage — "Why Dubai?" preview section.
  * Links to the full /why-dubai page.
@@ -48,12 +50,12 @@ export function WhyDubaiPreview() {
             </h2>
             <div className="w-12 h-0.5 bg-gold/40 mt-3" />
           </div>
-          <a
+          <Link
             href="/why-dubai"
             className="self-start lg:self-auto flex items-center gap-2 text-gold/70 hover:text-gold text-sm font-body transition-colors"
           >
             Full story → Why Dubai?
-          </a>
+          </Link>
         </div>
 
         {/* Grid */}
@@ -74,12 +76,12 @@ export function WhyDubaiPreview() {
 
         {/* CTA row */}
         <div className="mt-10 flex items-center justify-center">
-          <a
+          <Link
             href="/why-dubai"
             className="inline-flex items-center gap-2 px-6 py-3 border border-gold/30 text-gold rounded-xl text-sm font-body hover:bg-gold/8 transition-colors"
           >
             Discover the Full Dubai Gold Story →
-          </a>
+          </Link>
         </div>
       </div>
     </section>

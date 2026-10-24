@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { fetchGoldNews } from '@/lib/news';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -83,13 +84,13 @@ export default async function GoldNewsPage() {
                 { label: 'Why Dubai?', href: '/why-dubai' },
                 { label: 'Gold Education Blog', href: '/blogs' },
               ].map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white/60 text-sm font-body hover:border-gold/25 hover:text-gold transition-colors"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

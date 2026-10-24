@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getBlogArticle, getBlogIndex } from '@/content/blogs';
 import { Header } from '@/components/layout/Header';
@@ -53,9 +54,9 @@ export default async function BlogArticlePage({ params }) {
           <div className="section-container max-w-4xl">
             {/* Breadcrumb */}
             <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-body text-white/40 mb-6">
-              <a href="/" className="hover:text-gold transition-colors">Home</a>
+              <Link href="/" className="hover:text-gold transition-colors">Home</Link>
               <span>/</span>
-              <a href="/blogs" className="hover:text-gold transition-colors">Blogs</a>
+              <Link href="/blogs" className="hover:text-gold transition-colors">Blogs</Link>
               <span>/</span>
               <span className="text-white/60">{article.title}</span>
             </nav>
@@ -86,7 +87,7 @@ export default async function BlogArticlePage({ params }) {
             <div className="bg-gold/8 border border-gold/20 rounded-xl p-4 mb-8">
               <p className="text-emerald text-sm font-body">
                 <strong>Disclaimer:</strong> Information in this article is for educational purposes only and does not constitute financial, investment, or trading advice. Gold prices change daily — see our{' '}
-                <a href="/gold-prices" className="text-gold-antique underline hover:text-gold">live gold rates page</a> for current AED rates.
+                <Link href="/gold-prices" className="text-gold-antique underline hover:text-gold">live gold rates page</Link> for current AED rates.
               </p>
             </div>
           )}
@@ -101,18 +102,18 @@ export default async function BlogArticlePage({ params }) {
           {/* Footer CTA row */}
           <div className="mt-14 pt-8 border-t border-ivory-dark">
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
+              <Link
                 href="/gold-prices"
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald text-white rounded-lg text-sm font-body font-medium hover:bg-emerald-light transition-colors"
               >
                 View Live Gold Rates →
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/blogs"
                 className="inline-flex items-center gap-2 px-5 py-2.5 border border-emerald/20 text-emerald rounded-lg text-sm font-body hover:bg-emerald/5 transition-colors"
               >
                 ← Back to Blog
-              </a>
+              </Link>
             </div>
           </div>
         </article>
@@ -124,7 +125,7 @@ export default async function BlogArticlePage({ params }) {
               <h2 id="related-heading" className="font-display text-2xl text-emerald mb-7">Related Articles</h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {related.map((rel) => (
-                  <a
+                  <Link
                     key={rel.slug}
                     href={`/blogs/${rel.slug}`}
                     className="block bg-white rounded-xl p-5 border border-ivory-dark hover:border-gold/30 hover:shadow-card-hover transition-all duration-200"
@@ -134,7 +135,7 @@ export default async function BlogArticlePage({ params }) {
                       {rel.title}
                     </h3>
                     <span className="text-emerald/40 text-xs font-body">{rel.readTime}</span>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

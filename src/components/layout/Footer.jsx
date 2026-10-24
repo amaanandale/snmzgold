@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { SiteConfig } from '@/config/site';
 
 export function Footer() {
@@ -42,7 +43,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             {/* Official logo — place file at: public/images/brand/snmz-logo.png */}
             <div className="mb-5">
-              <a href="/" aria-label="SNMZ Gold &amp; Diamonds — Home">
+              <Link href="/" aria-label="SNMZ Gold &amp; Diamonds — Home">
                 <Image
                   src="/images/brand/snmz-logo.jpeg"
                   alt="SNMZ Gold &amp; Diamonds"
@@ -50,7 +51,7 @@ export function Footer() {
                   height={80}
                   className="object-contain"
                 />
-              </a>
+              </Link>
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
               Premium gold and diamonds for the UAE market. Verified purity,
@@ -95,12 +96,12 @@ export function Footer() {
               <ul className="space-y-3">
                 {group.links.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-white/60 hover:text-gold text-sm font-body transition-colors duration-200"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Badge } from '@/components/ui/Badge';
 
 /**
@@ -30,18 +31,18 @@ export function BlogsPreview({ articles }) {
             </h2>
             <div className="w-12 h-0.5 bg-gold/40 mt-3" />
           </div>
-          <a
+          <Link
             href="/blogs"
             className="self-start sm:self-auto text-gold-antique hover:text-gold text-sm font-body transition-colors"
           >
             All articles →
-          </a>
+          </Link>
         </div>
 
         {/* Articles */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {articles.map((article) => (
-            <a
+            <Link
               key={article.slug}
               href={`/blogs/${article.slug}`}
               className="group block bg-white border border-ivory-dark rounded-2xl overflow-hidden hover:border-gold/30 hover:shadow-card-hover transition-all duration-300"
@@ -78,18 +79,18 @@ export function BlogsPreview({ articles }) {
                   Read more →
                 </span>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
 
         {/* View all */}
         <div className="mt-8 flex justify-center">
-          <a
+          <Link
             href="/blogs"
             className="inline-flex items-center gap-2 px-6 py-3 border border-emerald/20 text-emerald rounded-xl text-sm font-body hover:bg-emerald/5 transition-colors"
           >
             Browse All 10 Articles →
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { getBlogIndex } from '@/content/blogs';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -50,7 +51,7 @@ export default function BlogsIndexPage() {
               <p className="text-gold text-xs uppercase tracking-[0.25em] font-body font-semibold mb-5">
                 Featured Article
               </p>
-              <a
+              <Link
                 href={`/blogs/${featured.slug}`}
                 className="group block bg-white/5 border border-gold/15 rounded-2xl overflow-hidden hover:border-gold/35 transition-all duration-300 hover:shadow-gold"
               >
@@ -86,14 +87,14 @@ export default function BlogsIndexPage() {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           )}
 
           {/* Article grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {rest.map((article) => (
-              <a
+              <Link
                 key={article.slug}
                 href={`/blogs/${article.slug}`}
                 className="group block bg-white/5 border border-white/8 rounded-2xl overflow-hidden hover:border-gold/25 transition-all duration-300"
@@ -130,7 +131,7 @@ export default function BlogsIndexPage() {
                     Read more →
                   </span>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

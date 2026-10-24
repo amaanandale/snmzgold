@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { fetchEconomicNews } from '@/lib/news';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -93,13 +94,13 @@ export default async function EconomicNewsPage() {
                 { label: 'Why Dubai?', href: '/why-dubai' },
                 { label: 'Gold Education', href: '/blogs' },
               ].map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   className="px-4 py-2 bg-white border border-ivory-dark rounded-lg text-emerald/60 text-sm font-body hover:border-gold/30 hover:text-emerald transition-colors"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

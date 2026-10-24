@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { UAEFlag } from '@/components/ui/UAEFlag';
 
 /**
@@ -21,12 +22,12 @@ export function AnnouncementBar() {
           {' — '}
           <span>Premium gold and precious metals for the UAE market.</span>
           {' '}
-          <a
+          <Link
             href="/#contact"
             className="text-gold/70 hover:text-gold underline underline-offset-2 transition-colors duration-200 ml-1 focus-visible:ring-1 focus-visible:ring-gold rounded-sm"
           >
             Enquire now →
-          </a>
+          </Link>
         </p>
       </div>
     </div>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
 /**
@@ -28,6 +29,13 @@ export function Button({
   const classes = cn(base, sizes, className);
 
   if (href) {
+    if (href.startsWith('/') && !href.startsWith('//')) {
+      return (
+        <Link href={href} className={classes} {...props}>
+          {children}
+        </Link>
+      );
+    }
     return (
       <a href={href} className={classes} {...props}>
         {children}

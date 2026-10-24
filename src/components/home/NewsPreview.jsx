@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 /**
  * Homepage — News preview section.
  * Links to /gold-news and /economic-news.
@@ -48,7 +50,7 @@ export function NewsPreview() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {newsCategories.map((cat) => (
-            <a
+            <Link
               key={cat.href}
               href={cat.href}
               className={`group relative block rounded-2xl border border-white/10 overflow-hidden hover:border-gold/30 transition-all duration-300 hover:shadow-gold`}
@@ -78,7 +80,7 @@ export function NewsPreview() {
                   Read {cat.label} →
                 </span>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

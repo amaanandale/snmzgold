@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { SiteConfig } from '@/config/site';
 import { Button } from '@/components/ui/Button';
 import { LogoIcon } from '@/components/ui/LogoIcon';
@@ -33,7 +34,7 @@ export function Header() {
         <div className="flex items-center justify-between h-18 lg:h-20">
 
           {/* Official logo — place file at: public/images/brand/snmz-logo.png */}
-          <a
+          <Link
             href="/"
             className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded"
             aria-label="SNMZ Gold &amp; Diamonds — Home"
@@ -42,7 +43,7 @@ export function Header() {
               size="md"
               className="group-hover:opacity-90 transition-opacity duration-300"
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav
@@ -50,13 +51,13 @@ export function Header() {
             aria-label="Main navigation"
           >
             {SiteConfig.nav.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 className="text-white/75 hover:text-gold text-[12px] font-body font-medium tracking-wide transition-colors duration-200"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -100,14 +101,14 @@ export function Header() {
         <div className="bg-emerald-dark/98 backdrop-blur-md border-t border-gold/10 px-4 pb-6 pt-4">
           <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
             {SiteConfig.nav.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
                 className="py-3 px-2 text-white/80 hover:text-gold font-body font-medium border-b border-white/5 last:border-0 transition-colors"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
           <div className="mt-5">

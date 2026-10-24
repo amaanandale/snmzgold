@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 /**
  * Homepage — Brief company preview (replaces full About section).
  * Full company profile lives at /who-we-are.
@@ -35,12 +37,12 @@ export function CompanyPreview() {
               </p>
             </div>
 
-            <a
+            <Link
               href="/who-we-are"
               className="inline-flex items-center gap-2 mt-7 px-6 py-3 bg-emerald text-white rounded-xl text-sm font-body font-medium hover:bg-emerald-light transition-colors"
             >
               Our Full Story →
-            </a>
+            </Link>
           </div>
 
           {/* Right — key facts */}

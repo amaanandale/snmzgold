@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { RateCards } from '@/components/prices/RateCards';
@@ -114,12 +115,12 @@ export default async function GoldPricesPage() {
                 <p className="text-white/60 font-body text-sm leading-relaxed mb-6">
                   SNMZ Gold & Diamonds deals in gold TT bars and precious metals for institutional and corporate buyers in the UAE and internationally. Rates shown are indicative — contact us to discuss verified trading rates, quantities, and settlement terms.
                 </p>
-                <a
+                <Link
                   href="/#contact"
                   className="inline-flex items-center gap-2 px-5 py-2.5 bg-gold-gradient text-emerald-dark rounded-lg text-sm font-body font-semibold hover:opacity-90 transition-opacity"
                 >
                   Enquire Now
-                </a>
+                </Link>
               </div>
               <div className="bg-white/5 border border-gold/15 rounded-xl p-5 space-y-3">
                 <p className="text-gold text-xs uppercase tracking-widest font-body font-semibold">Rate Disclaimer</p>
