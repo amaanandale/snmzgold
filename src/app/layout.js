@@ -1,20 +1,6 @@
-import { Inter, Playfair_Display } from 'next/font/google';
 import { SiteConfig } from '@/config/site';
 import { WhatsAppFloat } from '@/components/ui/WhatsAppFloat';
 import './globals.css';
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  display: 'swap',
-  weight: ['400', '600', '700'],
-});
 
 export const metadata = {
   metadataBase: new URL(SiteConfig.domain),
@@ -63,7 +49,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        />
+      </head>
       <body className="font-body antialiased">
         <a href="#main-content" className="skip-link">
           Skip to main content
