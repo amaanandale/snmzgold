@@ -9,26 +9,26 @@ export function Footer() {
     {
       title: 'Company',
       links: [
-        { label: 'About SNMZ',       href: '/#about' },
+        { label: 'About SNMZ', href: '/#about' },
         { label: 'Gold & Jewellery', href: '/#jewellery' },
         { label: 'Knowledge Centre', href: '/#insights' },
-        { label: 'Contact Us',       href: '/#contact' },
+        { label: 'Contact Us', href: '/#contact' },
       ],
     },
     {
       title: 'Markets',
       links: [
         { label: 'Gold Rates (AED)', href: '/gold-prices' },
-        { label: '24K TT Bars',      href: '/#jewellery' },
-        { label: 'Gold Calculator',  href: '/gold-prices#calculator' },
-        { label: 'Market Insights',  href: '/#insights' },
+        { label: '24K TT Bars', href: '/#jewellery' },
+        { label: 'Gold Calculator', href: '/gold-prices#calculator' },
+        { label: 'Market Insights', href: '/#insights' },
       ],
     },
     {
       title: 'Legal',
       links: [
         { label: 'Privacy Policy', href: '/privacy' },
-        { label: 'Terms of Use',   href: '/terms' },
+        { label: 'Terms of Use', href: '/terms' },
       ],
     },
   ];
@@ -45,7 +45,7 @@ export function Footer() {
             <div className="mb-5">
               <Link href="/" aria-label="SNMZ Gold &amp; Diamonds — Home">
                 <Image
-                  src="/images/brand/snmz-logo.jpeg"
+                  src="/images/brand/snmz-logo.png"
                   alt="SNMZ Gold &amp; Diamonds"
                   width={80}
                   height={80}
@@ -142,9 +142,9 @@ function SocialLink({ href, label, children }) {
 function InstagramIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
     </svg>
   );
 }
@@ -152,8 +152,8 @@ function InstagramIcon() {
 function LinkedInIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
-      <circle cx="4" cy="4" r="2"/>
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+      <circle cx="4" cy="4" r="2" />
     </svg>
   );
 }
@@ -161,7 +161,7 @@ function LinkedInIcon() {
 function TwitterIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
     </svg>
   );
 }

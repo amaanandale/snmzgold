@@ -34,7 +34,7 @@ export function HeroSection() {
         />
       </div>
 
-      <div className="section-container relative z-10 py-24 lg:py-28">
+      <div className="section-container relative z-10 pt-24 pb-20 lg:pt-36 lg:pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
           {/* Left — Copy */}

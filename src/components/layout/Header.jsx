@@ -5,9 +5,19 @@ import Link from 'next/link';
 import { SiteConfig } from '@/config/site';
 import { Button } from '@/components/ui/Button';
 import { LogoIcon } from '@/components/ui/LogoIcon';
+import { AnnouncementBar } from '@/components/layout/AnnouncementBar';
 import { whatsappUrl } from '@/lib/utils';
 
-export function Header() {
+/**
+ * Main application Header.
+ *
+ * Responsive logo sizing, sticky header with backdrop blur,
+ * announcement bar on laptop/desktop with breathing space,
+ * and hidden below laptop screen (< lg).
+ *
+ * @param {{ showAnnouncement?: boolean }} props
+ */
+export function Header({ showAnnouncement = true }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -26,17 +36,24 @@ export function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? 'bg-emerald-dark/95 backdrop-blur-md shadow-emerald border-b border-gold/10'
-          : 'bg-transparent'
+          : 'bg-emerald-dark/85 backdrop-blur-md border-b border-gold/10 lg:border-b-0 lg:bg-gradient-to-b lg:from-emerald-dark/95 lg:via-emerald-dark/70 lg:to-transparent'
       }`}
       role="banner"
     >
-      <div className="section-container">
-        <div className="flex items-center justify-between h-18 lg:h-20">
+      {/* Announcement Bar — visible on laptop screen (lg+) and above; hidden below laptop */}
+      {showAnnouncement && <AnnouncementBar />}
 
-          {/* Official logo — place file at: public/images/brand/snmz-logo.png */}
+      {/* Main Navbar — with space between announcement and navbar on laptop */}
+      <div className="section-container">
+        <div
+          className={`flex items-center justify-between h-18 lg:h-22 transition-all duration-300 ${
+            showAnnouncement ? 'lg:mt-3' : ''
+          }`}
+        >
+          {/* Official logo */}
           <Link
             href="/"
-            className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded"
+            className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded py-1"
             aria-label="SNMZ Gold &amp; Diamonds — Home"
           >
             <LogoIcon

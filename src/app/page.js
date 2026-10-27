@@ -1,6 +1,5 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { AnnouncementBar } from '@/components/layout/AnnouncementBar';
 import { HeroSection } from '@/components/home/HeroSection';
 import { GoldTicker } from '@/components/ui/GoldTicker';
 import { GoldRatePreview } from '@/components/home/GoldRatePreview';
@@ -28,9 +27,8 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* Announcement + nav */}
-      <AnnouncementBar />
-      <Header />
+      {/* Header with responsive logo and laptop announcement */}
+      <Header showAnnouncement={true} />
 
       <main id="main-content">
         {/* 1. Hero — compact enough for rates to show below on desktop */}

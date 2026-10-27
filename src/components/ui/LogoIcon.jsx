@@ -17,23 +17,25 @@ import Image from 'next/image';
  * @param {{ className?: string, size?: 'sm'|'md'|'lg' }} props
  */
 export function LogoIcon({ className = '', size = 'md' }) {
-  const dimensions = {
-    sm: { width: 44, height: 44 },
-    md: { width: 56, height: 56 },
-    lg: { width: 72, height: 72 },
+  const sizeClasses = {
+    sm: 'h-9 sm:h-10',
+    md: 'h-11 sm:h-12 md:h-14 lg:h-16 xl:h-[68px]',
+    lg: 'h-16 sm:h-20 lg:h-24',
   };
 
-  const { width, height } = dimensions[size] || dimensions.md;
+  const selectedSize = sizeClasses[size] || size;
 
   return (
-    <Image
-      src="/images/brand/snmz-logo.jpeg"
-      alt="SNMZ Gold &amp; Diamonds"
-      width={width}
-      height={height}
-      priority
-      className={`object-contain ${className}`}
-    />
+    <div className={`relative inline-flex items-center justify-center shrink-0 ${className}`}>
+      <Image
+        src="/images/brand/snmz-logo.png"
+        alt="SNMZ Gold &amp; Diamonds"
+        width={200}
+        height={200}
+        priority
+        className={`w-auto ${selectedSize} object-contain transition-all duration-300 drop-shadow-[0_2px_10px_rgba(223,175,36,0.15)]`}
+      />
+    </div>
   );
 }
 
@@ -43,12 +45,14 @@ export function LogoIcon({ className = '', size = 'md' }) {
  */
 export function LogoWide({ className = '', size = 88 }) {
   return (
-    <Image
-      src="/images/brand/snmz-logo.jpeg"
-      alt="SNMZ Gold &amp; Diamonds"
-      width={size}
-      height={size}
-      className={`object-contain ${className}`}
-    />
+    <div className={`relative inline-flex items-center justify-center shrink-0 ${className}`}>
+      <Image
+        src="/images/brand/snmz-logo.png"
+        alt="SNMZ Gold &amp; Diamonds"
+        width={size * 2}
+        height={size * 2}
+        className="w-auto h-20 lg:h-24 object-contain"
+      />
+    </div>
   );
 }
