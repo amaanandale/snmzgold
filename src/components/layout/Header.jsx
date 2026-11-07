@@ -1,25 +1,30 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { SiteConfig } from '@/config/site';
 import { Button } from '@/components/ui/Button';
 import { LogoIcon } from '@/components/ui/LogoIcon';
 import { AnnouncementBar } from '@/components/layout/AnnouncementBar';
-import { whatsappUrl } from '@/lib/utils';
+import { getWhatsAppUrl, getOfficePhoneUrl } from '@/lib/whatsapp';
 
 /**
- * Main application Header.
+ * Main application Header for SNMZ Gold & Diamonds.
  *
- * Responsive logo sizing, sticky header with backdrop blur,
- * announcement bar on laptop/desktop with breathing space,
- * and hidden below laptop screen (< lg).
- *
- * @param {{ showAnnouncement?: boolean }} props
+ * Implements:
+ * - Direct logo link to `/`
+ * - Clean primary navigation: Live Prices (dropdown: Gold Price, Silver Price), Shop, Gallery, Why Dubai?, Blogs, Contact
+ * - Contextual WhatsApp Enquiry
+ * - Responsive desktop dropdown & mobile drawer
  */
 export function Header({ showAnnouncement = true }) {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [pricesOpen, setPricesOpen] = useState(false);
+  const [mobilePricesOpen, setMobilePricesOpen] = useState(true);
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -27,66 +32,166 @@ export function Header({ showAnnouncement = true }) {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const waUrl = SiteConfig.whatsapp
-    ? whatsappUrl(SiteConfig.whatsapp, 'Hello, I would like to enquire about SNMZ Gold & Diamonds.')
-    : '#contact';
+  // Close desktop dropdown on click outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setPricesOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const waEnquiryUrl = getWhatsAppUrl('homepage');
+  const officePhoneUrl = getOfficePhoneUrl();
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-emerald-dark/95 backdrop-blur-md shadow-emerald border-b border-gold/10'
-          : 'bg-emerald-dark/85 backdrop-blur-md border-b border-gold/10 lg:border-b-0 lg:bg-gradient-to-b lg:from-emerald-dark/95 lg:via-emerald-dark/70 lg:to-transparent'
+          ? 'bg-emerald-dark/95 backdrop-blur-md shadow-emerald border-b border-gold/20'
+          : 'bg-emerald-dark/90 backdrop-blur-md border-b border-gold/10'
       }`}
       role="banner"
     >
-      {/* Announcement Bar — visible on laptop screen (lg+) and above; hidden below laptop */}
+      {/* Announcement Bar — visible on laptop screen (lg+) and above */}
       {showAnnouncement && <AnnouncementBar />}
 
-      {/* Main Navbar — with space between announcement and navbar on laptop */}
+      {/* Main Navbar */}
       <div className="section-container">
-        <div
-          className={`flex items-center justify-between h-18 lg:h-22 transition-all duration-300 ${
-            showAnnouncement ? 'lg:mt-3' : ''
-          }`}
-        >
-          {/* Official logo */}
+        <div className="flex items-center justify-between h-16 lg:h-20 transition-all duration-300">
+          {/* Official logo — always navigates to / */}
           <Link
             href="/"
-            className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded py-1"
-            aria-label="SNMZ Gold &amp; Diamonds — Home"
+            className="inline-flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded py-1"
+            aria-label="SNMZ Gold & Diamonds — Home"
           >
             <LogoIcon
               size="md"
-              className="group-hover:opacity-90 transition-opacity duration-300"
+              className="group-hover:opacity-95 transition-opacity duration-300"
             />
           </Link>
 
           {/* Desktop Navigation */}
           <nav
-            className="hidden lg:flex items-center gap-8"
+            className="hidden lg:flex items-center gap-6 xl:gap-8"
             aria-label="Main navigation"
           >
-            {SiteConfig.nav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-white/75 hover:text-gold text-[12px] font-body font-medium tracking-wide transition-colors duration-200"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {SiteConfig.nav.map((item) => {
+              if (item.hasDropdown) {
+                const isDropdownActive = item.items?.some((sub) => sub.href === pathname);
+                return (
+                  <div
+                    key={item.label}
+                    ref={dropdownRef}
+                    className="relative"
+                    onMouseEnter={() => setPricesOpen(true)}
+                    onMouseLeave={() => setPricesOpen(false)}
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setPricesOpen((prev) => !prev)}
+                      aria-expanded={pricesOpen}
+                      aria-haspopup="true"
+                      className={`inline-flex items-center gap-1.5 text-[13px] xl:text-sm font-body tracking-normal transition-colors duration-200 py-2 focus:outline-none focus-visible:text-gold ${
+                        isDropdownActive
+                          ? 'text-gold font-semibold'
+                          : 'text-white/85 hover:text-gold font-medium'
+                      }`}
+                    >
+                      <span>{item.label}</span>
+                      <ChevronDownIcon
+                        className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                          pricesOpen
+                            ? 'rotate-180 text-gold'
+                            : isDropdownActive
+                            ? 'text-gold'
+                            : 'text-white/60'
+                        }`}
+                      />
+                    </button>
+
+                    {/* Dropdown Menu */}
+                    <div
+                      className={`absolute top-full left-0 mt-1 w-64 rounded-xl bg-emerald-dark/98 border border-gold/25 p-2 shadow-2xl backdrop-blur-xl transition-all duration-200 ${
+                        pricesOpen
+                          ? 'opacity-100 translate-y-0 pointer-events-auto'
+                          : 'opacity-0 -translate-y-2 pointer-events-none'
+                      }`}
+                    >
+                      {item.items.map((subItem) => {
+                        const isSubActive = pathname === subItem.href;
+                        return (
+                          <Link
+                            key={subItem.href}
+                            href={subItem.href}
+                            onClick={() => setPricesOpen(false)}
+                            className={`flex flex-col gap-0.5 rounded-lg p-2.5 transition-colors group/item ${
+                              isSubActive ? 'bg-gold/15 text-gold' : 'hover:bg-gold/10'
+                            }`}
+                          >
+                            <div className="flex items-center justify-between">
+                              <span
+                                className={`text-xs font-semibold uppercase tracking-wider transition-colors ${
+                                  isSubActive ? 'text-gold' : 'text-white group-hover/item:text-gold'
+                                }`}
+                              >
+                                {subItem.label}
+                              </span>
+                              <span className="text-[10px] px-1.5 py-0.5 rounded bg-gold/15 text-gold font-mono">
+                                AED
+                              </span>
+                            </div>
+                            {subItem.description && (
+                              <span className="text-[11px] text-white/60 line-clamp-1 group-hover/item:text-white/80">
+                                {subItem.description}
+                              </span>
+                            )}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              }
+
+              const isActive = pathname === item.href;
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`text-[13px] xl:text-sm font-body tracking-normal transition-colors duration-200 py-1 ${
+                    isActive
+                      ? 'text-gold font-semibold border-b-2 border-gold/70 pb-0.5'
+                      : 'text-white/85 hover:text-gold font-medium'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
 
-          {/* Desktop CTA */}
+          {/* Desktop CTA actions */}
           <div className="hidden lg:flex items-center gap-4">
+            <a
+              href={officePhoneUrl}
+              className="text-xs font-mono text-white/70 hover:text-gold transition-colors hidden xl:inline-block"
+              title="Call SNMZ Dubai Office"
+            >
+              {SiteConfig.phoneDisplay}
+            </a>
+
             <Button
-              href={waUrl}
+              href={waEnquiryUrl}
               variant="primary"
               size="sm"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Contact SNMZ on WhatsApp"
+              className="shadow-sm hover:shadow-gold transition-all"
             >
               <WhatsAppIcon />
               Enquire Now
@@ -96,7 +201,7 @@ export function Header({ showAnnouncement = true }) {
           {/* Mobile menu toggle */}
           <button
             type="button"
-            className="lg:hidden p-2 text-white/80 hover:text-gold transition-colors"
+            className="lg:hidden p-2 text-white/85 hover:text-gold transition-colors rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
@@ -107,30 +212,85 @@ export function Header({ showAnnouncement = true }) {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation Drawer */}
       <div
         id="mobile-nav"
-        className={`lg:hidden transition-all duration-300 overflow-hidden ${
-          mobileOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+        className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+          mobileOpen ? 'max-h-[32rem] opacity-100' : 'max-h-0 opacity-0'
         }`}
         aria-hidden={!mobileOpen}
       >
-        <div className="bg-emerald-dark/98 backdrop-blur-md border-t border-gold/10 px-4 pb-6 pt-4">
+        <div className="bg-emerald-dark/98 backdrop-blur-lg border-t border-gold/15 px-5 pb-6 pt-3 shadow-2xl">
           <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
-            {SiteConfig.nav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setMobileOpen(false)}
-                className="py-3 px-2 text-white/80 hover:text-gold font-body font-medium border-b border-white/5 last:border-0 transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {SiteConfig.nav.map((item) => {
+              if (item.hasDropdown) {
+                const isDropdownActive = item.items?.some((sub) => sub.href === pathname);
+                return (
+                  <div key={item.label} className="border-b border-white/5 pb-2 pt-1">
+                    <button
+                      type="button"
+                      onClick={() => setMobilePricesOpen(!mobilePricesOpen)}
+                      className={`w-full flex items-center justify-between py-2 px-3 font-body text-sm hover:text-gold ${
+                        isDropdownActive ? 'text-gold font-semibold' : 'text-white/90 font-medium'
+                      }`}
+                    >
+                      <span>{item.label}</span>
+                      <ChevronDownIcon
+                        className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                          mobilePricesOpen ? 'rotate-180 text-gold' : isDropdownActive ? 'text-gold' : 'text-white/50'
+                        }`}
+                      />
+                    </button>
+                    {mobilePricesOpen && (
+                      <div className="pl-4 pr-2 flex flex-col gap-1 mt-1">
+                        {item.items.map((subItem) => {
+                          const isSubActive = pathname === subItem.href;
+                          return (
+                            <Link
+                              key={subItem.href}
+                              href={subItem.href}
+                              onClick={() => setMobileOpen(false)}
+                              className={`py-2 px-3 text-xs rounded-md flex items-center justify-between transition-colors ${
+                                isSubActive
+                                  ? 'text-gold bg-gold/15 font-semibold'
+                                  : 'text-white/80 hover:text-gold hover:bg-white/5'
+                              }`}
+                            >
+                              <span className="font-medium">{subItem.label}</span>
+                              <span className="text-[10px] text-gold/60 font-mono">AED Live</span>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
+              const isActive = pathname === item.href;
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className={`py-2.5 px-3 rounded-lg font-body text-sm border-b border-white/5 last:border-0 transition-colors flex items-center justify-between ${
+                    isActive
+                      ? 'text-gold bg-white/5 font-semibold'
+                      : 'text-white/85 hover:text-gold hover:bg-white/5 font-medium'
+                  }`}
+                >
+                  <span>{item.label}</span>
+                  <span className={isActive ? 'text-gold text-xs' : 'text-gold/40 text-xs'}>→</span>
+                </Link>
+              );
+            })}
           </nav>
-          <div className="mt-5">
+
+          {/* Mobile Direct Contact Actions */}
+          <div className="mt-4 pt-3 border-t border-gold/15 flex flex-col gap-2">
             <Button
-              href={waUrl}
+              href={waEnquiryUrl}
               variant="primary"
               className="w-full justify-center"
               target="_blank"
@@ -139,10 +299,34 @@ export function Header({ showAnnouncement = true }) {
               <WhatsAppIcon />
               Enquire on WhatsApp
             </Button>
+
+            <a
+              href={officePhoneUrl}
+              className="text-center py-2 text-xs font-mono text-white/70 hover:text-gold transition-colors"
+            >
+              Office: {SiteConfig.phoneDisplay}
+            </a>
           </div>
         </div>
       </div>
     </header>
+  );
+}
+
+function ChevronDownIcon({ className = '' }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <polyline points="6 9 12 15 18 9" />
+    </svg>
   );
 }
 

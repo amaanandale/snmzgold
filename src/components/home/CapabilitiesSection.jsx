@@ -2,14 +2,14 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 
 const trustMetrics = [
   {
-    value: '[X]+',
-    label: 'Years in Gold Trading',
-    note: '[To be provided]',
+    value: '24K',
+    label: 'Primary Bullion Format',
+    note: 'Investment TT Bars',
   },
   {
-    value: '[X]',
-    label: 'Kg Traded Annually',
-    note: '[To be provided]',
+    value: 'AED',
+    label: 'Settlement Currency',
+    note: 'Live spot reference',
   },
   {
     value: '999.9',
@@ -97,9 +97,9 @@ export function CapabilitiesSection() {
           ))}
         </div>
 
-        {/* Disclaimer */}
-        <p className="text-center text-xs text-white/25 italic font-body mt-10">
-          All trading volumes and metrics are placeholders. Verified data to be supplied by SNMZ.
+        {/* Compliance note */}
+        <p className="text-center text-xs text-white/40 font-body mt-10">
+          All transactions are executed in compliance with UAE Federal AML/CFT regulations and Good Delivery standards.
         </p>
       </div>
     </section>

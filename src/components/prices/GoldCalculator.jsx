@@ -2,6 +2,7 @@
 
 import { useState, useId } from 'react';
 import { calculateGoldValue, formatAED } from '@/lib/goldRates';
+import { getWhatsAppUrl } from '@/lib/whatsapp';
 
 /**
  * Interactive gold value calculator.
@@ -220,10 +221,18 @@ export function GoldCalculator({ rates }) {
                     <p className="font-display font-bold text-3xl text-gold leading-tight">
                       {formatAED(calcValue)}
                     </p>
-                    <p className="text-white/40 text-xs font-body mt-2">
+                    <p className="text-white/40 text-xs font-body mt-2 mb-3">
                       {weight}g of {selectedKarat} ({selectedRate?.purityLabel}) ×{' '}
                       {formatAED(selectedRate.perGram)}/g
                     </p>
+                    <a
+                      href={getWhatsAppUrl('goldRates')}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-1.5 w-full py-2 px-3 rounded-lg bg-gold text-emerald-dark font-body font-semibold text-xs transition-opacity hover:opacity-95"
+                    >
+                      Enquire Current Rate on WhatsApp
+                    </a>
                   </>
                 ) : (
                   <p className="font-display text-2xl text-white/20">

@@ -12,6 +12,10 @@ export const metadata = {
   keywords: SiteConfig.keywords,
   authors: [{ name: 'SNMZ Gold & Diamonds' }],
   creator: 'SNMZ Gold & Diamonds',
+  icons: {
+    icon: '/images/brand/snmz-logo.png',
+    apple: '/images/brand/snmz-logo.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_AE',

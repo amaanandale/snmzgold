@@ -1,42 +1,33 @@
 'use client';
 
-import { SiteConfig } from '@/config/site';
-import { whatsappUrl } from '@/lib/utils';
 import { useState } from 'react';
+import { getWhatsAppUrl } from '@/lib/whatsapp';
 
 /**
- * WhatsApp floating action button — globally visible.
- * Client Component (needs hover state and event handlers).
- *
- * CONFIGURATION:
- *   Set NEXT_PUBLIC_WHATSAPP in .env.local to enable direct messaging.
- *   Format: country code + number, no + sign. e.g. '971501234567'
- *   If not set, clicking opens https://www.whatsapp.com/ instead.
- *
- * @param {{ message?: string }} props
+ * WhatsApp floating action button — globally visible in bottom-right corner.
+ * Client Component (handles hover state).
+ * Target: +971527549259
  */
 export function WhatsAppFloat({ message }) {
   const [hovered, setHovered] = useState(false);
 
-  const greeting = message || SiteConfig.whatsappGreeting;
-
-  const href = SiteConfig.whatsapp
-    ? whatsappUrl(SiteConfig.whatsapp, greeting)
-    : 'https://www.whatsapp.com/';
-
-  const isConfigured = Boolean(SiteConfig.whatsapp);
+  const href = getWhatsAppUrl('general', message ? { customMessage: message } : {});
 
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Contact us on WhatsApp"
-      title={isConfigured ? 'Chat with us on WhatsApp' : 'Visit WhatsApp'}
+      aria-label="Contact SNMZ Gold & Diamonds on WhatsApp"
+      title="Chat with SNMZ Gold & Diamonds on WhatsApp"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="fixed bottom-6 right-6 z-50 flex items-center gap-3 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-dark rounded-full group"
-      style={{ filter: hovered ? 'drop-shadow(0 4px 16px rgba(37,211,102,0.45))' : 'drop-shadow(0 2px 8px rgba(37,211,102,0.25))' }}
+      style={{
+        filter: hovered
+          ? 'drop-shadow(0 4px 16px rgba(37,211,102,0.45))'
+          : 'drop-shadow(0 2px 8px rgba(37,211,102,0.25))',
+      }}
     >
       {/* Label — appears on hover */}
       <span
@@ -44,12 +35,12 @@ export function WhatsAppFloat({ message }) {
           hovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-3 pointer-events-none'
         }`}
       >
-        Chat with us
+        Chat on WhatsApp
       </span>
 
       {/* Button */}
       <div
-        className="w-14 h-14 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+        className="w-14 h-14 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110 shadow-lg"
         style={{ backgroundColor: '#25D366' }}
       >
         <WhatsAppIcon />

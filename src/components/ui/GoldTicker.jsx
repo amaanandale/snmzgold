@@ -64,11 +64,13 @@ export function GoldTicker({ rates, status }) {
 
 function TickerItem({ rate }) {
   return (
-    <span className="inline-flex items-baseline gap-1.5 text-sm font-body">
-      <span className="text-gold font-semibold tracking-wide">{rate.karat}</span>
-      <span className="text-white/50 text-[10px] uppercase tracking-widest">{rate.purityLabel}</span>
-      <span className="text-white font-medium ml-1">{formatAED(rate.perGram)}</span>
-      <span className="text-white/35 text-[10px]">/ g</span>
+    <span className="inline-flex items-center gap-2 text-sm font-body">
+      <span className="px-2 py-0.5 rounded bg-gold/15 text-gold text-xs font-bold font-display tracking-wider border border-gold/25">
+        {rate.karat}
+      </span>
+      <span className="text-white/60 text-xs font-body font-medium">{rate.purityLabel}</span>
+      <span className="text-white font-bold tabular-nums ml-0.5">{formatAED(rate.perGram)}</span>
+      <span className="text-gold/75 text-xs font-medium">/ gram</span>
     </span>
   );
 }

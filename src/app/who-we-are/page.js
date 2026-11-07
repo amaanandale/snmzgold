@@ -62,13 +62,14 @@ const offerings = [
   },
 ];
 
-const placeholders = [
-  { label: 'Company Registration', value: '[To be supplied by SNMZ]' },
-  { label: 'UAE Trade Licence', value: '[To be supplied by SNMZ]' },
-  { label: 'VAT Registration', value: '[To be supplied by SNMZ]' },
-  { label: 'Office Address', value: '[To be supplied by SNMZ]' },
-  { label: 'Founded', value: '[To be supplied by SNMZ]' },
-  { label: 'Regulatory Body', value: '[To be confirmed by SNMZ]' },
+const companyProfile = [
+  { label: 'Jurisdiction', value: 'Dubai, United Arab Emirates' },
+  { label: 'UAE Trade Licence', value: '#1531797' },
+  { label: 'Established', value: '2025' },
+  { label: 'Registered Premises', value: 'F03, Al Fadan Building, Al Dhagaya, Dubai' },
+  { label: 'Primary Focus', value: '24K Investment-Grade Gold TT Bars & Physical Silver' },
+  { label: 'Pricing Standard', value: 'Live International Spot Linked (AED)' },
+  { label: 'Compliance', value: 'Standardised UAE KYC / AML Verification' },
 ];
 
 export default function WhoWeArePage() {
@@ -113,33 +114,25 @@ export default function WhoWeArePage() {
                   <p>
                     We deal in investment-grade physical gold — primarily 24K TT bars — for institutional and corporate buyers. Our rates are published publicly in AED, based on live international spot prices.
                   </p>
-                  <div className="bg-gold/6 border border-gold/15 rounded-xl p-4 mt-2">
-                    <p className="text-emerald/60 text-sm italic">
-                      [Company founding year, founder names, and additional company history to be supplied by SNMZ. We will update this page when verified information is available.]
-                    </p>
-                  </div>
                 </div>
               </div>
 
-              {/* Company details */}
+              {/* Company profile summary */}
               <div className="lg:col-span-2">
                 <div className="bg-white rounded-2xl p-6 border border-ivory-dark shadow-card">
-                  <h3 className="font-display text-lg text-emerald mb-5">Company Details</h3>
-                  <div className="space-y-3">
-                    {placeholders.map((item) => (
+                  <h3 className="font-display text-lg text-emerald mb-5">Company Profile</h3>
+                  <div className="space-y-3.5">
+                    {companyProfile.map((item) => (
                       <div key={item.label} className="flex flex-col gap-0.5 pb-3 border-b border-ivory-dark last:border-0 last:pb-0">
-                        <span className="text-emerald/45 text-xs font-body uppercase tracking-wider">
+                        <span className="text-emerald/45 text-xs font-body uppercase tracking-wider font-semibold">
                           {item.label}
                         </span>
-                        <span className="text-emerald/50 text-sm font-body italic">
+                        <span className="text-emerald/80 text-sm font-body font-medium">
                           {item.value}
                         </span>
                       </div>
                     ))}
                   </div>
-                  <p className="text-emerald/30 text-xs font-body italic mt-4">
-                    Company registration details to be supplied by the business owner and verified before publication.
-                  </p>
                 </div>
               </div>
             </div>

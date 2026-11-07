@@ -13,11 +13,12 @@ export default function sitemap() {
   // Static routes
   const staticRoutes = [
     { url: baseUrl, priority: 1.0, changeFrequency: 'daily' },
+    { url: `${baseUrl}/shop`, priority: 0.95, changeFrequency: 'daily' },
     { url: `${baseUrl}/gold-prices`, priority: 0.95, changeFrequency: 'hourly' },
+    { url: `${baseUrl}/silver-prices`, priority: 0.90, changeFrequency: 'hourly' },
+    { url: `${baseUrl}/gallery`, priority: 0.85, changeFrequency: 'monthly' },
     { url: `${baseUrl}/why-dubai`, priority: 0.85, changeFrequency: 'monthly' },
     { url: `${baseUrl}/blogs`, priority: 0.85, changeFrequency: 'weekly' },
-    { url: `${baseUrl}/gold-news`, priority: 0.80, changeFrequency: 'daily' },
-    { url: `${baseUrl}/economic-news`, priority: 0.75, changeFrequency: 'daily' },
     { url: `${baseUrl}/who-we-are`, priority: 0.70, changeFrequency: 'monthly' },
   ].map((route) => ({
     ...route,

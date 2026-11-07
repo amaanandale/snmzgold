@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 /**
- * Hero section — Dubai. The World of Gold.
- * Compact to allow gold rates to be visible below fold on desktop.
+ * Hero section — SNMZ Gold & Diamonds Dubai.
+ * Professional bullion dealer headline and relevant CTA buttons.
  * Server Component.
  */
 export function HeroSection() {
@@ -34,72 +34,73 @@ export function HeroSection() {
         />
       </div>
 
-      <div className="section-container relative z-10 pt-24 pb-20 lg:pt-36 lg:pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-
+      <div className="section-container relative z-10 pt-28 pb-16 lg:pt-36 lg:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left — Copy */}
           <div className="flex flex-col gap-7">
             {/* Eyebrow */}
             <div className="flex items-center gap-3">
-              <div className="w-8 h-px bg-gold/60" aria-hidden="true" />
-              <span className="text-gold/80 text-xs font-body font-semibold uppercase tracking-[0.25em]">
-                Gold & Diamonds · Dubai, UAE
+              <div className="w-8 h-px bg-gold/70" aria-hidden="true" />
+              <span className="text-gold text-xs font-mono font-semibold uppercase tracking-[0.25em]">
+                SNMZ Gold &amp; Diamonds · Dubai Bullion Desk
               </span>
             </div>
 
             <h1
               id="hero-heading"
-              className="font-display text-5xl sm:text-6xl lg:text-[64px] leading-[1.05] tracking-tight text-white"
+              className="font-display text-4xl sm:text-5xl lg:text-[60px] leading-[1.08] tracking-tight text-white font-bold"
             >
-              Dubai.{' '}
+              Premium Physical{' '}
               <span
                 className="text-gold"
                 style={{
-                  backgroundImage: 'linear-gradient(135deg, #ECC84A 0%, #DFAF24 40%, #B8860B 100%)',
+                  backgroundImage: 'linear-gradient(135deg, #ECC84A 0%, #DFAF24 45%, #B8860B 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
                 }}
               >
-                The World
+                Bullion Trading
               </span>
               <br />
-              <span className="text-white">of Gold.</span>
+              <span className="text-white">in Dubai.</span>
             </h1>
 
-            <p className="text-white/65 text-lg font-body leading-relaxed max-w-lg">
-              Discover the heritage, craftsmanship and global connections behind
-              Dubai&apos;s extraordinary gold market.
+            <p className="text-white/75 text-base sm:text-lg font-body leading-relaxed max-w-lg">
+              Licensed bullion dealer in the City of Gold. Investment-grade 24K TT bars,
+              fine silver bullion, transparent live AED spot pricing, and institutional counterparty execution.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-1">
               <Link
-                href="/gold-prices"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gold-gradient text-emerald-dark font-body font-semibold rounded-xl hover:opacity-90 transition-opacity shadow-gold text-sm"
+                href="/shop"
+                className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-gold-gradient text-emerald-dark font-body font-bold rounded-xl hover:opacity-95 hover:scale-[1.02] transition-all shadow-gold text-sm tracking-wide"
               >
-                Explore Live Gold Rates
+                <span>Explore Bullion Shop</span>
                 <ArrowRightIcon />
               </Link>
               <Link
-                href="/why-dubai"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-gold/35 text-white font-body font-medium rounded-xl hover:bg-white/5 hover:border-gold/60 transition-all text-sm"
+                href="#live-rates"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-gold/40 text-white hover:text-gold font-body font-medium rounded-xl hover:bg-gold/10 hover:border-gold transition-all text-sm"
               >
-                Discover Why Dubai Leads
+                Live Gold &amp; Silver Rates
               </Link>
             </div>
 
             {/* Trust signals */}
-            <div className="flex flex-wrap gap-6 pt-2 border-t border-gold/15">
+            <div className="grid grid-cols-2 gap-6 pt-4 border-t border-gold/20 max-w-xs sm:max-w-sm">
               {[
-                { label: 'Currency',  value: 'AED' },
-                { label: 'Purity',    value: '999.9 Fine' },
-                { label: 'Market',    value: 'Dubai, UAE' },
+                { label: 'Currency', value: 'AED', sub: 'UAE Dirham Spot' },
+                { label: 'Purity', value: '999.9', sub: '24K TT & Cast' },
               ].map((stat) => (
-                <div key={stat.label} className="flex flex-col gap-0.5">
-                  <span className="text-gold font-display font-semibold text-xl leading-tight">
+                <div key={stat.label} className="flex flex-col">
+                  <span className="text-gold font-display font-bold text-xl sm:text-2xl leading-tight">
                     {stat.value}
                   </span>
-                  <span className="text-white/35 text-[10px] font-body uppercase tracking-widest">
+                  <span className="text-white/80 text-xs font-body font-medium mt-0.5">
+                    {stat.sub}
+                  </span>
+                  <span className="text-white/35 text-[10px] font-body uppercase tracking-wider">
                     {stat.label}
                   </span>
                 </div>
@@ -111,10 +112,10 @@ export function HeroSection() {
           <div className="hidden lg:flex items-center justify-center">
             <div className="relative w-full max-w-md aspect-square">
               {/* Ambient glow */}
-              <div className="absolute inset-6 rounded-3xl opacity-20 blur-3xl bg-gold-gradient" />
+              <div className="absolute inset-4 rounded-3xl opacity-25 blur-3xl bg-gold-gradient" />
 
               {/* Photo frame */}
-              <div className="relative rounded-3xl border border-gold/25 overflow-hidden shadow-gold-lg aspect-square">
+              <div className="relative rounded-3xl border border-gold/30 overflow-hidden shadow-gold-lg aspect-square">
                 <Image
                   src="/images/hero-gold-bars.jpg"
                   alt="SNMZ 24K gold bars — premium 999.9 fine gold"
@@ -124,29 +125,37 @@ export function HeroSection() {
                   sizes="448px"
                 />
                 {/* Brand overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark/80 via-emerald-dark/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark/85 via-emerald-dark/15 to-transparent" />
 
                 {/* Rate badge */}
-                <div className="absolute bottom-5 left-5 right-5 bg-emerald-dark/85 backdrop-blur-sm rounded-xl px-4 py-3 border border-gold/20 flex items-center justify-between">
+                <div className="absolute bottom-5 left-5 right-5 bg-emerald-dark/90 backdrop-blur-md rounded-xl px-4 py-3.5 border border-gold/25 flex items-center justify-between shadow-lg">
                   <div>
-                    <p className="text-gold text-[10px] uppercase tracking-[0.2em] font-body mb-0.5">Live Rate</p>
-                    <p className="text-white font-display font-semibold text-sm">24K · AED / gram</p>
+                    <div className="flex items-center gap-1.5 mb-0.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      <p className="text-gold text-[10px] uppercase tracking-[0.2em] font-body font-semibold">
+                        Live Benchmark
+                      </p>
+                    </div>
+                    <p className="text-white font-display font-semibold text-sm">
+                      24K TT Bars · 999.9 Purity
+                    </p>
                   </div>
                   <Link
-                    href="/gold-prices"
-                    className="text-gold/70 hover:text-gold text-xs font-body transition-colors"
+                    href="#live-rates"
+                    className="inline-flex items-center gap-1 text-gold hover:text-gold-light text-xs font-body font-medium transition-colors bg-gold/10 px-2.5 py-1.5 rounded-lg border border-gold/25"
                     aria-label="View live gold rates"
                   >
-                    View →
+                    View Rates ↓
                   </Link>
                 </div>
               </div>
 
               {/* Corner accent */}
               <div
-                className="absolute -top-2 -right-2 w-12 h-12 opacity-25 pointer-events-none"
+                className="absolute -top-2 -right-2 w-12 h-12 opacity-30 pointer-events-none"
                 style={{
-                  background: 'conic-gradient(from 45deg, transparent 25%, #DFAF24 25%, #DFAF24 50%, transparent 50%)',
+                  background:
+                    'conic-gradient(from 45deg, transparent 25%, #DFAF24 25%, #DFAF24 50%, transparent 50%)',
                   borderRadius: '3px',
                 }}
                 aria-hidden="true"

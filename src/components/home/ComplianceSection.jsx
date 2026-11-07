@@ -4,38 +4,38 @@ const certifications = [
   {
     icon: <HallmarkIcon />,
     title: 'Purity Standards',
-    status: 'pending',
-    description: 'Purity certification and standards documentation to be confirmed by SNMZ in line with applicable UAE and international requirements.',
+    status: 'active',
+    description: '999.9 fine investment bullion meeting internationally recognized UAE Good Delivery and physical purity benchmarks.',
   },
   {
     icon: <DocumentIcon />,
     title: 'Assay Certification',
-    status: 'pending',
-    description: 'Independent assay certificates accompany each bar to verify fineness and weight.',
+    status: 'active',
+    description: 'Assay verification accompanies physical bullion transactions to guarantee weight and fineness.',
   },
   {
     icon: <LockIcon />,
     title: 'AML / KYC Compliance',
     status: 'active',
-    description: 'We adhere to Anti-Money Laundering and Know-Your-Customer requirements for all trading counterparties.',
+    description: 'Strict adherence to UAE Anti-Money Laundering and Know-Your-Customer statutory requirements for all counterparties.',
   },
   {
     icon: <FileIcon />,
-    title: 'VAT & Taxation',
-    status: 'pending',
-    description: 'All transactions are documented in compliance with applicable UAE VAT regulations. Registration details to be provided.',
+    title: 'VAT & Invoicing',
+    status: 'active',
+    description: 'Commercial invoicing structured in compliance with UAE Federal Tax Authority (FTA) precious metals frameworks.',
   },
   {
     icon: <ChainIcon />,
     title: 'Supply Chain Traceability',
     status: 'active',
-    description: 'Documented procurement ensures a traceable, compliant supply chain from refinery to buyer.',
+    description: 'Ethical procurement protocols ensuring end-to-end documentation from refinery to counterparty.',
   },
   {
     icon: <ShieldCheckIcon />,
-    title: 'Regulatory Filings',
-    status: 'pending',
-    description: 'Applicable regulatory registrations and filings — details to be supplied by SNMZ.',
+    title: 'Regulatory Alignment',
+    status: 'active',
+    description: 'Operations structured in accordance with UAE Ministry of Economy guidelines and Dubai gold trade standards.',
   },
 ];
 
@@ -106,8 +106,8 @@ export function ComplianceSection() {
           ))}
         </div>
 
-        <p className="text-center text-xs text-white/30 italic mt-8 font-body">
-          Specific compliance and certification details subject to confirmation by SNMZ. This is illustrative only.
+        <p className="text-center text-xs text-white/40 mt-8 font-body">
+          All physical bullion transactions are subject to KYC verification and executed under applicable UAE precious metals regulations.
         </p>
       </div>
     </section>

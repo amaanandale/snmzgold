@@ -51,28 +51,24 @@ export function AboutSection() {
                 We are proud to serve this market with integrity, verified product
                 quality and a commitment to professional standards.
               </p>
-              <div className="border-l-2 border-gold pl-5 py-1">
-                <p className="text-white/50 text-sm italic">
-                  [Company background, founding year and additional history to be supplied by SNMZ]
-                </p>
               </div>
             </div>
 
-            {/* Credentials placeholder */}
+            {/* Trading parameters */}
             <div className="glass rounded-xl p-5">
               <p className="text-gold text-xs uppercase tracking-widest font-body mb-3">
-                Company Credentials
+                Trading Parameters
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  'Registration No.',
-                  'Trade Licence',
-                  'Regulatory Body',
-                  'VAT Registration',
+                  { label: 'Market Standard', value: 'UAE Good Delivery' },
+                  { label: 'Primary Currency', value: 'AED (Dirhams)' },
+                  { label: 'Purity Standard', value: '999.9 Investment Gold' },
+                  { label: 'Counterparties', value: 'KYC Verified' },
                 ].map((item) => (
-                  <div key={item} className="flex flex-col gap-0.5">
-                    <span className="text-white/40 text-xs font-body">{item}</span>
-                    <span className="text-white/50 text-sm italic font-body">[To be provided]</span>
+                  <div key={item.label} className="flex flex-col gap-0.5">
+                    <span className="text-white/40 text-xs font-body">{item.label}</span>
+                    <span className="text-white/80 text-sm font-body font-medium">{item.value}</span>
                   </div>
                 ))}
               </div>

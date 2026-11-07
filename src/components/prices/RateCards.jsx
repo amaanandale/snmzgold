@@ -39,7 +39,7 @@ export function RateCards({ rates, status, source }) {
         </div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {rates.map((rate, i) => {
             const p10g = per10g(rate.perGram);
             const isFeatured = i === 0; // 24K gets the featured treatment
@@ -47,9 +47,9 @@ export function RateCards({ rates, status, source }) {
             return (
               <div
                 key={rate.karat}
-                className={`relative rounded-2xl p-6 lg:p-8 border transition-all duration-300 group ${
+                className={`relative rounded-2xl p-6 lg:p-7 border transition-all duration-300 group flex flex-col justify-between ${
                   isFeatured
-                    ? 'bg-gradient-to-br from-emerald to-emerald-light border-gold/35 shadow-gold hover:shadow-gold-lg'
+                    ? 'bg-gradient-to-br from-emerald to-emerald-light border-gold/40 shadow-gold hover:shadow-gold-lg ring-1 ring-gold/25'
                     : 'bg-emerald-light/15 border-gold/15 hover:border-gold/30'
                 }`}
               >
