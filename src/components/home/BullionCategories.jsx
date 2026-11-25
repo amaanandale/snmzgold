@@ -109,7 +109,10 @@ export function BullionCategories() {
                   alt={cat.alt}
                   fill
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  className="object-contain p-2 group-hover:scale-105 transition-transform duration-300 ease-out drop-shadow-lg"
+                  className="object-contain p-2 group-hover:scale-105 transition-transform duration-300 ease-out"
+                  style={{
+                    filter: 'brightness(1.12) contrast(1.08) drop-shadow(0 12px 24px rgba(212, 175, 55, 0.28))',
+                  }}
                 />
               </div>
 

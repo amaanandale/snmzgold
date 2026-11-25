@@ -27,6 +27,7 @@ export function BullionProductCard({
   product,
   liveGoldRate24k = 480.09,
   liveSilverRate = 6.13,
+  theme = 'dark',
   className = '',
 }) {
   // Client-side dynamic pricing calculation without extra API requests
@@ -36,14 +37,25 @@ export function BullionProductCard({
 
   const isSilver = product.metal === 'silver';
   const isTT = product.category === 'tt-bars';
+  const isBeige = theme === 'beige';
 
   return (
     <article
-      className={`group relative bg-[#161C26] rounded-2xl border border-[#252F3F] hover:border-amber-400/50 transition-all duration-300 hover:shadow-[0_10px_35px_rgba(212,175,55,0.12)] flex flex-col p-3 sm:p-4 overflow-hidden ${className}`}
+      className={`group relative rounded-2xl transition-all duration-300 flex flex-col p-3 sm:p-4 overflow-hidden ${
+        isBeige
+          ? 'bg-white border border-[#E5D8B8] hover:border-[#D4AF37] shadow-sm hover:shadow-[0_12px_36px_rgba(212,175,55,0.18)]'
+          : 'bg-[#161C26] border border-[#252F3F] hover:border-amber-400/50 hover:shadow-[0_10px_35px_rgba(212,175,55,0.12)]'
+      } ${className}`}
     >
       {/* ── 1. TOP BAR: Minimal Brand Badge & Live Availability Dot ─────────── */}
       <div className="flex items-center justify-between mb-2.5 z-10">
-        <span className="text-[10px] sm:text-[11px] font-mono font-semibold uppercase tracking-wider text-[#D4AF37] bg-[#D4AF37]/10 px-2 py-0.5 rounded border border-[#D4AF37]/25">
+        <span
+          className={`text-[10px] sm:text-[11px] font-mono font-semibold uppercase tracking-wider px-2 py-0.5 rounded border ${
+            isBeige
+              ? 'text-[#997300] bg-[#F8F5EE] border-[#E5D8B8]'
+              : 'text-[#D4AF37] bg-[#D4AF37]/10 border-[#D4AF37]/25'
+          }`}
+        >
           {product.brand}
         </span>
 
@@ -53,43 +65,78 @@ export function BullionProductCard({
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
           </span>
-          <span className="text-[10px] text-emerald-400 font-mono font-medium hidden sm:inline">
+          <span
+            className={`text-[10px] font-mono font-medium hidden sm:inline ${
+              isBeige ? 'text-emerald-700' : 'text-emerald-400'
+            }`}
+          >
             In Stock
           </span>
         </div>
       </div>
 
       {/* ── 2. DEDICATED IMAGE WRAPPER (Fixes Bottom Cutoff on Mobile & Desktop) ── */}
-      <div className="relative aspect-[4/5] sm:h-56 w-full flex items-center justify-center p-3 sm:p-4 bg-[#111622]/60 rounded-xl overflow-hidden mb-3.5 border border-[#252F3F]/60 shadow-inner">
+      <div
+        className={`relative aspect-[4/5] sm:h-56 w-full flex items-center justify-center p-3 sm:p-4 rounded-xl overflow-hidden mb-3.5 border shadow-inner ${
+          isBeige
+            ? 'bg-[#F8F5EE] border-[#E5D8B8]/80'
+            : 'bg-[#111622]/60 border-[#252F3F]/60'
+        }`}
+      >
         {/* Subtle warm backlight glow */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(212,175,55,0.1),transparent_70%)] pointer-events-none" />
 
-        {/* High-fidelity Assay Blister Card with object-contain & hover zoom */}
-        <div className="w-full h-full flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+        {/* High-fidelity Assay Blister Card with brightness/contrast/glow filter */}
+        <div
+          className="w-full h-full flex items-center justify-center transition-transform duration-300 group-hover:scale-105"
+          style={{
+            filter: 'brightness(1.12) contrast(1.08) drop-shadow(0 12px 24px rgba(212, 175, 55, 0.28))',
+          }}
+        >
           <CertipackAssaySVG product={product} isSilver={isSilver} isTT={isTT} />
         </div>
       </div>
 
       {/* ── 3. PRODUCT TITLE (Bold & Clean) ─────────────────────────────────── */}
-      <h3 className="font-heading font-bold text-sm sm:text-base text-white group-hover:text-[#D4AF37] transition-colors leading-snug line-clamp-1 mb-1">
+      <h3
+        className={`font-heading font-bold text-sm sm:text-base transition-colors leading-snug line-clamp-1 mb-1 ${
+          isBeige
+            ? 'text-[#1A202C] group-hover:text-[#997300]'
+            : 'text-white group-hover:text-[#D4AF37]'
+        }`}
+      >
         {product.title}
       </h3>
 
       {/* ── 4. WEIGHT & FINENESS (Clean Minimal Subtitle Pill) ───────────────── */}
-      <div className="text-white/65 font-mono text-[11px] sm:text-xs tracking-wide mb-3 flex items-center gap-1.5">
-        <span className="font-medium text-white/80">{product.spec}</span>
-        <span className="text-white/20">•</span>
-        <span className="text-[#D4AF37] text-[10px] uppercase font-semibold">
+      <div
+        className={`font-mono text-[11px] sm:text-xs tracking-wide mb-3 flex items-center gap-1.5 ${
+          isBeige ? 'text-[#4A5568]' : 'text-white/65'
+        }`}
+      >
+        <span className={`font-medium ${isBeige ? 'text-[#1A202C]' : 'text-white/80'}`}>
+          {product.spec}
+        </span>
+        <span className="opacity-30">•</span>
+        <span
+          className={`text-[10px] uppercase font-semibold ${
+            isBeige ? 'text-[#997300]' : 'text-[#D4AF37]'
+          }`}
+        >
           {isSilver ? 'Fine Silver' : 'Fine Gold'}
         </span>
       </div>
 
-      {/* ── 5. LIVE PRICE (Bold Metallic Gold) ──────────────────────────────── */}
+      {/* ── 5. LIVE PRICE (Gold Pricing Badges) ─────────────────────────────── */}
       <div className="mt-auto mb-3.5">
-        <div className="text-[#D4AF37] font-display font-bold text-base sm:text-lg tracking-tight">
+        <div
+          className={`font-display font-bold text-base sm:text-lg tracking-tight ${
+            isBeige ? 'text-[#997300]' : 'text-[#D4AF37]'
+          }`}
+        >
           {formattedPrice}
         </div>
-        <span className="text-[10px] text-white/40 font-mono">
+        <span className={`text-[10px] font-mono ${isBeige ? 'text-[#718096]' : 'text-white/40'}`}>
           Live Spot Linked
         </span>
       </div>

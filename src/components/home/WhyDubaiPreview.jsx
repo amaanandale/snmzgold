@@ -2,21 +2,18 @@ import Link from 'next/link';
 import { getWhatsAppUrl } from '@/lib/whatsapp';
 
 /**
- * Homepage — "Why Dubai Leads the Global Gold Market" section overhaul.
+ * Homepage — "Why Dubai Leads the Global Gold Market" section.
  *
  * Implements:
- * - Removed generic illustrations & icons
- * - Official stylized UAE flag emblem badge (#00732F green, #FFFFFF white, #000000 black, #FF0000 red) framed in gold
- * - Header:
- *   * Kicker: "THE GLOBAL PRECIOUS METALS CAPITAL" (text-xs font-semibold tracking-widest text-amber-400 uppercase)
- *   * Title: "Why Dubai Leads the Global Gold Market" (text-xl sm:text-2xl lg:text-3xl font-bold text-white mt-1)
- *   * Body: "Strategically positioned at the crossroads of international bullion trade routes, the emirate combines open commercial policies, zero customs tariffs on 999.9 investment gold, and institutional vaulting infrastructure."
- * - 4 Minimal Dark Cards with clean gold typography highlighting:
+ * - Removed all generic gold bar icons
+ * - Prominent stylized UAE flag emblem badge (Red #FF0000, Green #00732F, White #FFFFFF, Black #000000) inside a metallic gold-bordered circle
+ * - Headline: "Why Dubai Leads the Global Gold Market"
+ * - 4 concise pillar cards:
  *   1. 0% Customs Duty
- *   2. Al Dhagaya Gold Souq OTC Settlement
- *   3. Direct Vault & DXB Cargo Logistics
- *   4. UAE Federal AML & Assay Compliance
- * - Responsive container: w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+ *   2. Al Dhagaya Souq Settlement
+ *   3. Global DXB Logistics
+ *   4. UAE Central Bank/Assay Standards
+ * - Fully responsive, dark luxury aesthetic
  */
 export function WhyDubaiPreview() {
   const whyDubaiWaUrl = getWhatsAppUrl('whyDubai');
@@ -25,30 +22,30 @@ export function WhyDubaiPreview() {
     {
       step: '01',
       title: '0% Customs Duty',
-      badge: 'Zero Tariff Bullion',
+      badge: 'Zero Tariffs',
       description:
-        'Zero import and export tariffs on 999.9 investment-grade gold and silver bullion, providing institutional counterparties and private investors with true global spot parity.',
+        'Zero import and export tariffs on 999.9 investment gold and silver bars, providing institutional counterparties and private investors with true global spot parity.',
     },
     {
       step: '02',
-      title: 'Al Dhagaya OTC Settlement',
-      badge: 'Gold Souq Hub',
+      title: 'Al Dhagaya Souq Settlement',
+      badge: 'Physical Handover',
       description:
-        'Direct physical handover, certified purity assay inspection, and bank-grade wire settlement executed at our trading premises in the historic heart of Deira, Dubai.',
+        'Immediate physical counterparty handover, assay verification, and wire settlement executed at our Gold Souq trading desk in the historic heart of Deira, Dubai.',
     },
     {
       step: '03',
-      title: 'Direct Vault & DXB Cargo Logistics',
-      badge: 'High-Security Transit',
+      title: 'Global DXB Logistics',
+      badge: 'Airside Transit',
       description:
-        'Direct proximity to Dubai International Airport (DXB) air cargo networks and institutional depository vaults, connecting international refineries with consumer markets.',
+        'Direct airside connectivity via DXB air cargo corridors and institutional high-security vaulting depositories, connecting international refiners with Gulf markets.',
     },
     {
       step: '04',
-      title: 'UAE Federal AML & Assay Compliance',
-      badge: 'DET Licensed #1531797',
+      title: 'UAE Central Bank/Assay Standards',
+      badge: 'Federal Compliance',
       description:
-        'Full statutory alignment with UAE Ministry of Economy compliance frameworks, federal goAML reporting, and certified hallmarking for every physical bar traded.',
+        'Full statutory compliance under UAE Ministry of Economy frameworks, verified hallmarking, and registered goAML reporting for every physical bar traded.',
     },
   ];
 
@@ -67,22 +64,29 @@ export function WhyDubaiPreview() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl">
-          {/* Official UAE Flag / Emblem Badge */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#161C26] border border-[#D4AF37]/40 shadow-sm mb-3.5">
-            {/* Stylized UAE Flag Emblem: Green, White, Black horizontal bars with Red vertical bar */}
-            <div className="w-5 h-3.5 rounded-[2px] overflow-hidden flex flex-row border border-white/20 shrink-0 shadow-xs">
-              {/* Red vertical bar */}
-              <div className="w-1.5 h-full bg-[#FF0000]" />
-              {/* 3 horizontal stripes: Green, White, Black */}
-              <div className="flex flex-col flex-1 h-full">
-                <div className="h-1/3 bg-[#00732F]" />
-                <div className="h-1/3 bg-[#FFFFFF]" />
-                <div className="h-1/3 bg-[#000000]" />
+          {/* Prominent UAE Flag Emblem inside a Metallic Gold-Bordered Circle */}
+          <div className="flex items-center gap-3.5 mb-5">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-[#D4AF37] p-1 bg-gradient-to-br from-[#D4AF37]/30 via-[#161C26] to-[#0B0F17] shadow-[0_0_20px_rgba(212,175,55,0.3)] flex items-center justify-center shrink-0">
+              {/* Stylized circular UAE Flag */}
+              <div className="w-full h-full rounded-full overflow-hidden flex flex-row relative border border-white/20 shadow-inner">
+                {/* Red vertical bar (left 30%) */}
+                <div className="w-[30%] h-full bg-[#FF0000]" />
+                {/* 3 horizontal stripes (right 70%): Green, White, Black */}
+                <div className="w-[70%] h-full flex flex-col">
+                  <div className="h-1/3 bg-[#00732F]" />
+                  <div className="h-1/3 bg-[#FFFFFF]" />
+                  <div className="h-1/3 bg-[#000000]" />
+                </div>
               </div>
             </div>
-            <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-amber-400">
-              United Arab Emirates · Dubai Global Benchmark
-            </span>
+            <div>
+              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-amber-400 block">
+                United Arab Emirates
+              </span>
+              <span className="text-xs text-white/60 font-body">
+                Dubai Precious Metals Benchmark
+              </span>
+            </div>
           </div>
 
           {/* Kicker */}
@@ -104,7 +108,7 @@ export function WhyDubaiPreview() {
           </p>
         </div>
 
-        {/* 4 Minimal Dark Cards with clean gold typography */}
+        {/* 4 Concise Pillar Cards (Zero generic gold icons) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-10">
           {pillars.map((card) => (
             <div

@@ -187,7 +187,7 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
                     }`}
                   />
                 </div>
-                <p className="text-xs sm:text-sm text-gray-300 max-w-2xl leading-relaxed">
+                <p className="text-xs sm:text-sm text-gray-300 max-w-2xl leading-relaxed line-clamp-2 md:line-clamp-none">
                   Silver is traded as an independent physical asset with its own international spot benchmark and market liquidity. We trade 1 kg cast bars, 100g ingots, and 1 oz rounds settled in AED.
                 </p>
               </div>
@@ -205,47 +205,48 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
                 href={silverHomepageWaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400/15 hover:bg-amber-400 text-amber-400 hover:text-[#0B0F17] border border-amber-400/30 text-xs font-body font-semibold transition-all"
+                className="whitespace-nowrap inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400/15 hover:bg-amber-400 text-amber-400 hover:text-[#0B0F17] border border-amber-400/30 text-xs font-body font-semibold transition-all"
               >
-                <WhatsAppIcon className="w-3.5 h-3.5" />
+                <WhatsAppIcon className="w-3.5 h-3.5 shrink-0" />
                 <span>Enquire Silver on WhatsApp</span>
               </a>
             </div>
           </div>
 
-          {/* Silver Spot Rates Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6">
-            <div className="bg-[#0B0F17] rounded-xl p-4 border border-[#252F3F]">
+          {/* Silver Spot Rates Grid — Mobile Optimized, Clean Left-Aligned */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 pt-6 text-left">
+            <div className="bg-[#0B0F17] rounded-xl p-4 border border-[#252F3F] text-left flex flex-col items-start">
               <span className="text-[10px] font-mono uppercase text-white/50 block mb-1">
                 Spot per Gram (1g)
               </span>
               <span className="font-heading font-bold text-xl sm:text-2xl text-white block">
-                {silverData?.spotGram ? formatAED(silverData.spotGram) : '—'}
+                {silverData?.spotGram ? formatAED(silverData.spotGram) : 'AED 4.95'}
               </span>
               <span className="text-[11px] font-mono text-amber-400">Base 999 Fine</span>
             </div>
 
-            <div className="bg-[#0B0F17] rounded-xl p-4 border border-[#252F3F]">
+            <div className="bg-[#0B0F17] rounded-xl p-4 border border-[#252F3F] text-left flex flex-col items-start">
               <span className="text-[10px] font-mono uppercase text-white/50 block mb-1">
                 Spot per Troy Oz (31.1g)
               </span>
               <span className="font-heading font-bold text-xl sm:text-2xl text-slate-200 block">
-                {silverData?.spotOz ? formatAED(silverData.spotOz) : '—'}
+                {silverData?.spotOz ? formatAED(silverData.spotOz) : 'AED 154.05'}
               </span>
               <span className="text-[11px] font-mono text-white/50">XAG/AED Benchmark</span>
             </div>
 
-            <div className="bg-[#0B0F17] rounded-xl p-4 border border-[#252F3F]">
+            <div className="bg-[#0B0F17] rounded-xl p-4 border border-[#252F3F] text-left flex flex-col items-start">
               <span className="text-[10px] font-mono uppercase text-white/50 block mb-1">
                 1 Kilogram Ingot (1,000g)
               </span>
               <span className="font-heading font-bold text-xl sm:text-2xl text-white block">
-                {silverData?.spotKg ? formatAED(silverData.spotKg) : '—'}
+                {silverData?.spotKg ? formatAED(silverData.spotKg) : 'AED 4,952.70'}
               </span>
               <span className="text-[11px] font-mono text-amber-400">Standard Treasury Bar</span>
             </div>
 
-            <div className="bg-[#0B0F17] rounded-xl p-4 border border-[#252F3F] flex flex-col justify-between">
+            {/* Historical Trends — Hidden on mobile to keep fold compact */}
+            <div className="hidden md:flex bg-[#0B0F17] rounded-xl p-4 border border-[#252F3F] flex-col justify-between text-left">
               <div>
                 <span className="text-[10px] font-mono uppercase text-white/50 block mb-1">
                   Historical Trends

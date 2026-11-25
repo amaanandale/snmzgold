@@ -14,6 +14,8 @@ const ITEMS_PER_PAGE = 8;
  * Bullion Shop Component for SNMZ Gold & Diamonds.
  *
  * Implements:
+ * - Luxury Beige / Champagne background (#F8F5EE) matching Tora Bullion (torabullion.com/shop)
+ * - Crisp warm white cards (#FFFFFF) with subtle warm-gold borders (#E5D8B8), dark slate typography (#1A202C), and gold pricing badges (#997300)
  * - Dynamic live prices calculated on the client side using passed live spot rates (0 extra API hits)
  * - Tora Bullion eCommerce responsive grid: mobile grid-cols-2 gap-3, tablet sm:grid-cols-3 gap-4, desktop lg:grid-cols-4 gap-6
  * - Filter pills with clean active states
@@ -73,9 +75,9 @@ export function BullionShop({ liveGoldRate24k = 480.09, liveSilverRate = 6.13 })
   };
 
   return (
-    <div className="bg-[#0B0F17] text-white min-h-screen selection:bg-[#D4AF37]/30 selection:text-white">
+    <div className="bg-[#F8F5EE] text-[#1A202C] min-h-screen selection:bg-[#D4AF37]/30 selection:text-[#0B0F17]">
       {/* ── TOP STICKY MICRO-TICKER (Live Spot Linked) ────────────────────── */}
-      <div className="sticky top-16 lg:top-20 z-30 bg-[#0B0F17]/95 backdrop-blur-md border-y border-[#252F3F] py-2 sm:py-2.5 px-4 shadow-lg transition-all">
+      <div className="sticky top-16 lg:top-20 z-30 bg-white/95 backdrop-blur-md border-y border-[#E5D8B8] py-2 sm:py-2.5 px-4 shadow-sm transition-all">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs sm:text-[13px] font-mono">
           <div className="flex items-center gap-3 sm:gap-6 flex-wrap">
             {/* Live Status Pulse */}
@@ -84,33 +86,33 @@ export function BullionShop({ liveGoldRate24k = 480.09, liveSilverRate = 6.13 })
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
-              <span className="text-white/60 text-[11px] uppercase tracking-wider font-semibold">
+              <span className="text-[#4A5568] text-[11px] uppercase tracking-wider font-semibold">
                 Live Spot Feed
               </span>
             </div>
 
             {/* Gold 24K Benchmark */}
             <div className="flex items-center gap-1.5">
-              <span className="text-white/50">Gold 24K:</span>
-              <span className="text-[#D4AF37] font-bold">
+              <span className="text-[#718096]">Gold 24K:</span>
+              <span className="text-[#997300] font-bold">
                 {formatCurrencyAED(liveGoldRate24k)}/g
               </span>
             </div>
 
-            <span className="hidden sm:inline text-white/20">|</span>
+            <span className="hidden sm:inline text-[#CBD5E1]">|</span>
 
             {/* Silver 999 Benchmark */}
             <div className="flex items-center gap-1.5">
-              <span className="text-white/50">Silver 999:</span>
-              <span className="text-slate-300 font-bold">
+              <span className="text-[#718096]">Silver 999:</span>
+              <span className="text-[#4A5568] font-bold">
                 {formatCurrencyAED(liveSilverRate)}/g
               </span>
             </div>
           </div>
 
           {/* Sync Guarantee */}
-          <div className="flex items-center gap-2 text-[11px] text-white/45 hidden md:flex">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]/50" />
+          <div className="flex items-center gap-2 text-[11px] text-[#718096] hidden md:flex">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#997300]/60" />
             <span>Live Spot Linked | Updates every 60s</span>
           </div>
         </div>
@@ -121,14 +123,14 @@ export function BullionShop({ liveGoldRate24k = 480.09, liveSilverRate = 6.13 })
         {/* Header & Subtitle */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <div className="inline-block mb-3">
-            <span className="text-[#D4AF37]/90 text-xs sm:text-[13px] font-mono font-bold tracking-[0.28em] uppercase">
+            <span className="text-[#997300] text-xs sm:text-[13px] font-mono font-bold tracking-[0.28em] uppercase">
               OUR COLLECTION
             </span>
           </div>
-          <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-4 leading-tight">
+          <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#1A202C] tracking-tight mb-4 leading-tight">
             Explore Our Products
           </h1>
-          <p className="text-white/65 font-body text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[#4A5568] font-body text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
             Investment-grade physical bullion bars and legal tender ingots. Sealed in tamper-evident assay certipack packaging and settled at live Dubai spot rates.
           </p>
         </div>
@@ -147,7 +149,7 @@ export function BullionShop({ liveGoldRate24k = 480.09, liveSilverRate = 6.13 })
                   className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-body font-semibold transition-all duration-200 whitespace-nowrap active:scale-95 ${
                     isActive
                       ? 'bg-[#D4AF37] text-[#0B0F17] shadow-[0_4px_16px_rgba(212,175,55,0.35)]'
-                      : 'bg-[#161C26] text-white/75 border border-[#252F3F] hover:border-[#D4AF37]/50 hover:text-white'
+                      : 'bg-white text-[#4A5568] border border-[#E5D8B8] hover:border-[#D4AF37] hover:text-[#1A202C]'
                   }`}
                 >
                   {cat.label}
@@ -158,8 +160,8 @@ export function BullionShop({ liveGoldRate24k = 480.09, liveSilverRate = 6.13 })
 
           {/* Quick Search & Sort Line */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2 text-xs">
-            <div className="text-white/50 font-mono">
-              Showing <span className="text-white font-bold">{filteredProducts.length}</span> precious metal items
+            <div className="text-[#718096] font-mono">
+              Showing <span className="text-[#1A202C] font-bold">{filteredProducts.length}</span> precious metal items
             </div>
 
             <div className="flex items-center gap-3 w-full sm:w-auto">
@@ -172,13 +174,13 @@ export function BullionShop({ liveGoldRate24k = 480.09, liveSilverRate = 6.13 })
                     setCurrentPage(1);
                   }}
                   placeholder="Filter weight or fineness…"
-                  className="w-full bg-[#161C26] border border-[#252F3F] rounded-lg px-3 py-1.5 text-xs text-white placeholder-white/40 focus:outline-none focus:border-[#D4AF37]"
+                  className="w-full bg-white border border-[#E5D8B8] rounded-lg px-3 py-1.5 text-xs text-[#1A202C] placeholder-[#A0AEC0] focus:outline-none focus:border-[#D4AF37]"
                 />
                 {searchQuery && (
                   <button
                     type="button"
                     onClick={() => setSearchQuery('')}
-                    className="absolute right-2.5 top-1/2 -translate-y-1/2 text-white/40 hover:text-white"
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#A0AEC0] hover:text-[#1A202C]"
                   >
                     ×
                   </button>
@@ -188,7 +190,7 @@ export function BullionShop({ liveGoldRate24k = 480.09, liveSilverRate = 6.13 })
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="bg-[#161C26] border border-[#252F3F] rounded-lg px-3 py-1.5 text-xs text-white/80 focus:outline-none focus:border-[#D4AF37] cursor-pointer"
+                className="bg-white border border-[#E5D8B8] rounded-lg px-3 py-1.5 text-xs text-[#1A202C] focus:outline-none focus:border-[#D4AF37] cursor-pointer"
               >
                 <option value="featured">Featured Order</option>
                 <option value="price-asc">Weight: Low to High</option>
@@ -198,10 +200,10 @@ export function BullionShop({ liveGoldRate24k = 480.09, liveSilverRate = 6.13 })
           </div>
         </div>
 
-        {/* ── UNIFIED RESPONSIVE GRID (Mobile: 2 cols | Tablet: 3 cols | Desktop: 4 cols) ── */}
+        {/* ── UNIFIED RESPONSIVE GRID (Cards on Beige: White Surface & Warm Gold Borders) ── */}
         {paginatedProducts.length === 0 ? (
-          <div className="text-center py-20 bg-[#161C26]/40 rounded-2xl border border-[#252F3F] p-8">
-            <p className="text-white/70 text-base mb-3">No products match your current filter.</p>
+          <div className="text-center py-20 bg-white/70 rounded-2xl border border-[#E5D8B8] p-8 shadow-sm">
+            <p className="text-[#4A5568] text-base mb-3">No products match your current filter.</p>
             <button
               type="button"
               onClick={() => {
@@ -221,6 +223,7 @@ export function BullionShop({ liveGoldRate24k = 480.09, liveSilverRate = 6.13 })
                 product={product}
                 liveGoldRate24k={liveGoldRate24k}
                 liveSilverRate={liveSilverRate}
+                theme="beige"
               />
             ))}
           </div>
@@ -228,10 +231,10 @@ export function BullionShop({ liveGoldRate24k = 480.09, liveSilverRate = 6.13 })
 
         {/* ── PAGINATION CONTROLS ────────────────────────────────────────────── */}
         {totalPages > 1 && (
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-[#252F3F]">
-            <div className="text-xs font-mono text-white/60">
-              Page <span className="text-[#D4AF37] font-bold">{validCurrentPage}</span> of{' '}
-              <span className="text-white font-bold">{totalPages}</span>
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-[#E5D8B8]">
+            <div className="text-xs font-mono text-[#718096]">
+              Page <span className="text-[#997300] font-bold">{validCurrentPage}</span> of{' '}
+              <span className="text-[#1A202C] font-bold">{totalPages}</span>
             </div>
 
             <div className="flex items-center gap-2">
@@ -239,7 +242,7 @@ export function BullionShop({ liveGoldRate24k = 480.09, liveSilverRate = 6.13 })
                 type="button"
                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                 disabled={validCurrentPage === 1}
-                className="px-4 py-2 rounded-lg bg-[#161C26] border border-[#252F3F] text-xs font-mono text-white/80 hover:text-white hover:border-[#D4AF37]/50 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                className="px-4 py-2 rounded-lg bg-white border border-[#E5D8B8] text-xs font-mono text-[#4A5568] hover:text-[#1A202C] hover:border-[#D4AF37] disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-xs"
               >
                 ← Prev
               </button>
@@ -256,7 +259,7 @@ export function BullionShop({ liveGoldRate24k = 480.09, liveSilverRate = 6.13 })
                       className={`w-8 h-8 rounded-lg text-xs font-mono font-bold transition-all ${
                         isCurrent
                           ? 'bg-[#D4AF37] text-[#0B0F17] shadow-sm'
-                          : 'bg-[#161C26] text-white/60 hover:text-white border border-[#252F3F]'
+                          : 'bg-white text-[#4A5568] hover:text-[#1A202C] border border-[#E5D8B8]'
                       }`}
                     >
                       {pageNum}
@@ -269,7 +272,7 @@ export function BullionShop({ liveGoldRate24k = 480.09, liveSilverRate = 6.13 })
                 type="button"
                 onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                 disabled={validCurrentPage === totalPages}
-                className="px-4 py-2 rounded-lg bg-[#161C26] border border-[#252F3F] text-xs font-mono text-white/80 hover:text-white hover:border-[#D4AF37]/50 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                className="px-4 py-2 rounded-lg bg-white border border-[#E5D8B8] text-xs font-mono text-[#4A5568] hover:text-[#1A202C] hover:border-[#D4AF37] disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-xs"
               >
                 Next →
               </button>
@@ -278,63 +281,63 @@ export function BullionShop({ liveGoldRate24k = 480.09, liveSilverRate = 6.13 })
         )}
 
         {/* ── 4 TRUST BADGES BOTTOM BAR ───────────────────────────────────────── */}
-        <div className="mt-16 pt-10 border-t border-[#252F3F]">
+        <div className="mt-16 pt-10 border-t border-[#E5D8B8]">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {/* Badge 1: DET Licensed */}
-            <div className="bg-[#161C26] border border-[#252F3F] rounded-xl p-3.5 sm:p-5 flex items-center gap-3 hover:border-[#D4AF37]/40 transition-colors">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] shrink-0">
+            <div className="bg-white border border-[#E5D8B8] rounded-xl p-3.5 sm:p-5 flex items-center gap-3 hover:border-[#D4AF37] transition-colors shadow-xs">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#F8F5EE] border border-[#E5D8B8] flex items-center justify-center text-[#997300] shrink-0">
                 <ShieldCheckIcon />
               </div>
               <div>
-                <div className="font-heading font-bold text-xs sm:text-sm text-white leading-tight">
+                <div className="font-heading font-bold text-xs sm:text-sm text-[#1A202C] leading-tight">
                   DET Licensed #1531797
                 </div>
-                <div className="text-[10px] sm:text-[11px] text-white/50 font-mono mt-0.5">
+                <div className="text-[10px] sm:text-[11px] text-[#718096] font-mono mt-0.5">
                   Dubai Economic Authority
                 </div>
               </div>
             </div>
 
             {/* Badge 2: 999.9 Guaranteed Hallmark */}
-            <div className="bg-[#161C26] border border-[#252F3F] rounded-xl p-3.5 sm:p-5 flex items-center gap-3 hover:border-[#D4AF37]/40 transition-colors">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] shrink-0">
+            <div className="bg-white border border-[#E5D8B8] rounded-xl p-3.5 sm:p-5 flex items-center gap-3 hover:border-[#D4AF37] transition-colors shadow-xs">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#F8F5EE] border border-[#E5D8B8] flex items-center justify-center text-[#997300] shrink-0">
                 <BadgeCheckIcon />
               </div>
               <div>
-                <div className="font-heading font-bold text-xs sm:text-sm text-white leading-tight">
+                <div className="font-heading font-bold text-xs sm:text-sm text-[#1A202C] leading-tight">
                   999.9 Guaranteed Hallmark
                 </div>
-                <div className="text-[10px] sm:text-[11px] text-white/50 font-mono mt-0.5">
+                <div className="text-[10px] sm:text-[11px] text-[#718096] font-mono mt-0.5">
                   Assay Verified Bullion
                 </div>
               </div>
             </div>
 
             {/* Badge 3: Direct Handover at Al Dhagaya */}
-            <div className="bg-[#161C26] border border-[#252F3F] rounded-xl p-3.5 sm:p-5 flex items-center gap-3 hover:border-[#D4AF37]/40 transition-colors">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] shrink-0">
+            <div className="bg-white border border-[#E5D8B8] rounded-xl p-3.5 sm:p-5 flex items-center gap-3 hover:border-[#D4AF37] transition-colors shadow-xs">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#F8F5EE] border border-[#E5D8B8] flex items-center justify-center text-[#997300] shrink-0">
                 <BuildingLocationIcon />
               </div>
               <div>
-                <div className="font-heading font-bold text-xs sm:text-sm text-white leading-tight">
+                <div className="font-heading font-bold text-xs sm:text-sm text-[#1A202C] leading-tight">
                   Direct Handover at Al Dhagaya
                 </div>
-                <div className="text-[10px] sm:text-[11px] text-white/50 font-mono mt-0.5">
+                <div className="text-[10px] sm:text-[11px] text-[#718096] font-mono mt-0.5">
                   Deira Gold Souk Desk
                 </div>
               </div>
             </div>
 
             {/* Badge 4: Liquid Wholesale Buyback */}
-            <div className="bg-[#161C26] border border-[#252F3F] rounded-xl p-3.5 sm:p-5 flex items-center gap-3 hover:border-[#D4AF37]/40 transition-colors">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] shrink-0">
+            <div className="bg-white border border-[#E5D8B8] rounded-xl p-3.5 sm:p-5 flex items-center gap-3 hover:border-[#D4AF37] transition-colors shadow-xs">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#F8F5EE] border border-[#E5D8B8] flex items-center justify-center text-[#997300] shrink-0">
                 <RefreshArrowsIcon />
               </div>
               <div>
-                <div className="font-heading font-bold text-xs sm:text-sm text-white leading-tight">
+                <div className="font-heading font-bold text-xs sm:text-sm text-[#1A202C] leading-tight">
                   Liquid Wholesale Buyback
                 </div>
-                <div className="text-[10px] sm:text-[11px] text-white/50 font-mono mt-0.5">
+                <div className="text-[10px] sm:text-[11px] text-[#718096] font-mono mt-0.5">
                   Spot Settlement Guarantee
                 </div>
               </div>

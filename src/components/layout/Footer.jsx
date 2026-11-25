@@ -1,59 +1,62 @@
 import Link from 'next/link';
 import { SiteConfig } from '@/config/site';
 import { LogoIcon } from '@/components/ui/LogoIcon';
-import { getWhatsAppUrl, getOfficePhoneUrl } from '@/lib/whatsapp';
+import { getWhatsAppUrl } from '@/lib/whatsapp';
 
+/**
+ * Footer Component — Aligned like Tora Bullion.
+ *
+ * Implements:
+ * - 4 clean left-aligned columns:
+ *   * Col 1 (Brand): "SNMZ Gold & Diamonds", tagline "Licensed precious metals & physical bullion trading desk in Dubai."
+ *   * Col 2 (Bullion): "Gold Bars (24K)", "10 Tola TT Bars", "Silver Bullion (999)", "Minted Coins", "Shop Catalogue".
+ *   * Col 3 (Live Rates): "Gold Spot Rate (AED)", "Silver Spot Rate (AED)", "Why Dubai?", "Buyback Policy".
+ *   * Col 4 (Trading Desk): Office location (F03, Al Fadan Building, Al Dhagaya, Deira, Dubai), WhatsApp desk (+971 52 754 9259), Hours (Mon–Sat: 9:00 AM – 7:00 PM GST).
+ * - Mobile View: Stacks vertically with clear left alignment (text-left items-start), zero centered misalignment.
+ * - Cleaned up: Removed bulky registration paragraphs & legal boilerplate. Discreet single-line bottom copyright.
+ */
 export function Footer() {
   const currentYear = new Date().getFullYear();
   const waUrl = getWhatsAppUrl('contact');
-  const officePhone = getOfficePhoneUrl();
 
   return (
-    <footer className="bg-[#0B0F17] border-t border-[#252F3F] w-full max-w-full overflow-hidden" role="contentinfo">
-      {/* Main footer content */}
-      <div className="section-container py-14 lg:py-18">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
-          {/* Brand & Description (5 cols) */}
-          <div className="lg:col-span-5 flex flex-col items-start">
-            <div className="mb-5">
-              <Link
-                href="/"
-                aria-label="SNMZ Gold &amp; Diamonds — Home"
-                className="inline-flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] rounded"
-              >
-                <LogoIcon size="lg" className="hover:opacity-95 transition-opacity" />
-              </Link>
-            </div>
+    <footer className="bg-[#0B0F17] border-t border-[#252F3F] w-full max-w-full overflow-hidden text-left" role="contentinfo">
+      {/* Main footer content container */}
+      <div className="section-container py-12 lg:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 text-left items-start">
+          {/* ── Col 1: Brand ────────────────────────────────────────────────── */}
+          <div className="flex flex-col items-start text-left">
+            <Link
+              href="/"
+              aria-label="SNMZ Gold &amp; Diamonds — Home"
+              className="inline-flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] rounded mb-3"
+            >
+              <LogoIcon size="md" className="hover:opacity-95 transition-opacity" />
+            </Link>
 
-            <p className="text-gray-300 text-sm leading-relaxed mb-6 font-body max-w-sm">
-              Licensed precious metals and bullion dealer in Dubai offering investment-grade 24K gold TT bars, cast bars, minted bullion, and physical silver. Live AED spot rates and counterparty excellence.
+            <h3 className="font-heading font-bold text-base text-white tracking-tight mb-1.5">
+              SNMZ Gold &amp; Diamonds
+            </h3>
+
+            <p className="text-gray-400 text-xs sm:text-sm leading-relaxed max-w-xs font-body">
+              Licensed precious metals &amp; physical bullion trading desk in Dubai.
             </p>
-
-            <div className="flex flex-col gap-2 text-xs font-mono text-gray-400">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-amber-400" aria-hidden="true" />
-                <span className="text-white/90">Al Dhagaya, Dubai, United Arab Emirates</span>
-              </div>
-              <div className="flex items-center gap-2 pl-4">
-                <span>Trading Hours: {SiteConfig.businessHours}</span>
-              </div>
-            </div>
           </div>
 
-          {/* Quick Links: Bullion & Catalogue (2 cols) */}
-          <div className="lg:col-span-2">
-            <h3 className="text-amber-400 text-xs font-semibold uppercase tracking-widest font-mono mb-4">
+          {/* ── Col 2: Bullion ──────────────────────────────────────────────── */}
+          <div className="flex flex-col items-start text-left">
+            <h3 className="text-amber-400 text-xs font-semibold uppercase tracking-widest font-mono mb-3.5">
               Bullion
             </h3>
-            <ul className="space-y-2.5 text-xs sm:text-sm font-body">
+            <ul className="space-y-2 text-xs sm:text-sm font-body text-left">
               <li>
                 <Link href="/shop" className="text-gray-300 hover:text-amber-400 transition-colors">
-                  Shop Catalogue
+                  Gold Bars (24K)
                 </Link>
               </li>
               <li>
                 <Link href="/shop" className="text-gray-300 hover:text-amber-400 transition-colors">
-                  Gold Bullion (24K)
+                  10 Tola TT Bars
                 </Link>
               </li>
               <li>
@@ -62,27 +65,32 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="text-gray-300 hover:text-amber-400 transition-colors">
-                  Bullion Gallery
+                <Link href="/shop" className="text-gray-300 hover:text-amber-400 transition-colors">
+                  Minted Coins
+                </Link>
+              </li>
+              <li>
+                <Link href="/shop" className="text-gray-300 hover:text-amber-400 transition-colors">
+                  Shop Catalogue
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Quick Links: Live Rates & Hub (2 cols) */}
-          <div className="lg:col-span-2">
-            <h3 className="text-amber-400 text-xs font-semibold uppercase tracking-widest font-mono mb-4">
-              Live Rates &amp; Hub
+          {/* ── Col 3: Live Rates ───────────────────────────────────────────── */}
+          <div className="flex flex-col items-start text-left">
+            <h3 className="text-amber-400 text-xs font-semibold uppercase tracking-widest font-mono mb-3.5">
+              Live Rates
             </h3>
-            <ul className="space-y-2.5 text-xs sm:text-sm font-body">
+            <ul className="space-y-2 text-xs sm:text-sm font-body text-left">
               <li>
                 <Link href="/gold-prices" className="text-gray-300 hover:text-amber-400 transition-colors">
-                  Gold Price (AED)
+                  Gold Spot Rate (AED)
                 </Link>
               </li>
               <li>
                 <Link href="/silver-prices" className="text-gray-300 hover:text-amber-400 transition-colors">
-                  Silver Price (AED)
+                  Silver Spot Rate (AED)
                 </Link>
               </li>
               <li>
@@ -91,36 +99,33 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/blogs" className="text-gray-300 hover:text-amber-400 transition-colors">
-                  Knowledge Hub
+                <Link href="/gold-prices#buyback" className="text-gray-300 hover:text-amber-400 transition-colors">
+                  Buyback Policy
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact Desk Actions (3 cols) */}
-          <div className="lg:col-span-3">
-            <h3 className="text-amber-400 text-xs font-semibold uppercase tracking-widest font-mono mb-4">
-              Bullion Desk Contact
+          {/* ── Col 4: Trading Desk ─────────────────────────────────────────── */}
+          <div className="flex flex-col items-start text-left">
+            <h3 className="text-amber-400 text-xs font-semibold uppercase tracking-widest font-mono mb-3.5">
+              Trading Desk
             </h3>
-            <div className="space-y-3 text-xs sm:text-sm font-body">
+            <div className="space-y-2.5 text-xs sm:text-sm font-body text-left">
               <div>
-                <span className="text-[10px] uppercase font-mono text-white/40 block">Office Telephone</span>
-                <a
-                  href={officePhone}
-                  className="font-mono text-white hover:text-amber-400 font-semibold transition-colors"
-                >
-                  {SiteConfig.phoneDisplay}
-                </a>
+                <span className="text-[10px] uppercase font-mono text-white/40 block">Office Location</span>
+                <span className="text-gray-300 text-xs leading-relaxed font-mono block">
+                  {SiteConfig.address}
+                </span>
               </div>
 
               <div>
-                <span className="text-[10px] uppercase font-mono text-white/40 block">WhatsApp Trading Desk</span>
+                <span className="text-[10px] uppercase font-mono text-white/40 block">WhatsApp Desk</span>
                 <a
                   href={waUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-amber-400 hover:underline flex items-center gap-1.5"
+                  className="font-mono text-amber-400 hover:underline inline-flex items-center gap-1.5"
                 >
                   <WhatsAppSmallIcon />
                   <span>{SiteConfig.whatsappDisplay}</span>
@@ -128,9 +133,9 @@ export function Footer() {
               </div>
 
               <div>
-                <span className="text-[10px] uppercase font-mono text-white/40 block">Premises</span>
-                <span className="text-gray-300 text-xs leading-relaxed block font-mono">
-                  {SiteConfig.address}
+                <span className="text-[10px] uppercase font-mono text-white/40 block">Hours</span>
+                <span className="text-gray-300 text-xs font-mono block">
+                  Mon–Sat: 9:00 AM – 7:00 PM GST
                 </span>
               </div>
             </div>
@@ -138,18 +143,14 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Legal & Company Details Line */}
+      {/* ── Discreet Single-Line Bottom Copyright ──────────────────────────── */}
       <div className="border-t border-[#252F3F] bg-[#070A0F]">
-        <div className="section-container py-5 flex flex-col md:flex-row justify-between items-center gap-3">
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-3 gap-y-1 text-xs text-white/60 font-body">
-            <span>&copy; {currentYear} {SiteConfig.name}. All rights reserved.</span>
-            <span className="text-white/20 hidden sm:inline">•</span>
-            <span className="font-mono text-amber-400 font-medium">UAE Trade Licence: #{SiteConfig.tradeLicence}</span>
-            <span className="text-white/20 hidden sm:inline">•</span>
-            <span>Established {SiteConfig.establishedYear} · Dubai</span>
-          </div>
+        <div className="section-container py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-xs text-white/50 font-body text-left">
+          <p className="text-left">
+            &copy; {currentYear} SNMZ Gold &amp; Diamonds. All rights reserved.
+          </p>
 
-          <div className="flex items-center gap-4 text-xs text-white/50">
+          <div className="flex items-center gap-4 text-xs text-white/40">
             <Link href="/privacy" className="hover:text-amber-400 transition-colors">
               Privacy Policy
             </Link>
