@@ -16,7 +16,7 @@ export function GoldTicker({ rates, status }) {
 
   // Separator element between ticker items
   const Separator = () => (
-    <span className="mx-4 text-gold/20 select-none" aria-hidden="true">◆</span>
+    <span className="mx-4 text-amber-400/25 select-none" aria-hidden="true">◆</span>
   );
 
   if (!isLive || availableRates.length === 0) {
@@ -37,7 +37,7 @@ export function GoldTicker({ rates, status }) {
 
   return (
     <div
-      className="w-full bg-emerald-dark/90 border-y border-gold/15 overflow-hidden"
+      className="w-full max-w-full bg-[#111622] border-y border-[#252F3F] overflow-hidden"
       aria-label="Live gold rates ticker in AED"
     >
       {/* Static fallback for reduced-motion users — shown via @media query */}
@@ -65,12 +65,12 @@ export function GoldTicker({ rates, status }) {
 function TickerItem({ rate }) {
   return (
     <span className="inline-flex items-center gap-2 text-sm font-body">
-      <span className="px-2 py-0.5 rounded bg-gold/15 text-gold text-xs font-bold font-display tracking-wider border border-gold/25">
+      <span className="px-2 py-0.5 rounded bg-amber-400/15 text-amber-400 text-xs font-bold font-mono tracking-wider border border-amber-400/25">
         {rate.karat}
       </span>
       <span className="text-white/60 text-xs font-body font-medium">{rate.purityLabel}</span>
       <span className="text-white font-bold tabular-nums ml-0.5">{formatAED(rate.perGram)}</span>
-      <span className="text-gold/75 text-xs font-medium">/ gram</span>
+      <span className="text-amber-400/80 text-xs font-medium">/ gram</span>
     </span>
   );
 }

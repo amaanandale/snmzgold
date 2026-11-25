@@ -48,11 +48,11 @@ export function FeaturedProducts({ liveGoldRate24k = 480.09, liveSilverRate = 6.
             </div>
             <h2
               id="featured-products-heading"
-              className="font-heading text-xl sm:text-2xl lg:text-3xl font-semibold text-white tracking-tight leading-snug"
+              className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-white tracking-tight leading-snug"
             >
               Featured Bullion <span className="text-[#D4AF37] italic font-serif">Products</span>
             </h2>
-            <p className="text-white/60 text-xs sm:text-sm font-body mt-2 max-w-xl">
+            <p className="text-sm sm:text-base text-gray-300 leading-relaxed mt-2 max-w-xl">
               Benchmark 999.9 gold minted bars, regional 10 tola TT bars, and investment silver settled against live Dubai spot rates.
             </p>
           </div>

@@ -1,133 +1,165 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { getWhatsAppUrl } from '@/lib/whatsapp';
 
 /**
- * Homepage — "Why Dubai?" preview section.
- * Editorial bullion dealer layout:
- * - Large authentic precious metals photograph on the left.
- * - Heading, informative text, Discover Why Dubai CTA, and WhatsApp enquiry on the right.
- * - Cleanly stacks on mobile.
+ * Homepage — "Why Dubai Leads the Global Gold Market" section overhaul.
+ *
+ * Implements:
+ * - Removed generic illustrations & icons
+ * - Official stylized UAE flag emblem badge (#00732F green, #FFFFFF white, #000000 black, #FF0000 red) framed in gold
+ * - Header:
+ *   * Kicker: "THE GLOBAL PRECIOUS METALS CAPITAL" (text-xs font-semibold tracking-widest text-amber-400 uppercase)
+ *   * Title: "Why Dubai Leads the Global Gold Market" (text-xl sm:text-2xl lg:text-3xl font-bold text-white mt-1)
+ *   * Body: "Strategically positioned at the crossroads of international bullion trade routes, the emirate combines open commercial policies, zero customs tariffs on 999.9 investment gold, and institutional vaulting infrastructure."
+ * - 4 Minimal Dark Cards with clean gold typography highlighting:
+ *   1. 0% Customs Duty
+ *   2. Al Dhagaya Gold Souq OTC Settlement
+ *   3. Direct Vault & DXB Cargo Logistics
+ *   4. UAE Federal AML & Assay Compliance
+ * - Responsive container: w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
  */
 export function WhyDubaiPreview() {
   const whyDubaiWaUrl = getWhatsAppUrl('whyDubai');
 
+  const pillars = [
+    {
+      step: '01',
+      title: '0% Customs Duty',
+      badge: 'Zero Tariff Bullion',
+      description:
+        'Zero import and export tariffs on 999.9 investment-grade gold and silver bullion, providing institutional counterparties and private investors with true global spot parity.',
+    },
+    {
+      step: '02',
+      title: 'Al Dhagaya OTC Settlement',
+      badge: 'Gold Souq Hub',
+      description:
+        'Direct physical handover, certified purity assay inspection, and bank-grade wire settlement executed at our trading premises in the historic heart of Deira, Dubai.',
+    },
+    {
+      step: '03',
+      title: 'Direct Vault & DXB Cargo Logistics',
+      badge: 'High-Security Transit',
+      description:
+        'Direct proximity to Dubai International Airport (DXB) air cargo networks and institutional depository vaults, connecting international refineries with consumer markets.',
+    },
+    {
+      step: '04',
+      title: 'UAE Federal AML & Assay Compliance',
+      badge: 'DET Licensed #1531797',
+      description:
+        'Full statutory alignment with UAE Ministry of Economy compliance frameworks, federal goAML reporting, and certified hallmarking for every physical bar traded.',
+    },
+  ];
+
   return (
     <section
       id="why-dubai"
-      className="section-padding bg-emerald-dark relative overflow-hidden"
+      className="section-padding bg-[#111622] border-t border-b border-[#252F3F] relative overflow-hidden w-full max-w-full"
       aria-labelledby="why-dubai-heading"
     >
-      <div className="section-container">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* Left Column: Authentic Photograph (5 cols) */}
-          <div className="lg:col-span-5">
-            <div className="relative aspect-[4/3] sm:aspect-square w-full rounded-3xl overflow-hidden border border-gold/30 shadow-2xl group">
-              <Image
-                src="/images/gold-bar-close.jpg"
-                alt="SNMZ 100g 24K Gold Bullion Bar Dubai — Physical Gold Bullion Trading at Al Dhagaya Deira"
-                fill
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark/90 via-emerald-dark/20 to-transparent" />
+      {/* Background radial gold glow */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.05),transparent_70%)] pointer-events-none"
+        aria-hidden="true"
+      />
 
-              {/* Informative overlay tag */}
-              <div className="absolute bottom-5 left-5 right-5 bg-emerald-dark/95 backdrop-blur-md rounded-2xl p-4 border border-gold/25 shadow-lg">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-gold font-bold block mb-1">
-                  The City of Gold
-                </span>
-                <p className="text-white text-xs font-body leading-relaxed">
-                  Connecting producers across Africa &amp; the Americas with major consumer markets across Asia.
-                </p>
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header */}
+        <div className="max-w-3xl">
+          {/* Official UAE Flag / Emblem Badge */}
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#161C26] border border-[#D4AF37]/40 shadow-sm mb-3.5">
+            {/* Stylized UAE Flag Emblem: Green, White, Black horizontal bars with Red vertical bar */}
+            <div className="w-5 h-3.5 rounded-[2px] overflow-hidden flex flex-row border border-white/20 shrink-0 shadow-xs">
+              {/* Red vertical bar */}
+              <div className="w-1.5 h-full bg-[#FF0000]" />
+              {/* 3 horizontal stripes: Green, White, Black */}
+              <div className="flex flex-col flex-1 h-full">
+                <div className="h-1/3 bg-[#00732F]" />
+                <div className="h-1/3 bg-[#FFFFFF]" />
+                <div className="h-1/3 bg-[#000000]" />
               </div>
             </div>
+            <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-amber-400">
+              United Arab Emirates · Dubai Global Benchmark
+            </span>
           </div>
 
-          {/* Right Column: Narrative & Actions (7 cols) */}
-          <div className="lg:col-span-7 flex flex-col items-start">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/25 mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-              <span className="text-xs font-mono uppercase tracking-widest text-gold">
-                The Global Precious Metals Capital
-              </span>
-            </div>
+          {/* Kicker */}
+          <span className="text-xs font-semibold tracking-widest text-amber-400 uppercase block mb-1">
+            THE GLOBAL PRECIOUS METALS CAPITAL
+          </span>
 
-            <h2
-              id="why-dubai-heading"
-              className="font-display font-semibold text-xl sm:text-2xl lg:text-3xl leading-tight text-white mb-4"
+          {/* Title */}
+          <h2
+            id="why-dubai-heading"
+            className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mt-1 leading-snug"
+          >
+            Why Dubai Leads the Global Gold Market
+          </h2>
+
+          {/* Body */}
+          <p className="text-sm sm:text-base text-gray-300 leading-relaxed mt-3">
+            Strategically positioned at the crossroads of international bullion trade routes, the emirate combines open commercial policies, zero customs tariffs on 999.9 investment gold, and institutional vaulting infrastructure.
+          </p>
+        </div>
+
+        {/* 4 Minimal Dark Cards with clean gold typography */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-10">
+          {pillars.map((card) => (
+            <div
+              key={card.step}
+              className="bg-[#161C26] border border-[#252F3F] hover:border-amber-400/50 rounded-2xl p-5 sm:p-6 transition-all duration-300 flex flex-col justify-between shadow-sm group hover:shadow-[0_8px_30px_rgba(212,175,55,0.08)] hover:-translate-y-0.5"
             >
-              Why Dubai Leads the{' '}
-              <span
-                className="text-gold"
-                style={{
-                  backgroundImage: 'linear-gradient(135deg, #ECC84A 0%, #DFAF24 45%, #B8860B 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-              >
-                Global Gold Market
-              </span>
-            </h2>
+              <div>
+                {/* Step number & Badge */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-mono font-bold text-amber-400/70 group-hover:text-amber-400 transition-colors">
+                    {card.step}
+                  </span>
+                  <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/25">
+                    {card.badge}
+                  </span>
+                </div>
 
-            <p className="text-white/75 text-sm sm:text-base font-body leading-relaxed mb-6">
-              Dubai has built one of the world&apos;s most recognised precious metals trading ecosystems.
-              Strategically positioned at the crossroads of international bullion trade routes, the emirate combines
-              open commercial policies, zero customs tariffs on investment gold, and institutional vaulting infrastructure.
-            </p>
+                {/* Card Title */}
+                <h3 className="font-heading font-bold text-base sm:text-lg text-white group-hover:text-amber-400 transition-colors mb-2.5 leading-snug">
+                  {card.title}
+                </h3>
 
-            {/* Strategic Pillars List */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 w-full">
-              <div className="bg-emerald-light/25 border border-white/5 rounded-xl p-4">
-                <span className="text-gold font-bold text-sm block mb-1">📍 Strategic Crossroads</span>
-                <p className="text-xs text-white/65 leading-relaxed">
-                  Midpoint connectivity between African mines, European refineries, and Asian retail hubs.
+                {/* Card Description */}
+                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-body">
+                  {card.description}
                 </p>
               </div>
 
-              <div className="bg-emerald-light/25 border border-white/5 rounded-xl p-4">
-                <span className="text-gold font-bold text-sm block mb-1">⚖️ Transparent Pricing</span>
-                <p className="text-xs text-white/65 leading-relaxed">
-                  Live international spot benchmarks published publicly in AED with established trading spreads.
-                </p>
-              </div>
-
-              <div className="bg-emerald-light/25 border border-white/5 rounded-xl p-4">
-                <span className="text-gold font-bold text-sm block mb-1">🏛️ Gold Souk &amp; Deira Heritage</span>
-                <p className="text-xs text-white/65 leading-relaxed">
-                  Centuries of physical trading legacy concentrated in Al Dhagaya and surrounding districts.
-                </p>
-              </div>
-
-              <div className="bg-emerald-light/25 border border-white/5 rounded-xl p-4">
-                <span className="text-gold font-bold text-sm block mb-1">✈️ Global Logistics</span>
-                <p className="text-xs text-white/65 leading-relaxed">
-                  Direct physical settlement backed by high-security transport via DXB cargo and Jebel Ali.
-                </p>
+              {/* Bottom subtle indicator */}
+              <div className="pt-4 mt-4 border-t border-[#252F3F]/60 flex items-center justify-between text-[11px] font-mono text-white/40 group-hover:text-amber-400/80 transition-colors">
+                <span>Dubai Trading Standard</span>
+                <span className="group-hover:translate-x-0.5 transition-transform">→</span>
               </div>
             </div>
+          ))}
+        </div>
 
-            {/* Actions: Full page CTA + WhatsApp Enquiry */}
-            <div className="flex flex-wrap items-center gap-4">
-              <Link
-                href="/why-dubai"
-                className="px-6 py-3.5 rounded-xl bg-gold hover:bg-gold-light text-emerald-dark font-body font-semibold text-xs tracking-wider uppercase transition-all shadow-gold"
-              >
-                Discover Why Dubai →
-              </Link>
+        {/* Action CTAs */}
+        <div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-10 pt-6 border-t border-[#252F3F]/60">
+          <Link
+            href="/why-dubai"
+            className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#E5C158] hover:opacity-95 text-[#0B0F17] font-body font-bold text-xs tracking-wider uppercase transition-all shadow-[0_4px_16px_rgba(212,175,55,0.2)]"
+          >
+            Discover Why Dubai →
+          </Link>
 
-              <a
-                href={whyDubaiWaUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white font-body font-medium text-xs border border-white/10 transition-colors"
-              >
-                <WhatsAppIcon className="w-3.5 h-3.5" />
-                <span>Enquire About Trading in Dubai</span>
-              </a>
-            </div>
-          </div>
+          <a
+            href={whyDubaiWaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#161C26] hover:bg-[#1C2330] text-white hover:text-amber-400 font-body font-medium text-xs border border-[#252F3F] transition-colors"
+          >
+            <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" />
+            <span>Enquire About Trading in Dubai</span>
+          </a>
         </div>
       </div>
     </section>

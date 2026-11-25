@@ -9,7 +9,7 @@ export function Footer() {
   const officePhone = getOfficePhoneUrl();
 
   return (
-    <footer className="bg-emerald-dark border-t border-gold/20" role="contentinfo">
+    <footer className="bg-[#0B0F17] border-t border-[#252F3F] w-full max-w-full overflow-hidden" role="contentinfo">
       {/* Main footer content */}
       <div className="section-container py-14 lg:py-18">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
@@ -19,19 +19,19 @@ export function Footer() {
               <Link
                 href="/"
                 aria-label="SNMZ Gold &amp; Diamonds — Home"
-                className="inline-flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded"
+                className="inline-flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] rounded"
               >
                 <LogoIcon size="lg" className="hover:opacity-95 transition-opacity" />
               </Link>
             </div>
 
-            <p className="text-white/70 text-sm leading-relaxed mb-6 font-body max-w-sm">
+            <p className="text-gray-300 text-sm leading-relaxed mb-6 font-body max-w-sm">
               Licensed precious metals and bullion dealer in Dubai offering investment-grade 24K gold TT bars, cast bars, minted bullion, and physical silver. Live AED spot rates and counterparty excellence.
             </p>
 
-            <div className="flex flex-col gap-2 text-xs font-mono text-white/60">
+            <div className="flex flex-col gap-2 text-xs font-mono text-gray-400">
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-gold" aria-hidden="true" />
+                <span className="w-2 h-2 rounded-full bg-amber-400" aria-hidden="true" />
                 <span className="text-white/90">Al Dhagaya, Dubai, United Arab Emirates</span>
               </div>
               <div className="flex items-center gap-2 pl-4">
@@ -42,56 +42,56 @@ export function Footer() {
 
           {/* Quick Links: Bullion & Catalogue (2 cols) */}
           <div className="lg:col-span-2">
-            <h3 className="text-gold text-xs font-semibold uppercase tracking-widest font-mono mb-4">
+            <h3 className="text-amber-400 text-xs font-semibold uppercase tracking-widest font-mono mb-4">
               Bullion
             </h3>
             <ul className="space-y-2.5 text-xs sm:text-sm font-body">
               <li>
-                <Link href="/shop" className="text-white/70 hover:text-gold transition-colors">
+                <Link href="/shop" className="text-gray-300 hover:text-amber-400 transition-colors">
                   Shop Catalogue
                 </Link>
               </li>
               <li>
-                <Link href="/shop" className="text-white/70 hover:text-gold transition-colors">
+                <Link href="/shop" className="text-gray-300 hover:text-amber-400 transition-colors">
                   Gold Bullion (24K)
                 </Link>
               </li>
               <li>
-                <Link href="/shop" className="text-white/70 hover:text-gold transition-colors">
+                <Link href="/shop" className="text-gray-300 hover:text-amber-400 transition-colors">
                   Silver Bullion (999)
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="text-white/70 hover:text-gold transition-colors">
+                <Link href="/gallery" className="text-gray-300 hover:text-amber-400 transition-colors">
                   Bullion Gallery
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Quick Links: Live Rates & Insights (2 cols) */}
+          {/* Quick Links: Live Rates & Hub (2 cols) */}
           <div className="lg:col-span-2">
-            <h3 className="text-gold text-xs font-semibold uppercase tracking-widest font-mono mb-4">
+            <h3 className="text-amber-400 text-xs font-semibold uppercase tracking-widest font-mono mb-4">
               Live Rates &amp; Hub
             </h3>
             <ul className="space-y-2.5 text-xs sm:text-sm font-body">
               <li>
-                <Link href="/gold-prices" className="text-white/70 hover:text-gold transition-colors">
+                <Link href="/gold-prices" className="text-gray-300 hover:text-amber-400 transition-colors">
                   Gold Price (AED)
                 </Link>
               </li>
               <li>
-                <Link href="/silver-prices" className="text-white/70 hover:text-gold transition-colors">
+                <Link href="/silver-prices" className="text-gray-300 hover:text-amber-400 transition-colors">
                   Silver Price (AED)
                 </Link>
               </li>
               <li>
-                <Link href="/why-dubai" className="text-white/70 hover:text-gold transition-colors">
+                <Link href="/why-dubai" className="text-gray-300 hover:text-amber-400 transition-colors">
                   Why Dubai?
                 </Link>
               </li>
               <li>
-                <Link href="/blogs" className="text-white/70 hover:text-gold transition-colors">
+                <Link href="/blogs" className="text-gray-300 hover:text-amber-400 transition-colors">
                   Knowledge Hub
                 </Link>
               </li>
@@ -100,7 +100,7 @@ export function Footer() {
 
           {/* Contact Desk Actions (3 cols) */}
           <div className="lg:col-span-3">
-            <h3 className="text-gold text-xs font-semibold uppercase tracking-widest font-mono mb-4">
+            <h3 className="text-amber-400 text-xs font-semibold uppercase tracking-widest font-mono mb-4">
               Bullion Desk Contact
             </h3>
             <div className="space-y-3 text-xs sm:text-sm font-body">
@@ -108,7 +108,7 @@ export function Footer() {
                 <span className="text-[10px] uppercase font-mono text-white/40 block">Office Telephone</span>
                 <a
                   href={officePhone}
-                  className="font-mono text-white hover:text-gold font-semibold transition-colors"
+                  className="font-mono text-white hover:text-amber-400 font-semibold transition-colors"
                 >
                   {SiteConfig.phoneDisplay}
                 </a>
@@ -120,7 +120,7 @@ export function Footer() {
                   href={waUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-gold hover:underline flex items-center gap-1.5"
+                  className="font-mono text-amber-400 hover:underline flex items-center gap-1.5"
                 >
                   <WhatsAppSmallIcon />
                   <span>{SiteConfig.whatsappDisplay}</span>
@@ -129,7 +129,7 @@ export function Footer() {
 
               <div>
                 <span className="text-[10px] uppercase font-mono text-white/40 block">Premises</span>
-                <span className="text-white/70 text-xs leading-relaxed block font-mono">
+                <span className="text-gray-300 text-xs leading-relaxed block font-mono">
                   {SiteConfig.address}
                 </span>
               </div>
@@ -139,22 +139,22 @@ export function Footer() {
       </div>
 
       {/* Legal & Company Details Line */}
-      <div className="border-t border-gold/15 bg-emerald-dark/95">
+      <div className="border-t border-[#252F3F] bg-[#070A0F]">
         <div className="section-container py-5 flex flex-col md:flex-row justify-between items-center gap-3">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-3 gap-y-1 text-xs text-white/60 font-body">
             <span>&copy; {currentYear} {SiteConfig.name}. All rights reserved.</span>
             <span className="text-white/20 hidden sm:inline">•</span>
-            <span className="font-mono text-gold/90 font-medium">UAE Trade Licence: #{SiteConfig.tradeLicence}</span>
+            <span className="font-mono text-amber-400 font-medium">UAE Trade Licence: #{SiteConfig.tradeLicence}</span>
             <span className="text-white/20 hidden sm:inline">•</span>
             <span>Established {SiteConfig.establishedYear} · Dubai</span>
           </div>
 
           <div className="flex items-center gap-4 text-xs text-white/50">
-            <Link href="/privacy" className="hover:text-gold transition-colors">
+            <Link href="/privacy" className="hover:text-amber-400 transition-colors">
               Privacy Policy
             </Link>
             <span className="text-white/20">•</span>
-            <Link href="/terms" className="hover:text-gold transition-colors">
+            <Link href="/terms" className="hover:text-amber-400 transition-colors">
               Terms of Use
             </Link>
           </div>

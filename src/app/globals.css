@@ -22,15 +22,23 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
   }
 
   body {
-    @apply bg-emerald-dark text-white font-body antialiased;
+    background-color: #0B0F17;
+    color: #ffffff;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+    @apply font-body antialiased;
   }
 
   /* Focus rings — accessible, on-brand */
   *:focus-visible {
-    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-emerald-dark;
+    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-[#0B0F17];
   }
 
   /* Headings default to display font */
@@ -72,7 +80,7 @@
 
   /* ---- Section wrapper ---- */
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .section-padding {

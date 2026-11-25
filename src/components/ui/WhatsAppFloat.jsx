@@ -22,7 +22,7 @@ export function WhatsAppFloat({ message }) {
       title="Chat with SNMZ Gold & Diamonds on WhatsApp"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-3 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-dark rounded-full group"
+      className="fixed bottom-6 right-6 z-50 flex items-center gap-3 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0F17] rounded-full group"
       style={{
         filter: hovered
           ? 'drop-shadow(0 4px 16px rgba(37,211,102,0.45))'
@@ -31,7 +31,7 @@ export function WhatsAppFloat({ message }) {
     >
       {/* Label — appears on hover */}
       <span
-        className={`hidden sm:block bg-emerald-dark/95 text-white text-xs font-body font-medium px-3 py-1.5 rounded-full border border-white/10 whitespace-nowrap transition-all duration-300 ${
+        className={`hidden sm:block bg-[#161C26] text-white text-xs font-body font-medium px-3.5 py-1.5 rounded-full border border-[#252F3F] shadow-lg whitespace-nowrap transition-all duration-300 ${
           hovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-3 pointer-events-none'
         }`}
       >

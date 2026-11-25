@@ -40,27 +40,27 @@ export function TrustStandardsSection() {
   return (
     <section
       id="verifiable-standards"
-      className="section-padding bg-emerald-dark relative border-t border-gold/15"
+      className="section-padding bg-[#111622] relative border-t border-[#252F3F] overflow-hidden w-full max-w-full"
       aria-labelledby="standards-heading"
     >
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Sticky Editorial Context (5 cols) */}
           <div className="lg:col-span-5 lg:sticky lg:top-28">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/25 mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-              <span className="text-xs font-mono uppercase tracking-widest text-gold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/25 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+              <span className="text-xs font-mono uppercase tracking-widest text-amber-400 font-semibold">
                 Trading Governance &amp; Integrity
               </span>
             </div>
 
             <h2
               id="standards-heading"
-              className="font-display font-semibold text-xl sm:text-2xl lg:text-3xl text-white leading-tight mb-4"
+              className="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-white leading-snug mb-4"
             >
               Built on Verifiable{' '}
               <span
-                className="text-gold"
+                className="text-amber-400"
                 style={{
                   backgroundImage: 'linear-gradient(135deg, #ECC84A 0%, #DFAF24 45%, #B8860B 100%)',
                   WebkitBackgroundClip: 'text',
@@ -72,17 +72,17 @@ export function TrustStandardsSection() {
               </span>
             </h2>
 
-            <p className="text-white/70 text-sm sm:text-base font-body leading-relaxed mb-8">
+            <p className="text-gray-300 text-sm sm:text-base font-body leading-relaxed mb-8">
               Physical precious metals trading demands total transparency, traceable supply chains, and rigorous regulatory adherence.
               SNMZ Gold &amp; Diamonds operates as an established Dubai bullion dealer, conducting counterparty business with documented precision.
             </p>
 
             {/* Verified Credential Summary Card */}
-            <div className="bg-emerald-light/25 border border-gold/20 rounded-2xl p-6 mb-8 shadow-lg">
+            <div className="bg-[#161C26] border border-[#252F3F] rounded-2xl p-6 mb-8 shadow-sm">
               <div className="grid grid-cols-2 gap-4 pb-4 border-b border-white/10 font-mono text-xs">
                 <div>
                   <span className="text-white/40 block text-[10px] uppercase">UAE Trade Licence</span>
-                  <span className="text-gold font-bold text-sm sm:text-base">#{SiteConfig.tradeLicence}</span>
+                  <span className="text-amber-400 font-bold text-sm sm:text-base">#{SiteConfig.tradeLicence}</span>
                 </div>
                 <div>
                   <span className="text-white/40 block text-[10px] uppercase">Established</span>
@@ -108,13 +108,13 @@ export function TrustStandardsSection() {
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gold hover:bg-gold-light text-emerald-dark font-body font-semibold text-xs tracking-wider uppercase transition-all shadow-md"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#E5C158] hover:opacity-95 text-[#0B0F17] font-body font-bold text-xs tracking-wider uppercase transition-all shadow-md"
               >
                 Direct Desk Enquiry
               </a>
               <a
                 href={officePhone}
-                className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-white font-mono text-xs border border-white/10 transition-colors"
+                className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-[#161C26] hover:bg-[#1C2330] text-white font-mono text-xs border border-[#252F3F] transition-colors"
               >
                 Call {SiteConfig.phoneDisplay}
               </a>
@@ -122,21 +122,21 @@ export function TrustStandardsSection() {
           </div>
 
           {/* Right Column: Numbered Editorial Blocks (7 cols) */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-5">
             {standards.map((s) => (
               <div
                 key={s.step}
-                className="bg-emerald-light/20 border border-white/8 hover:border-gold/30 rounded-2xl p-6 sm:p-7 transition-all duration-300 relative group shadow-sm hover:shadow-md"
+                className="bg-[#161C26] border border-[#252F3F] hover:border-amber-400/50 rounded-2xl p-6 sm:p-7 transition-all duration-300 relative group shadow-sm"
               >
                 <div className="flex items-start gap-5">
-                  <span className="font-mono font-bold text-2xl text-gold/60 group-hover:text-gold transition-colors shrink-0">
+                  <span className="font-mono font-bold text-2xl text-amber-400/60 group-hover:text-amber-400 transition-colors shrink-0">
                     {s.step}
                   </span>
                   <div>
-                    <h3 className="font-heading font-semibold text-lg text-white mb-2 group-hover:text-gold transition-colors">
+                    <h3 className="font-heading font-bold text-base sm:text-lg text-white mb-2 group-hover:text-amber-400 transition-colors">
                       {s.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-body">
+                    <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-body">
                       {s.description}
                     </p>
                   </div>
@@ -145,8 +145,8 @@ export function TrustStandardsSection() {
             ))}
 
             {/* Honest Disclosure Box */}
-            <div className="p-5 rounded-xl bg-white/[0.02] border border-white/5 text-[11px] text-white/50 leading-relaxed font-mono">
-              <span className="text-gold font-semibold block mb-1">Company Statement:</span>
+            <div className="p-5 rounded-xl bg-[#161C26]/60 border border-[#252F3F] text-[11px] text-gray-400 leading-relaxed font-mono">
+              <span className="text-amber-400 font-semibold block mb-1">Company Statement:</span>
               SNMZ Gold &amp; Diamonds is an independent precious metals dealer operating under Dubai economic authority. We do not offer investment advisory services, promise speculative returns, or claim unverified third-party certifications. All transactions represent physical commodity sales under commercial agreement.
             </div>
           </div>

@@ -36,7 +36,7 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
   return (
     <section
       id="live-rates"
-      className="section-padding bg-emerald border-y border-gold/15 relative"
+      className="section-padding bg-[#0B0F17] border-y border-[#252F3F] relative overflow-hidden w-full max-w-full"
       aria-labelledby="rates-preview-heading"
     >
       {/* Subtle background ambient gold accent */}
@@ -50,7 +50,7 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
         {/* Heading row */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-10">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/25 text-gold text-xs font-semibold uppercase tracking-wider font-body mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/25 text-amber-400 text-xs font-semibold uppercase tracking-wider font-body mb-3">
               <span
                 className={`w-2 h-2 rounded-full ${
                   isGoldLive ? 'bg-emerald-400 animate-pulse' : 'bg-white/30'
@@ -61,7 +61,7 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
             </div>
             <h2
               id="rates-preview-heading"
-              className="font-display text-xl sm:text-2xl lg:text-3xl text-white leading-tight font-semibold"
+              className="font-display text-xl sm:text-2xl lg:text-3xl text-white leading-snug font-bold"
             >
               Today&apos;s Gold &amp; Silver Rates
             </h2>
@@ -69,12 +69,12 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
           </div>
 
           <div className="flex flex-col items-start sm:items-end gap-1.5">
-            <span className="text-white/60 text-xs font-body font-medium">
+            <span className="text-gray-300 text-xs font-body font-medium">
               {isGoldLive && formattedDate
                 ? `Updated ${formattedDate} (Dubai Time)`
                 : 'Rates connecting…'}
             </span>
-            <span className="text-gold/80 text-xs font-body font-mono">
+            <span className="text-amber-400/80 text-xs font-body font-mono">
               Separate spot-linked instruments · AED per gram
             </span>
           </div>
@@ -83,16 +83,16 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
         {/* ── Section A: Live Gold Rates (4 Cards) ── */}
         <div className="mb-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-mono uppercase tracking-widest text-gold font-bold">
+            <span className="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">
               Instrument 1: Physical Gold (XAU/AED)
             </span>
-            <span className="text-[10px] px-2 py-0.5 rounded bg-gold/15 text-gold font-mono">
+            <span className="text-[10px] px-2 py-0.5 rounded bg-amber-400/15 text-amber-400 font-mono">
               Spot Linked
             </span>
           </div>
           <Link
             href="/gold-prices"
-            className="text-xs text-gold/80 hover:text-gold font-mono hover:underline hidden sm:inline"
+            className="text-xs text-amber-400/80 hover:text-amber-400 font-mono hover:underline hidden sm:inline"
           >
             Full Gold Table &amp; Calculator →
           </Link>
@@ -108,17 +108,17 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
                 key={rate.karat}
                 className={`rounded-2xl p-6 border transition-all duration-300 relative flex flex-col justify-between ${
                   isFeatured
-                    ? 'bg-gradient-to-b from-emerald-light/40 to-emerald-dark border-gold/50 shadow-[0_8px_30px_rgba(223,175,36,0.15)] ring-1 ring-gold/25'
-                    : 'bg-white/[0.04] border-white/10 hover:border-gold/30 hover:bg-white/[0.06]'
+                    ? 'bg-gradient-to-b from-[#161C26] to-[#111622] border-amber-400/60 shadow-[0_8px_30px_rgba(212,175,55,0.12)] ring-1 ring-amber-400/30'
+                    : 'bg-[#161C26] border-[#252F3F] hover:border-amber-400/50 hover:bg-[#1C2330]'
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="px-2 py-0.5 rounded text-[11px] font-semibold tracking-wider font-body uppercase text-gold bg-gold/10 border border-gold/25">
+                    <span className="px-2 py-0.5 rounded text-[11px] font-semibold tracking-wider font-body uppercase text-amber-400 bg-amber-400/10 border border-amber-400/25">
                       {rate.purityLabel}
                     </span>
                     {isFeatured && (
-                      <span className="text-[10px] font-body uppercase font-bold tracking-wider text-gold-light bg-gold/20 px-2 py-0.5 rounded-full border border-gold/30">
+                      <span className="text-[10px] font-body uppercase font-bold tracking-wider text-amber-300 bg-amber-400/20 px-2 py-0.5 rounded-full border border-amber-400/30">
                         TT Bar Benchmark
                       </span>
                     )}
@@ -130,7 +130,7 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
 
                   {rate.perGram != null ? (
                     <div className="mb-5">
-                      <span className="text-gold text-[11px] font-body uppercase tracking-wider block font-semibold mb-1">
+                      <span className="text-amber-400 text-[11px] font-body uppercase tracking-wider block font-semibold mb-1">
                         AED PER GRAM
                       </span>
                       <p className="font-display font-bold text-3xl sm:text-[32px] text-white leading-none tracking-tight">
@@ -154,7 +154,7 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
                 {/* 10g divider */}
                 <div className="pt-3.5 border-t border-white/10 flex items-center justify-between text-xs font-body">
                   <span className="text-white/50">Per 10 Grams:</span>
-                  <span className="text-gold font-semibold tabular-nums">
+                  <span className="text-amber-400 font-semibold tabular-nums">
                     {p10g ? formatAED(p10g) : '—'}
                   </span>
                 </div>
@@ -164,7 +164,7 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
         </div>
 
         {/* ── Section B: Live Physical Silver Preview Card ── */}
-        <div className="bg-gradient-to-br from-emerald-light/35 via-emerald-dark/95 to-emerald-light/20 border border-slate-300/30 rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
+        <div className="bg-gradient-to-br from-[#161C26] via-[#111622] to-[#161C26] border border-[#252F3F] rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
           {/* Silver ambient glow */}
           <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-slate-300/5 blur-3xl pointer-events-none" />
 
@@ -187,7 +187,7 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
                     }`}
                   />
                 </div>
-                <p className="text-xs sm:text-sm text-white/70 max-w-2xl leading-relaxed">
+                <p className="text-xs sm:text-sm text-gray-300 max-w-2xl leading-relaxed">
                   Silver is traded as an independent physical asset with its own international spot benchmark and market liquidity. We trade 1 kg cast bars, 100g ingots, and 1 oz rounds settled in AED.
                 </p>
               </div>
@@ -197,7 +197,7 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
             <div className="flex flex-wrap items-center gap-3 w-full lg:w-auto">
               <Link
                 href="/silver-prices"
-                className="flex-1 sm:flex-initial text-center px-5 py-2.5 rounded-xl bg-slate-200 hover:bg-white text-emerald-dark font-body font-semibold text-xs tracking-wider uppercase transition-all shadow-md"
+                className="flex-1 sm:flex-initial text-center px-5 py-2.5 rounded-xl bg-slate-200 hover:bg-white text-[#0B0F17] font-body font-semibold text-xs tracking-wider uppercase transition-all shadow-md"
               >
                 View Silver Rates
               </Link>
@@ -205,7 +205,7 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
                 href={silverHomepageWaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gold/15 hover:bg-gold text-gold hover:text-emerald-dark border border-gold/30 text-xs font-body font-semibold transition-all"
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400/15 hover:bg-amber-400 text-amber-400 hover:text-[#0B0F17] border border-amber-400/30 text-xs font-body font-semibold transition-all"
               >
                 <WhatsAppIcon className="w-3.5 h-3.5" />
                 <span>Enquire Silver on WhatsApp</span>
@@ -215,17 +215,17 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
 
           {/* Silver Spot Rates Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6">
-            <div className="bg-emerald-dark/80 rounded-xl p-4 border border-white/5">
+            <div className="bg-[#0B0F17] rounded-xl p-4 border border-[#252F3F]">
               <span className="text-[10px] font-mono uppercase text-white/50 block mb-1">
                 Spot per Gram (1g)
               </span>
               <span className="font-heading font-bold text-xl sm:text-2xl text-white block">
                 {silverData?.spotGram ? formatAED(silverData.spotGram) : '—'}
               </span>
-              <span className="text-[11px] font-mono text-gold">Base 999 Fine</span>
+              <span className="text-[11px] font-mono text-amber-400">Base 999 Fine</span>
             </div>
 
-            <div className="bg-emerald-dark/80 rounded-xl p-4 border border-white/5">
+            <div className="bg-[#0B0F17] rounded-xl p-4 border border-[#252F3F]">
               <span className="text-[10px] font-mono uppercase text-white/50 block mb-1">
                 Spot per Troy Oz (31.1g)
               </span>
@@ -235,22 +235,22 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
               <span className="text-[11px] font-mono text-white/50">XAG/AED Benchmark</span>
             </div>
 
-            <div className="bg-emerald-dark/80 rounded-xl p-4 border border-white/5">
+            <div className="bg-[#0B0F17] rounded-xl p-4 border border-[#252F3F]">
               <span className="text-[10px] font-mono uppercase text-white/50 block mb-1">
                 1 Kilogram Ingot (1,000g)
               </span>
               <span className="font-heading font-bold text-xl sm:text-2xl text-white block">
                 {silverData?.spotKg ? formatAED(silverData.spotKg) : '—'}
               </span>
-              <span className="text-[11px] font-mono text-gold">Standard Treasury Bar</span>
+              <span className="text-[11px] font-mono text-amber-400">Standard Treasury Bar</span>
             </div>
 
-            <div className="bg-emerald-dark/80 rounded-xl p-4 border border-white/5 flex flex-col justify-between">
+            <div className="bg-[#0B0F17] rounded-xl p-4 border border-[#252F3F] flex flex-col justify-between">
               <div>
                 <span className="text-[10px] font-mono uppercase text-white/50 block mb-1">
                   Historical Trends
                 </span>
-                <span className="text-xs text-white/75 font-body block mb-2">
+                <span className="text-xs text-gray-300 font-body block mb-2">
                   Interactive 1W, 1M, 3M &amp; 1Y chart available
                 </span>
               </div>
@@ -266,8 +266,8 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
         </div>
 
         {/* Global Footer info row */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-5 pt-8 mt-6 border-t border-white/10">
-          <p className="text-white/45 text-xs font-body text-center sm:text-left max-w-2xl leading-relaxed">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-5 pt-8 mt-6 border-t border-[#252F3F]">
+          <p className="text-gray-400 text-xs font-body text-center sm:text-left max-w-2xl leading-relaxed">
             Gold (XAU) and Silver (XAG) rates are calculated from genuine live market spot feeds converted to UAE Dirhams (AED) at the standard conversion of 31.1034768 grams per troy ounce. Indicative wholesale rates for physical settlement in Dubai.
           </p>
           <div className="flex items-center gap-3">
@@ -275,7 +275,7 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
               href="/gold-prices"
               variant="outline"
               size="sm"
-              className="shrink-0 hover:bg-gold hover:text-emerald-dark font-semibold transition-all"
+              className="shrink-0 hover:bg-[#D4AF37] hover:text-[#0B0F17] border-[#252F3F] text-amber-400 font-semibold transition-all"
             >
               Full Gold Rates Table →
             </Button>

@@ -9,7 +9,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="section-padding bg-emerald relative overflow-hidden border-t border-gold/15"
+      className="section-padding bg-[#0B0F17] relative overflow-hidden border-t border-[#252F3F] w-full max-w-full"
       aria-labelledby="contact-heading"
     >
       {/* Decorative background */}
@@ -25,17 +25,19 @@ export function ContactSection() {
       </div>
 
       <div className="section-container relative z-10">
-        <div className="max-w-3xl mx-auto text-center flex flex-col items-center gap-7">
+        <div className="max-w-3xl mx-auto text-center flex flex-col items-center gap-6">
           {/* Section label */}
-          <span className="section-label">Enquiries &amp; Trading Desk</span>
+          <span className="text-amber-400 text-xs font-semibold uppercase tracking-widest font-mono">
+            Enquiries &amp; Trading Desk
+          </span>
 
           <h2
             id="contact-heading"
-            className="font-display text-xl sm:text-2xl lg:text-3xl text-white leading-tight font-semibold"
+            className="font-display text-xl sm:text-2xl lg:text-3xl text-white leading-snug font-bold"
           >
             Connect with Our{' '}
             <span
-              className="text-gold"
+              className="text-amber-400"
               style={{
                 backgroundImage: 'linear-gradient(135deg, #ECC84A 0%, #DFAF24 45%, #B8860B 100%)',
                 WebkitBackgroundClip: 'text',
@@ -47,19 +49,19 @@ export function ContactSection() {
             </span>
           </h2>
 
-          <div className="w-16 h-0.5 bg-gradient-to-r from-gold to-gold-antique" />
+          <div className="w-16 h-0.5 bg-gradient-to-r from-[#D4AF37] to-[#B8860B]" />
 
-          <p className="text-white/70 text-base sm:text-lg font-body leading-relaxed max-w-xl">
+          <p className="text-gray-300 text-sm sm:text-base font-body leading-relaxed max-w-xl">
             Whether inquiring about wholesale 1 kg gold bars, 10 tola TT bars, or physical silver allocations in Dubai, our bullion specialists provide real-time pricing and order settlement.
           </p>
 
           {/* Primary Action Buttons */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-xl mt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full max-w-xl mt-2">
             <Button
               href={waUrl}
               variant="primary"
               size="lg"
-              className="w-full justify-center shadow-gold font-semibold"
+              className="w-full justify-center shadow-[0_4px_20px_rgba(212,175,55,0.25)] font-bold text-sm bg-gradient-to-r from-[#D4AF37] to-[#E5C158] text-[#0B0F17]"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -69,7 +71,7 @@ export function ContactSection() {
 
             <a
               href={officePhone}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-gold/30 hover:border-gold font-body font-semibold text-sm transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#161C26] hover:bg-[#1C2330] text-white border border-[#252F3F] hover:border-amber-400/50 font-body font-semibold text-sm transition-all shadow-sm"
             >
               <PhoneIcon />
               <span>Call {SiteConfig.phoneDisplay}</span>
@@ -77,32 +79,32 @@ export function ContactSection() {
           </div>
 
           {/* Business Details Grid */}
-          <div className="glass rounded-2xl p-6 w-full max-w-2xl mt-3 border border-gold/20">
+          <div className="bg-[#161C26] rounded-2xl p-6 w-full max-w-2xl mt-3 border border-[#252F3F] shadow-sm">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
               <div>
-                <p className="text-gold text-xs uppercase tracking-widest font-mono mb-1 font-semibold">
+                <p className="text-amber-400 text-xs uppercase tracking-widest font-mono mb-1 font-semibold">
                   Trading Office
                 </p>
-                <p className="text-white/80 text-xs font-body leading-relaxed">
+                <p className="text-gray-300 text-xs font-body leading-relaxed">
                   {SiteConfig.address}
                 </p>
               </div>
 
               <div>
-                <p className="text-gold text-xs uppercase tracking-widest font-mono mb-1 font-semibold">
+                <p className="text-amber-400 text-xs uppercase tracking-widest font-mono mb-1 font-semibold">
                   Trading Hours
                 </p>
-                <p className="text-white/80 text-xs font-mono">
+                <p className="text-gray-300 text-xs font-mono">
                   {SiteConfig.businessHours}
                 </p>
                 <span className="text-[10px] text-white/50 block mt-0.5">Gulf Standard Time</span>
               </div>
 
               <div>
-                <p className="text-gold text-xs uppercase tracking-widest font-mono mb-1 font-semibold">
+                <p className="text-amber-400 text-xs uppercase tracking-widest font-mono mb-1 font-semibold">
                   Trade Licence
                 </p>
-                <p className="text-white/80 text-xs font-mono font-bold">
+                <p className="text-gray-300 text-xs font-mono font-bold">
                   #{SiteConfig.tradeLicence}
                 </p>
                 <span className="text-[10px] text-white/50 block mt-0.5">Est. {SiteConfig.establishedYear} · Dubai</span>

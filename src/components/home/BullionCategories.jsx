@@ -75,11 +75,11 @@ export function BullionCategories() {
           </div>
           <h2
             id="bullion-categories-heading"
-            className="font-heading text-xl sm:text-2xl lg:text-3xl font-semibold text-white tracking-tight leading-snug"
+            className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-white tracking-tight leading-snug"
           >
             Physical Bullion <span className="text-[#D4AF37] italic font-serif">Categories</span>
           </h2>
-          <p className="text-white/65 text-xs sm:text-sm font-body mt-2 leading-relaxed">
+          <p className="text-sm sm:text-base text-gray-300 leading-relaxed mt-2">
             Standardized 999.9 gold certipack ingots, regional 10 tola TT bars, and physical silver traded at live spot rates in Dubai.
           </p>
         </div>

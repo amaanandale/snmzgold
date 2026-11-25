@@ -59,7 +59,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden max-w-full w-full">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -68,7 +68,7 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
         />
       </head>
-      <body className="font-body antialiased">
+      <body className="font-body antialiased bg-[#0B0F17] text-white overflow-x-hidden max-w-full w-full min-h-screen">
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
