@@ -23,7 +23,7 @@ export const blogArticles = [
     readTime: '10 min read',
     summary:
       'A comprehensive guide for retail investors, family offices, and tourists buying physical investment gold bullion in Dubai. Covers 24K 999.9 certipack bars, 10 tola TT bars, spot pricing in AED, zero VAT rules, and Deira trading desk settlement.',
-    coverImage: '/images/blog/gold-purity.jpg',
+    coverImage: '/images/products/gold-minted-bar.jpg',
     coverImageAlt: 'Physical 24K 999.9 gold bullion bars and 10 tola TT bars displayed at SNMZ trading desk in Dubai',
     content: `
 ## Why Dubai Is the Global Epicenter for Physical Bullion
@@ -105,7 +105,7 @@ Ready to trade? View our complete physical inventory in the [Shop Catalogue](/sh
     readTime: '8 min read',
     summary:
       'The 10 Tola TT bar is the premier commercial bullion vehicle across Dubai and South Asia. Understand its exact gram weight (116.64g), 999.0 fineness, pricing formula, and why institutional traders prefer cast TT bars.',
-    coverImage: '/images/blog/dubai-gold-souk.jpg',
+    coverImage: '/images/products/gold-kilo-bar.jpg',
     coverImageAlt: 'Cast 10 tola TT gold bar weighing 116.64 grams with 999.0 purity stamp',
     content: `
 ## What Is a 10 Tola "TT" Bar?
@@ -183,7 +183,7 @@ Explore our available inventory in the [Shop Catalogue](/shop) or contact our bu
     readTime: '7 min read',
     summary:
       'Physical silver bullion represents an accessible hedge against inflation and a high-liquidity precious metals asset. Discover 1kg cast silver bars, spot pricing in AED, and purchasing through Dubai trading desks.',
-    coverImage: '/images/blog/gold-price-chart.jpg',
+    coverImage: '/images/products/silver-kilo-bar.jpg',
     coverImageAlt: 'Stack of 1 kilogram 999.0 fine cast silver bullion ingots in Dubai',
     content: `
 ## The Case for Physical Silver Bullion
@@ -254,7 +254,7 @@ Ready to acquire investment-grade silver? Contact our bullion desk via [WhatsApp
     readTime: '9 min read',
     summary:
       'Essential legal and tax information for buying gold bullion in Dubai. Learn why 24K investment gold is 0% VAT, what documentation official trading desks provide, and airport customs declaration limits.',
-    coverImage: '/images/blog/dubai-shopping.jpg',
+    coverImage: '/images/gold-bar-close.jpg',
     coverImageAlt: 'Official customs and tax documentation for physical gold bullion export at Dubai International Airport',
     content: `
 ## Is Gold Bullion Tax-Free in Dubai?
@@ -330,7 +330,7 @@ Have questions regarding bullion transport? Contact our desk on [WhatsApp (+971 
     readTime: '8 min read',
     summary:
       'How family offices, high-net-worth individuals, and corporate buyers execute wholesale physical gold bullion orders in Dubai. Covers kilobars, TT batches, spot fixing, and secure settlement.',
-    coverImage: '/images/blog/global-gold-trade.jpg',
+    coverImage: '/images/hero-gold-bars.jpg',
     coverImageAlt: 'Institutional wholesale bullion trading floor and vault settlement in Dubai',
     content: `
 ## The Institutional Bullion Landscape in Dubai
@@ -402,8 +402,8 @@ For institutional inquiries and wholesale quotes, contact our managing desk at [
     readTime: '7 min read',
     summary:
       'Few places on earth carry a nickname as evocative as Dubai\'s "City of Gold." This article explores the historical, economic, and cultural foundations behind that title.',
-    coverImage: '/images/blog/dubai-gold-souk.jpg',
-    coverImageAlt: 'The gold souk in Dubai — rows of jewellery shops illuminated by warm light',
+    coverImage: '/images/hero-gold-bars.jpg',
+    coverImageAlt: 'Physical gold bullion bars reflecting Dubai City of Gold trading heritage',
     content: `
 ## The Origins of a Golden Reputation
 
@@ -472,8 +472,8 @@ The nickname is, in short, earned.
     readTime: '8 min read',
     summary:
       'Dubai\'s importance in the global gold trade is the result of deliberate policy choices, strategic geography, and decades of infrastructure investment — not just reputation.',
-    coverImage: '/images/blog/dubai-skyline.jpg',
-    coverImageAlt: 'Dubai skyline at sunset — modern towers reflected in the water',
+    coverImage: '/images/products/gold-kilo-bar.jpg',
+    coverImageAlt: 'Physical bullion bar on green marble representing Dubai global trading hub',
     content: `
 ## Geography: The Bridge Between East and West
 
@@ -552,8 +552,8 @@ Sources: OECD (oecd.org), DMCC responsible sourcing documentation.
     readTime: '6 min read',
     summary:
       'Established in the 1940s, Dubai\'s Gold Souk has grown from a local trading post to an internationally recognised destination for gold buyers, tourists, and traders.',
-    coverImage: '/images/blog/gold-souk-interior.jpg',
-    coverImageAlt: 'Interior of the Dubai Gold Souk showing illuminated shopfronts lined with gold jewellery',
+    coverImage: '/images/gold-bar-close.jpg',
+    coverImageAlt: 'Fine investment gold bar representing Dubai Gold Souk heritage',
     content: `
 ## Origins in the Deira Trading District
 
@@ -617,8 +617,8 @@ The Gold Souk is more than a marketplace — it is a symbol of Dubai's commercia
     readTime: '7 min read',
     summary:
       'Dubai\'s jewellery sector is the product of decades of investment in retail infrastructure, tourism, design, and trade — making it a destination for buyers from across the world.',
-    coverImage: '/images/blog/dubai-jewellery.jpg',
-    coverImageAlt: 'Luxury gold and diamond jewellery displayed in a premium Dubai showcase',
+    coverImage: '/images/products/gold-minted-bar.jpg',
+    coverImageAlt: 'Luxury fine gold bullion bar representing Dubai precious metals sector',
     content: `
 ## From Souk to Global Stage
 
@@ -681,8 +681,8 @@ Expo 2020 Dubai (held in 2021–2022 due to the pandemic) reinforced Dubai's pos
     readTime: '8 min read',
     summary:
       'Dubai\'s transformation from a modest trading port to one of the world\'s most dynamic cities reflects decisions made over generations of leadership. This article provides a verified historical overview.',
-    coverImage: '/images/blog/dubai-development.jpg',
-    coverImageAlt: 'Dubai\'s urban development — historic Deira alongside modern towers',
+    coverImage: '/images/hero-gold-bars.jpg',
+    coverImageAlt: 'Dubai bullion treasury bars symbolizing economic development in the UAE',
     content: `
 ## A City Built on Deliberate Vision
 
@@ -755,8 +755,8 @@ The gold souk, the commodity exchanges, the DMCC free zone, and the modern preci
     readTime: '7 min read',
     summary:
       'Gold prices in Dubai are based on international spot rates converted to AED, adjusted for purity and — in the retail market — additional charges. This guide explains each component.',
-    coverImage: '/images/blog/gold-price-chart.jpg',
-    coverImageAlt: 'Gold price data chart on a screen — market rate visualization',
+    coverImage: '/images/gold-bar-close.jpg',
+    coverImageAlt: 'Fine gold bullion bar representing live LBMA gold spot rates in AED',
     content: `
 ## Starting Point: The International Spot Price
 
@@ -849,7 +849,7 @@ These rates are **indicative only** and do **not** include making charges, VAT, 
     readTime: '6 min read',
     summary:
       'Gold purity is measured in karats. This guide explains what 24K, 22K, 21K and 18K mean, how fineness is calculated, and which purity suits different uses.',
-    coverImage: '/images/blog/gold-purity.jpg',
+    coverImage: '/images/products/gold-minted-bar.jpg',
     coverImageAlt: 'Gold bars of different purities stamped with 999.9 fine gold markings',
     content: `
 ## What Does "Karat" Mean?
@@ -945,8 +945,8 @@ Gold sold in the UAE is subject to UAE standards for hallmarking. A hallmark sta
     readTime: '8 min read',
     summary:
       'Buying gold in Dubai can be an excellent value proposition — if you know how to navigate the market. This guide explains prices, purity, receipts, and practical tips for tourist shoppers.',
-    coverImage: '/images/blog/dubai-shopping.jpg',
-    coverImageAlt: 'Tourist shopping at Dubai Gold Souk, viewing gold jewellery in a shop window',
+    coverImage: '/images/products/gold-kilo-bar.jpg',
+    coverImageAlt: 'Investment grade bullion bar with certified assay marks in Dubai',
     content: `
 ## Why Dubai Is Popular for Gold Shopping
 
@@ -1042,8 +1042,8 @@ Examine the hallmark with the shop's magnifying glass if needed. Do not purchase
     readTime: '6 min read',
     summary:
       'Dubai offers gold shopping across two very different environments — the historic Gold Souk and modern retail malls. Each suits different buyers. This guide helps you choose.',
-    coverImage: '/images/blog/gold-souk-modern.jpg',
-    coverImageAlt: 'Split view of traditional Dubai Gold Souk and a modern mall jewellery boutique',
+    coverImage: '/images/hero-gold-bars.jpg',
+    coverImageAlt: 'Gold bullion bars comparing traditional souk and modern trading channels in Dubai',
     content: `
 ## Two Worlds, One City
 
@@ -1145,8 +1145,8 @@ One important clarification: the gold rate per gram for a given purity is the sa
     readTime: '9 min read',
     summary:
       'The UAE plays a significant role in linking gold-producing regions with gold-consuming markets. This article examines the supply chain, trade infrastructure, and responsible sourcing considerations.',
-    coverImage: '/images/blog/global-gold-trade.jpg',
-    coverImageAlt: 'Global map visualization showing gold trade flows connecting continents',
+    coverImage: '/images/products/silver-kilo-bar.jpg',
+    coverImageAlt: 'Precious metals bullion representing UAE global market transit and trade',
     content: `
 ## Gold\'s Global Journey
 

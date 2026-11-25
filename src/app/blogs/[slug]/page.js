@@ -159,6 +159,25 @@ export default async function BlogArticlePage({ params }) {
 
         {/* ── Article Body ────────────────────────────────────────────────── */}
         <article className="section-container max-w-4xl py-12 lg:py-16">
+          {/* Main Cover Image */}
+          {article.coverImage && (
+            <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full rounded-2xl overflow-hidden mb-8 border border-[#E2D7C5] bg-[#E8DFC9] shadow-md">
+              <Image
+                src={article.coverImage}
+                alt={article.coverImageAlt || article.title}
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 896px"
+              />
+              <div className="absolute top-4 left-4 z-10">
+                <span className="px-3 py-1 rounded-md bg-[#1A1E24]/85 text-[#D4AF37] text-xs font-mono font-bold uppercase tracking-wider backdrop-blur-xs">
+                  {article.category}
+                </span>
+              </div>
+            </div>
+          )}
+
           {/* Optional Educational/Market Disclaimer */}
           <div className="bg-[#EFE8DC] border border-[#E2D7C5] rounded-xl p-4 sm:p-5 mb-8">
             <p className="text-[#4A5568] text-xs sm:text-sm font-body leading-relaxed">
@@ -248,26 +267,39 @@ export default async function BlogArticlePage({ params }) {
                   <Link
                     key={rel.slug}
                     href={`/blogs/${rel.slug}`}
-                    className="flex flex-col justify-between bg-[#F4EFE6] rounded-xl p-5 border border-[#E2D7C5] hover:border-[#D4AF37] hover:shadow-md transition-all duration-200 group"
+                    className="flex flex-col justify-between bg-[#F4EFE6] rounded-xl overflow-hidden border border-[#E2D7C5] hover:border-[#D4AF37] hover:shadow-md transition-all duration-200 group"
                   >
-                    <div>
-                      <span className="px-2 py-0.5 rounded bg-[#EFE8DC] border border-[#E2D7C5] text-[#997300] text-[10px] font-mono font-bold uppercase tracking-wider">
-                        {rel.category}
-                      </span>
-                      <h3 className="text-[#1A1E24] font-heading font-semibold text-sm sm:text-base mt-2.5 leading-snug group-hover:text-[#997300] transition-colors line-clamp-2">
-                        {rel.title}
-                      </h3>
-                      <p className="text-[#718096] text-xs font-body mt-1.5 line-clamp-2">
-                        {rel.summary}
-                      </p>
-                    </div>
-                    <div className="pt-3 border-t border-[#E2D7C5] mt-4 flex items-center justify-between">
-                      <span className="text-[#997300] text-xs font-bold group-hover:text-[#D4AF37]">
-                        Read →
-                      </span>
-                      <span className="text-[#718096] text-[11px] font-mono">
-                        {rel.readTime}
-                      </span>
+                    {rel.coverImage && (
+                      <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#E8DFC9]">
+                        <Image
+                          src={rel.coverImage}
+                          alt={rel.coverImageAlt || rel.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          sizes="(max-width: 640px) 100vw, 300px"
+                        />
+                      </div>
+                    )}
+                    <div className="p-4 flex flex-col flex-1 justify-between">
+                      <div>
+                        <span className="px-2 py-0.5 rounded bg-[#EFE8DC] border border-[#E2D7C5] text-[#997300] text-[10px] font-mono font-bold uppercase tracking-wider">
+                          {rel.category}
+                        </span>
+                        <h3 className="text-[#1A1E24] font-heading font-semibold text-sm sm:text-base mt-2.5 leading-snug group-hover:text-[#997300] transition-colors line-clamp-2">
+                          {rel.title}
+                        </h3>
+                        <p className="text-[#718096] text-xs font-body mt-1.5 line-clamp-2">
+                          {rel.summary}
+                        </p>
+                      </div>
+                      <div className="pt-3 border-t border-[#E2D7C5] mt-4 flex items-center justify-between">
+                        <span className="text-[#997300] text-xs font-bold group-hover:text-[#D4AF37]">
+                          Read →
+                        </span>
+                        <span className="text-[#718096] text-[11px] font-mono">
+                          {rel.readTime}
+                        </span>
+                      </div>
                     </div>
                   </Link>
                 ))}
