@@ -13,8 +13,14 @@ export const metadata = {
   authors: [{ name: 'SNMZ Gold & Diamonds' }],
   creator: 'SNMZ Gold & Diamonds',
   icons: {
-    icon: '/images/brand/snmz-logo.png',
-    apple: '/images/brand/snmz-logo.png',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/images/brand/snmz-logo.png' },
+    ],
+    apple: [
+      { url: '/apple-icon.svg', type: 'image/svg+xml' },
+      { url: '/images/brand/snmz-logo.png' },
+    ],
   },
   openGraph: {
     type: 'website',
