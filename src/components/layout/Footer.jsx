@@ -9,15 +9,17 @@ import { getWhatsAppUrl, getOfficePhoneUrl } from '@/lib/whatsapp';
  * Implements:
  * - Mobile Format:
  *   * Top brand block: Official logo + established description + row of 4 rounded social icon buttons
- *   * 2-Column Grid: QUICK LINKS (left) and OUR LOCATIONS (right, with gold map pin icons)
+ *   * 2-Column Grid:
+ *     - QUICK LINKS (Blogs, Shop Catalogue, Gold Rates 24K, Silver Rates 999, Bullion Gallery, Contact)
+ *     - OUR LOCATIONS (Dubai Trading Office: F03, Al Fadan Building, Al Dhagaya, Deira, Dubai)
  *   * Dedicated CONTACT Block: WhatsApp, Email, and Open Hours with gold outline icons
  * - Desktop Format (lg:grid-cols-4):
  *   * Col 1: Brand, established year, description, social icons
- *   * Col 2: Quick Links
- *   * Col 3: Our Locations (Dubai Trading Office & Gold Souq Handover)
+ *   * Col 2: Quick Links (Bullion, Rates, Gallery, Blogs, Contact)
+ *   * Col 3: Our Locations (Single official Dubai Trading Office)
  *   * Col 4: Contact (WhatsApp, Email, Open Hours)
- * - Single-line minimal bottom copyright: "© 2026 SNMZ Gold & Diamonds. All rights reserved."
- * - Segregated dark theme support for homepage (`isDarkHome`)
+ * - Clean Single-Line Bottom Copyright: "© 2026 SNMZ Gold & Diamonds. All rights reserved." (No Privacy/Terms links)
+ * - Strict palette: Metallic Warm Gold (#D4AF37) accents with high contrast readable typography
  */
 export function Footer({ isDarkHome = false }) {
   const currentYear = new Date().getFullYear();
@@ -102,26 +104,6 @@ export function Footer({ isDarkHome = false }) {
               </h3>
               <ul className="space-y-2.5 text-xs sm:text-sm font-body text-left">
                 <li>
-                  <Link href="/why-dubai" className="text-gray-300 hover:text-[#D4AF37] transition-colors">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/gold-prices#buyback" className="text-gray-300 hover:text-[#D4AF37] transition-colors">
-                    Buyback Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/privacy" className="text-gray-300 hover:text-[#D4AF37] transition-colors">
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/terms" className="text-gray-300 hover:text-[#D4AF37] transition-colors">
-                    Terms &amp; Conditions
-                  </Link>
-                </li>
-                <li>
                   <Link href="/blogs" className="text-gray-300 hover:text-[#D4AF37] transition-colors">
                     Blogs
                   </Link>
@@ -142,8 +124,13 @@ export function Footer({ isDarkHome = false }) {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/why-dubai" className="text-gray-300 hover:text-[#D4AF37] transition-colors">
+                    Why Dubai
+                  </Link>
+                </li>
+                <li>
                   <Link href="/gallery" className="text-gray-300 hover:text-[#D4AF37] transition-colors">
-                    Gallery
+                    Bullion Gallery
                   </Link>
                 </li>
                 <li>
@@ -154,13 +141,13 @@ export function Footer({ isDarkHome = false }) {
               </ul>
             </div>
 
-            {/* ── Col 3: OUR LOCATIONS ──────────────────────────────────────── */}
+            {/* ── Col 3: OUR LOCATIONS (Restored Single Official Location) ──── */}
             <div className="flex flex-col items-start text-left">
               <h3 className="text-[#D4AF37] text-xs font-semibold uppercase tracking-widest font-mono mb-4">
                 OUR LOCATIONS
               </h3>
               <div className="space-y-5 text-xs sm:text-sm font-body text-left">
-                {/* Location 1: Dubai Office */}
+                {/* Official Dubai Trading Office */}
                 <div className="flex items-start gap-2.5">
                   <MapPinIcon className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
                   <div>
@@ -177,25 +164,6 @@ export function Footer({ isDarkHome = false }) {
                       className="text-[#D4AF37] hover:underline font-mono text-xs block mt-1"
                     >
                       {SiteConfig.whatsappDisplay || '+971 52 754 9259'}
-                    </a>
-                  </div>
-                </div>
-
-                {/* Location 2: Gold Souq Handover Desk */}
-                <div className="flex items-start gap-2.5">
-                  <MapPinIcon className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-heading font-bold text-white text-sm leading-tight mb-1">
-                      Deira Gold Souq
-                    </h4>
-                    <p className="text-gray-300 text-xs font-body leading-relaxed max-w-[200px] sm:max-w-xs">
-                      Physical Settlement Desk, Historic Gold Souq, Deira, Dubai
-                    </p>
-                    <a
-                      href={officePhone}
-                      className="text-[#D4AF37] hover:underline font-mono text-xs block mt-1"
-                    >
-                      {SiteConfig.phoneDisplay || '+971 4 344 1832'}
                     </a>
                   </div>
                 </div>
@@ -266,7 +234,7 @@ export function Footer({ isDarkHome = false }) {
         </div>
       </div>
 
-      {/* ── Discreet Single-Line Bottom Copyright ──────────────────────────── */}
+      {/* ── Discreet Single-Line Bottom Copyright (No Privacy/Terms Links) ── */}
       <div
         className={`${
           isDarkHome
@@ -278,16 +246,6 @@ export function Footer({ isDarkHome = false }) {
           <p className="text-left">
             &copy; {currentYear} SNMZ Gold &amp; Diamonds. All rights reserved.
           </p>
-
-          <div className="flex items-center gap-4 text-xs text-white/40">
-            <Link href="/privacy" className="hover:text-[#D4AF37] transition-colors">
-              Privacy Policy
-            </Link>
-            <span className="text-white/20">•</span>
-            <Link href="/terms" className="hover:text-[#D4AF37] transition-colors">
-              Terms of Use
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

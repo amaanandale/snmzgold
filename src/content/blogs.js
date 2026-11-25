@@ -12,6 +12,385 @@
 /** @type {BlogArticle[]} */
 export const blogArticles = [
   {
+    slug: 'buy-physical-gold-bullion-dubai-guide',
+    title: 'How to Buy Physical Gold Bullion in Dubai: 24K Bars, TT Bars & Settlement Guide',
+    metaTitle: 'Buy Physical Gold Bullion in Dubai | 24K Bars & TT Bars | SNMZ',
+    metaDescription:
+      'Complete guide to buying physical investment gold bullion in Dubai. Learn about 24K 999.9 bars, 10 tola TT bars, spot prices in AED, zero VAT rules, and Deira trading desks.',
+    category: 'Bullion',
+    publishedAt: '2025-01-15',
+    updatedAt: '2025-01-15',
+    readTime: '10 min read',
+    summary:
+      'A comprehensive guide for retail investors, family offices, and tourists buying physical investment gold bullion in Dubai. Covers 24K 999.9 certipack bars, 10 tola TT bars, spot pricing in AED, zero VAT rules, and Deira trading desk settlement.',
+    coverImage: '/images/blog/gold-purity.jpg',
+    coverImageAlt: 'Physical 24K 999.9 gold bullion bars and 10 tola TT bars displayed at SNMZ trading desk in Dubai',
+    content: `
+## Why Dubai Is the Global Epicenter for Physical Bullion
+
+Dubai is globally recognized as the "City of Gold," accounting for an estimated 20% to 25% of the world's physical gold trade. Investors, wealth managers, and private buyers from Europe, South Asia, Africa, and North America travel to Dubai to acquire physical gold bullion.
+
+Unlike paper gold or financial derivatives (such as gold ETFs), physical bullion gives you unencumbered title to tangible physical wealth. Dubai offers five structural advantages unmatched by other trading capitals:
+
+1. **Direct Benchmark Pricing**: Bullion transactions in Dubai are pegged directly to international LBMA spot rates converted to UAE Dirhams (AED) at the official central bank parity (1 USD = 3.6725 AED).
+2. **Zero Value Added Tax (0% VAT)**: Under UAE Federal Tax Authority (FTA) statutes, investment precious metals of 99% purity and above are strictly zero-rated for VAT.
+3. **Ultra-Low Wholesale Premiums**: High turnover and intense competition among Deira trading desks result in the narrowest buy/sell spreads in the world.
+4. **Instant Physical Liquidity**: Liquidate or settle physical gold bars on the same day with certified invoices, bank transfers, or compliant settlement.
+5. **Stringent Purity Enforcement**: The Dubai Central Laboratories Department and Dubai Multi Commodities Centre (DMCC) enforce rigorous assay compliance, ensuring every bar meets its stamped fineness.
+
+## Minted Certipack Bars vs. Cast TT Bars
+
+When buying investment gold in Dubai, you will primarily choose between two established formats:
+
+| Bullion Format | Weight Range | Fineness | Packaging | Best Suited For |
+|---|---|---|---|---|
+| **Minted Certipack Bars** | 1g, 2.5g, 5g, 10g, 20g, 31.1g (1oz), 50g, 100g | 999.9 (24K) | Tamper-evident blister card with individual serial number and assayer signature | Long-term retail wealth storage, personal gifts, portable wealth |
+| **Cast 10 Tola TT Bars** | 116.64 Grams (3.75 Troy Oz) | 999.0 or 999.9 | Cast finish, stamped with weight and refinery hallmark | Commercial bullion trade, lowest premium per gram, South Asian cross-border settlement |
+| **Cast Kilobars** | 1,000 Grams (32.15 Troy Oz) | 999.9 or 999.5 | Cast bar, stamped with weight, serial number, and refinery seal | High-net-worth investors, family offices, institutional vaulting |
+
+## How Live Bullion Prices Are Calculated in AED
+
+Unlike retail gold jewellery, which carries design making charges and retail markups, investment bullion prices are calculated transparently using an objective formula:
+
+> **Live Product Price (AED) = Math.round(Weight in Grams × Live 24K Spot Rate in AED + Wholesale Premium)**
+
+- **Live 24K Spot Rate (AED/g)**: Derived directly from the international XAU/USD benchmark divided by 31.1034768 and multiplied by 3.6725.
+- **Wholesale Premium**: Covers certified refinery assay, security packaging, logistics, and trading desk margin (typically AED 5 to AED 150 depending on unit size).
+
+You can monitor real-time AED gold prices and test the dynamic calculator on our [Live Gold Rates Page](/gold-prices).
+
+## Zero VAT on Investment Gold in the UAE
+
+A common query from international buyers is whether gold is subject to UAE VAT:
+
+- **Investment Bullion (≥99% Purity)**: Qualifies for **0% VAT** (Zero-rated) under UAE Executive Regulation of Federal Decree-Law No. (8) of 2017. This includes 24K bars (999.9), 10 Tola TT bars (999.0), and certified investment coins.
+- **Gold Jewellery (<99% Purity, e.g., 22K, 21K, 18K)**: Subject to 5% UAE VAT, although international tourists can claim a VAT refund at Dubai International Airport (DXB) via Planet Payment kiosks.
+
+When purchasing from SNMZ Gold & Diamonds, all investment bullion transactions receive official, itemized commercial tax invoices clearly stating purity, gross weight, serial numbers, and tax-exempt investment classification.
+
+## Physical Settlement and Counterparty Handover
+
+Executing a bullion purchase in Dubai is straightforward:
+
+1. **Rate Fixing**: Contact our trading desk via [WhatsApp Desk](https://wa.me/971527549259) to lock your spot rate based on real-time market ticks.
+2. **Payment Execution**: Settle via bank transfer (AED or USD) or compliant currency settlement in accordance with UAE Central Bank AML/CFT guidelines.
+3. **Physical Inspection**: Inspect the minted certipacks or cast TT bars in person at our trading office in Deira (F03, Al Fadan Building, Al Dhagaya).
+4. **Documentation**: Receive official assay certificates and legal ownership invoices for personal vaulting or international transport.
+
+Ready to trade? View our complete physical inventory in the [Shop Catalogue](/shop) or visit our Deira desk today.
+
+---
+
+### Sources & Regulatory References
+- [Dubai Multi Commodities Centre (DMCC)](https://www.dmcc.ae/)
+- [UAE Federal Tax Authority (FTA) — VAT on Precious Metals](https://tax.gov.ae/)
+- [London Bullion Market Association (LBMA)](https://www.lbma.org.uk/)
+- [Dubai Central Laboratories — Purity and Assay Testing](https://www.dm.gov.ae/)
+
+### Related Trading Guides
+- [10 Tola TT Bar Price & Trading Guide in UAE](/blogs/10-tola-gold-tt-bar-trading-price-uae)
+- [UAE Gold Bullion Tax & Customs Guide](/blogs/dubai-gold-customs-allowance-tax-free-bullion)
+- [View Live AED Gold Rates](/gold-prices)
+    `,
+  },
+  {
+    slug: '10-tola-gold-tt-bar-trading-price-uae',
+    title: '10 Tola TT Bar Price & Trading Guide in UAE (999.0 Fine Bullion)',
+    metaTitle: '10 Tola TT Bar Price Dubai | 999.0 Gold Bullion Guide | SNMZ',
+    metaDescription:
+      'Live 10 Tola TT bar price calculation in Dubai AED. Discover weight (116.64g), purity (999.0), wholesale premiums, buyback liquidity, and how to trade TT bars in Deira.',
+    category: 'Bullion',
+    publishedAt: '2025-01-18',
+    updatedAt: '2025-01-18',
+    readTime: '8 min read',
+    summary:
+      'The 10 Tola TT bar is the premier commercial bullion vehicle across Dubai and South Asia. Understand its exact gram weight (116.64g), 999.0 fineness, pricing formula, and why institutional traders prefer cast TT bars.',
+    coverImage: '/images/blog/dubai-gold-souk.jpg',
+    coverImageAlt: 'Cast 10 tola TT gold bar weighing 116.64 grams with 999.0 purity stamp',
+    content: `
+## What Is a 10 Tola "TT" Bar?
+
+The 10 Tola bar — universally known in Dubai trading circles as the **TT Bar** (short for "Ten Tola") — is the undisputed workhorse of the Middle Eastern and South Asian physical bullion markets.
+
+Originating from traditional Indian weight units, the *tola* was standardized during the British colonial era as exactly 180 troy grains, which equals approximately 11.6638 grams. Consequently, a 10 Tola bar weighs exactly:
+
+> **10 Tola = 116.638 Grams ≈ 116.64 Grams (3.75 Troy Ounces)**
+
+Unlike smaller minted certipack bars that target retail gift-buyers, the 10 Tola TT bar is engineered for commercial wholesale and heavy wealth preservation. It features smooth rounded edges, a classic cast surface, and the hallmark of an accredited refinery (such as Emirates Gold, Valcambi, PAMP, or Al Etihad).
+
+## Technical Specifications of the 10 Tola TT Bar
+
+| Specification | Standard Value |
+|---|---|
+| **Gross Weight** | 116.64 Grams (3.75 Troy Ounces) |
+| **Standard Fineness** | 999.0 Parts per 1,000 (99.9% Pure Gold) |
+| **Pure Gold Content** | 116.52 Grams |
+| **Edge Finish** | Smooth, rounded cast edges (comfortable grip) |
+| **Markings** | Refinery stamp, "TEN TOLA", "999.0", Serial number (if applicable) |
+| **Standard Purity Standard** | 999.0 (traditional benchmark) or 999.9 (fine minted version) |
+
+## How the 10 Tola TT Bar Live Price Is Calculated
+
+Because 10 Tola TT bars are typically 999.0 fineness rather than 999.9, their live market price in AED is calculated by adjusting the live 24K spot rate:
+
+> **10 Tola Price (AED) = Math.round(116.64 × Live 24K Spot Rate × (999.0 / 999.9) + Wholesale Premium)**
+
+For example, if the live 24K gold rate is AED 480.00 per gram:
+- Fine gold value: 116.64 × 480.00 × (999.0 / 999.9) ≈ AED 55,938.00
+- Adding a typical competitive wholesale trading desk premium of AED 60 to AED 80 results in a total transaction cost of approximately **AED 55,998.00**.
+
+Because making charges are zero on cast TT bars, the spread between buy and sell rates is remarkably tight — often under 0.3% to 0.5% in the Deira gold district.
+
+## Why Institutional Traders and Exporters Prefer TT Bars
+
+1. **Lowest Premium per Gram**: Manufacturing a cast TT bar requires substantially less tooling than vacuum-sealing certipacks. That saving is passed directly to the buyer.
+2. **High International Recognizability**: Across India, Pakistan, Bangladesh, the UAE, and East Africa, the 10 Tola bar is an instant currency substitute. Any jeweler or bullion desk recognizes it on sight.
+3. **High Density Wealth**: Measuring approximately 32mm × 18mm × 10mm, a 10 Tola bar fits comfortably into a small pocket while carrying tens of thousands of dirhams in intrinsic value.
+4. **Instant Buyback Liquidity**: At SNMZ Gold & Diamonds, we maintain a dedicated buyback desk with real-time settlement for verified 10 Tola bars.
+
+## How to Trade 10 Tola TT Bars with SNMZ Gold & Diamonds
+
+Our physical trading office in Al Dhagaya, Deira, handles 10 Tola TT transactions on a continuous daily basis:
+
+- **Check Current Rates**: View live benchmark rates on our [Gold Rates Page](/gold-prices).
+- **Lock Your Price**: Connect with our spot desk on [WhatsApp (+971 52 754 9259)](https://wa.me/971527549259) during market trading hours (Mon–Sat, 9:00 AM – 7:00 PM GST).
+- **Office Handover**: Inspect the bar, verify the weight on our certified precision balances (0.01g accuracy), and receive your commercial sales invoice.
+
+Explore our available inventory in the [Shop Catalogue](/shop) or contact our bullion desk for wholesale bulk orders.
+
+---
+
+### Sources & Further Reading
+- [London Bullion Market Association (LBMA) Good Delivery Rules](https://www.lbma.org.uk/)
+- [Emirates Gold Refinery Standards](https://www.emiratesgold.ae/)
+- [Dubai Good Delivery Standard (DGD)](https://www.dmcc.ae/)
+
+### Related Articles
+- [How to Buy Physical Gold Bullion in Dubai](/blogs/buy-physical-gold-bullion-dubai-guide)
+- [Understanding 24K, 22K, 21K and 18K Gold](/blogs/understanding-gold-purity-karats)
+- [Live Gold Rates in AED](/gold-prices)
+    `,
+  },
+  {
+    slug: 'physical-silver-bullion-investment-dubai',
+    title: 'Physical Silver Bullion Investment in Dubai: 1kg Ingots & Spot Rates (Ag 999)',
+    metaTitle: 'Buy Physical Silver Bullion in Dubai | 1kg Cast Bars (999) | SNMZ',
+    metaDescription:
+      'Guide to buying physical silver bullion bars and 1kg cast ingots in Dubai. Live silver spot rates in AED, wholesale premiums, VAT exemption rules, and vault storage.',
+    category: 'Bullion',
+    publishedAt: '2025-01-20',
+    updatedAt: '2025-01-20',
+    readTime: '7 min read',
+    summary:
+      'Physical silver bullion represents an accessible hedge against inflation and a high-liquidity precious metals asset. Discover 1kg cast silver bars, spot pricing in AED, and purchasing through Dubai trading desks.',
+    coverImage: '/images/blog/gold-price-chart.jpg',
+    coverImageAlt: 'Stack of 1 kilogram 999.0 fine cast silver bullion ingots in Dubai',
+    content: `
+## The Case for Physical Silver Bullion
+
+While gold receives the majority of headline attention, physical silver (chemical symbol Ag, atomic number 47) represents one of the most compelling risk-adjusted stores of value in the precious metals universe.
+
+Investors choose physical silver for three fundamental reasons:
+
+1. **Dual Demand Engine**: Silver is both an investment monetary asset and an indispensable industrial metal. Over 50% of annual silver demand comes from solar photovoltaic panels, electric vehicle electronics, 5G infrastructure, and medical biocides.
+2. **Gold-to-Silver Ratio Revaluation**: Historically, the gold-to-silver price ratio averaged roughly 15:1 to 30:1. In recent market cycles, the ratio has traded between 80:1 and 90:1, indicating potential long-term upside for physical silver accumulation.
+3. **Accessibility**: At current AED spot rates, a 1kg silver bar costs a fraction of an equivalent gold bar, allowing investors to dollar-cost average into tangible wealth.
+
+## Physical Silver Products Available in Dubai
+
+| Product | Fineness | Weight | Form Factor | Primary Advantage |
+|---|---|---|---|---|
+| **1 Kilogram Cast Bar** | 999.0 Fine Silver | 1,000 Grams (32.15 oz) | Cast Ingot | Lowest premium over spot; standard wholesale unit |
+| **100 Gram Minted Bar** | 999.0 Fine Silver | 100 Grams | Sealed Assay Card | Convenient gift and portable barter unit |
+| **1 Troy Ounce Round/Coin** | 999.0 Fine Silver | 31.10 Grams | Minted Coin | Universally recognized collectible investment |
+
+## Calculating Live Silver Prices in AED
+
+Silver is priced on global commodity exchanges in US Dollars per troy ounce (XAG/USD). In Dubai, trading desks convert this benchmark to AED per gram:
+
+> **Live Silver Spot per Gram (AED) = (XAG/USD Spot Price ÷ 31.1034768) × 3.6725**
+> **1kg Silver Bar Price (AED) = Math.round(1,000 × Live Spot Rate + Wholesale Premium)**
+
+For example, with silver trading around AED 6.13 per gram, a 1kg investment bar carries an intrinsic metal value of approximately AED 6,130.00, plus a wholesale refinery premium of AED 120 to AED 200 depending on batch size.
+
+You can check real-time silver benchmarks and historical trends on our dedicated [Silver Rates Page](/silver-prices).
+
+## VAT Regulations for Physical Silver in the UAE
+
+Under UAE Federal Tax Authority (FTA) regulations:
+- **Investment-Grade Silver**: Bars and ingots with a purity of 99% (990 fine) or higher that are tradable on international bullion markets qualify for zero-rated VAT treatment when acquired through licensed precious metals dealers for qualifying commercial transactions.
+- Always verify the specific tax invoice treatment with our compliance team before completing institutional silver orders.
+
+## Storage and Delivery in Dubai
+
+Because silver has a lower value density than gold (1kg of gold is worth roughly 75 times more than 1kg of silver), storing substantial volumes requires appropriate security planning:
+
+- **Private Home Safes**: Feasible for individual 1kg bars and smaller holdings.
+- **Commercial Vaulting**: High-volume investors holding 50kg to 500kg of silver bars typically utilize secure bonded vaulting facilities through DMCC or third-party logistics providers (such as Brink's, Loomis, or Transguard) located in Dubai.
+
+Ready to acquire investment-grade silver? Contact our bullion desk via [WhatsApp (+971 52 754 9259)](https://wa.me/971527549259) or inspect physical 1kg ingots in our [Bullion Shop](/shop).
+
+---
+
+### Sources & Reference Data
+- [The Silver Institute — Global Silver Supply & Demand](https://www.silverinstitute.org/)
+- [London Bullion Market Association (LBMA) Silver Prices](https://www.lbma.org.uk/)
+- [UAE Federal Tax Authority](https://tax.gov.ae/)
+
+### Related Articles
+- [How to Buy Physical Gold Bullion in Dubai](/blogs/buy-physical-gold-bullion-dubai-guide)
+- [View Live AED Silver Rates](/silver-prices)
+    `,
+  },
+  {
+    slug: 'dubai-gold-customs-allowance-tax-free-bullion',
+    title: 'UAE Gold Bullion Tax & Customs Guide: Zero VAT & Airport Export Rules',
+    metaTitle: 'UAE Gold Tax & Customs Guide | Zero VAT on Bullion | SNMZ',
+    metaDescription:
+      'Official rules on VAT for gold bullion in the UAE. Zero-rated 24K investment gold, tax-free purchases, tourist export declarations, and customs allowances at Dubai Airport.',
+    category: 'Guide',
+    publishedAt: '2025-01-22',
+    updatedAt: '2025-01-22',
+    readTime: '9 min read',
+    summary:
+      'Essential legal and tax information for buying gold bullion in Dubai. Learn why 24K investment gold is 0% VAT, what documentation official trading desks provide, and airport customs declaration limits.',
+    coverImage: '/images/blog/dubai-shopping.jpg',
+    coverImageAlt: 'Official customs and tax documentation for physical gold bullion export at Dubai International Airport',
+    content: `
+## Is Gold Bullion Tax-Free in Dubai?
+
+One of the most persistent reasons international investors flock to Dubai is its favorable tax environment. However, there is frequent confusion between retail jewellery taxation and investment bullion taxation.
+
+Here is the exact legal standing under current UAE Federal Tax Authority (FTA) law:
+
+### 1. Investment Precious Metals (0% VAT / Zero-Rated)
+Under Article 29 of Cabinet Decision No. (52) of 2017 on the Executive Regulation of Federal Decree-Law No. (8) of 2017 on Value Added Tax, the supply of investment precious metals is **zero-rated (0% VAT)**, provided the metal satisfies two explicit statutory tests:
+- **Purity Test**: The gold, silver, or platinum must have a purity level of 99% (990 fine) or greater.
+- **Tradability Test**: The precious metal must be in a form tradeable in global bullion markets (e.g., standard minted bars, cast ingots, 10 tola TT bars, or recognized bullion coins).
+
+Because all investment gold bars sold by SNMZ Gold & Diamonds are 999.9 or 999.0 fine, your bullion purchase is **100% exempt from the standard 5% VAT**.
+
+### 2. Gold Jewellery (5% VAT with Tourist Refund)
+Gold jewellery (typically 22K, 21K, or 18K) carries a purity level below 99% and therefore incurs the standard 5% UAE VAT. International tourists can recover approximately 85% of this VAT upon departure from Dubai International Airport (DXB) via Planet Payment automated self-service kiosks.
+
+## Carrying Gold Out of Dubai: Airport Customs Guidelines
+
+When departing from Dubai International Airport (DXB) or Al Maktoum International Airport (DWC) with physical gold bullion in your possession:
+
+### UAE Export Customs (Leaving Dubai)
+The UAE does **not** levy any export duties or taxes on gold bullion departing the country. However, you must comply with declaration thresholds established by the Federal Authority for Identity, Citizenship, Customs and Port Security (ICP):
+
+- **Threshold for Declaration**: Travelers entering or exiting the UAE carrying cash, gold, or precious stones valued at **AED 60,000 or above** (or equivalent in foreign currency) must declare the assets to UAE Customs via the official "Afseh" declaration app or at the customs desk before departure.
+- **Commercial Tax Invoice**: Always carry the original tax invoice issued by SNMZ Gold & Diamonds. The invoice documents the legal chain of custody, assay purity, exact weight, and purchase price.
+
+### Destination Country Import Regulations (Entering Your Home Country)
+While Dubai allows you to depart with your bullion without tax, your destination country may impose import duties, customs tariffs, or personal limits:
+
+| Destination | Import Duty Status for Personal Gold Bullion | Notes |
+|---|---|---|
+| **European Union (EU)** | 0% Customs Duty & 0% VAT on qualifying investment gold | Must declare to customs if total value exceeds €10,000 |
+| **United Kingdom (UK)** | 0% Customs Duty & 0% VAT on investment gold bars | Must declare if value exceeds £10,000 |
+| **India** | Regulated customs duty applies per gram; passenger duty allowance based on residency | Subject to strict baggage limits and duty payment at Indian customs |
+| **United States (US)** | 0% Customs Duty on gold bullion bars | Must declare total monetary instruments and precious metals exceeding $10,000 on CBP Form 6059B |
+
+*Disclaimer: Customs regulations are subject to frequent changes by national authorities. Always consult your destination country's official border agency before traveling.*
+
+## Required Invoicing Standards for International Travelers
+
+To ensure frictionless transit through international customs, SNMZ Gold & Diamonds provides an official commercial invoice featuring:
+1. Licensed trading desk entity details and verified Deira address.
+2. Buyer's legal identification details (passport number for tourists; Emirates ID for UAE residents).
+3. Exact gross weight, stamped fineness (e.g., 999.9 / 24K), and manufacturer serial numbers.
+4. Transaction spot rate in AED and total settlement value.
+
+Have questions regarding bullion transport? Contact our desk on [WhatsApp (+971 52 754 9259)](https://wa.me/971527549259).
+
+---
+
+### Sources & Regulatory References
+- [UAE Federal Tax Authority (FTA) Executive Regulations](https://tax.gov.ae/)
+- [Dubai Customs Official Portal](https://www.dubaicustoms.gov.ae/)
+- [Federal Authority for Identity, Citizenship, Customs and Port Security (ICP)](https://icp.gov.ae/)
+
+### Related Articles
+- [How to Buy Physical Gold Bullion in Dubai](/blogs/buy-physical-gold-bullion-dubai-guide)
+- [How Gold Prices Are Determined in Dubai](/blogs/how-gold-prices-are-determined-in-dubai)
+- [Live AED Gold Rates](/gold-prices)
+    `,
+  },
+  {
+    slug: 'institutional-gold-bullion-settlement-dubai',
+    title: 'Wholesale & Institutional Bullion Trading in Dubai: Spot Liquidity & Settlement',
+    metaTitle: 'Wholesale Gold Bullion Trading Dubai | Institutional Settlement | SNMZ',
+    metaDescription:
+      'Institutional physical gold trading in Dubai. Bank transfer, cash settlement thresholds, 1kg London Good Delivery bars, and Deira physical handover protocols.',
+    category: 'Market',
+    publishedAt: '2025-01-25',
+    updatedAt: '2025-01-25',
+    readTime: '8 min read',
+    summary:
+      'How family offices, high-net-worth individuals, and corporate buyers execute wholesale physical gold bullion orders in Dubai. Covers kilobars, TT batches, spot fixing, and secure settlement.',
+    coverImage: '/images/blog/global-gold-trade.jpg',
+    coverImageAlt: 'Institutional wholesale bullion trading floor and vault settlement in Dubai',
+    content: `
+## The Institutional Bullion Landscape in Dubai
+
+Dubai has emerged as one of the four primary pillars of global physical precious metals liquidity, alongside London, Zurich, and New York. While retail buyers purchase small minted certipacks, institutional counterparties — including family offices, asset managers, commodity trading firms, and industrial jewelers — trade physical bullion in significant volume.
+
+Executing wholesale transactions requires institutional market depth:
+- **Tight Wholesale Spreads**: On 1kg kilobars and 10 Tola batches, bid-ask spreads typically narrow to fractions of a percentage point.
+- **Deep Spot Liquidity**: Capability to fulfill multi-kilogram orders without moving the local Deira spot benchmark.
+- **Direct Refinery Sourcing**: Access to Emirates Gold, Valcambi, PAMP, Al Etihad, and LBMA-accredited refining channels.
+
+## Wholesale Bullion Product Categories
+
+Institutional orders typically center around three standard vehicles:
+
+1. **1 Kilogram Gold Bars (999.9 Fine Gold)**: The primary international trading unit for wholesale spot settlement. Weighing exactly 32.1507 troy ounces, kilobars offer the lowest premium over spot of any cast gold product.
+2. **10 Tola TT Bar Master Boxes**: Traded in lots of 10, 20, or 50 bars (1.166kg to 5.83kg), providing flexible, highly divisible physical liquidity.
+3. **London Good Delivery (LGD) 400oz Bars**: For central banks, sovereign wealth funds, and major financial institutions utilizing institutional vaulting.
+
+## Spot Rate Fixing Protocols
+
+In wholesale precious metals trading, spot prices fluctuate second by second during active trading sessions (matching the London and New York market hours). 
+
+At SNMZ Gold & Diamonds, the fixing procedure works as follows:
+
+1. **Volume Request**: The buyer indicates the required volume (e.g., 5 × 1kg bars or 20 × 10 Tola TT bars).
+2. **Live Spot Fix**: Our spot desk provides an active, two-way quote tied to the live XAU/AED or XAU/USD benchmark.
+3. **Execution Confirmation**: Once agreed, the rate is locked immediately via electronic confirmation or recorded trading line.
+4. **Settlement Timing**: Delivery is scheduled following confirmed wire transfer or approved payment execution.
+
+## AML Compliance & UAE Regulatory Standards
+
+Wholesale precious metals trading in Dubai operates under strict supervisory frameworks overseen by the UAE Ministry of Economy and the UAE Central Bank:
+
+- **Anti-Money Laundering (AML/CFT)**: Institutional buyers undergo standard Know Your Customer (KYC) onboarding, including trade license verification, beneficial ownership documentation, and source of funds verification.
+- **goAML Reporting**: Suspicious transaction monitoring and compliance with Federal Decree-Law No. (20) of 2018 on Anti-Money Laundering.
+- **Cash Transaction Thresholds**: In strict compliance with UAE regulations, transactions exceeding statutory cash limits require official electronic bank wire transfer (Telegraphic Transfer).
+
+## Secure Handover & Vault Settlement
+
+SNMZ Gold & Diamonds coordinates institutional handovers through:
+- **Deira Trading Desk Handover**: Direct, confidential physical handover at our office (F03, Al Fadan Building, Al Dhagaya, Deira, Dubai) equipped with precision assay equipment.
+- **Secure Armored Transport**: Coordination with licensed armored logistics operators (Transguard, Brink's, Loomis) for institutional vault-to-vault transfers across the UAE.
+
+For institutional inquiries and wholesale quotes, contact our managing desk at [desk@snmzgold.com](mailto:desk@snmzgold.com) or connect directly on [WhatsApp (+971 52 754 9259)](https://wa.me/971527549259).
+
+---
+
+### Regulatory Authorities
+- [UAE Ministry of Economy — Anti-Money Laundering](https://www.moec.gov.ae/)
+- [Dubai Multi Commodities Centre (DMCC)](https://www.dmcc.ae/)
+- [Central Bank of the United Arab Emirates](https://www.centralbank.ae/)
+
+### Related Articles
+- [How to Buy Physical Gold Bullion in Dubai](/blogs/buy-physical-gold-bullion-dubai-guide)
+- [Why Dubai Is a Global Gold Trading Hub](/blogs/why-dubai-is-a-global-gold-trading-hub)
+- [View Live AED Gold Rates](/gold-prices)
+    `,
+  },
+  {
     slug: 'why-dubai-is-called-city-of-gold',
     title: 'Why Is Dubai Called the City of Gold?',
     metaTitle: "Why Is Dubai Called the City of Gold? | SNMZ",

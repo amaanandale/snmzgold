@@ -278,7 +278,19 @@ export function Header({ showAnnouncement = true }) {
                 Gallery
               </Link>
 
-              {/* 5. Contact */}
+              {/* 5. Blogs */}
+              <Link
+                href="/blogs"
+                className={`text-xs lg:text-sm font-body tracking-wide transition-colors duration-200 py-1 ${
+                  pathname.startsWith('/blogs')
+                    ? 'text-[#D4AF37] font-semibold border-b-2 border-[#D4AF37] pb-0.5'
+                    : 'text-white/85 hover:text-[#D4AF37] font-medium'
+                }`}
+              >
+                Blogs
+              </Link>
+
+              {/* 6. Contact */}
               <Link
                 href="/#contact"
                 className={`text-xs lg:text-sm font-body tracking-wide transition-colors duration-200 py-1 ${
@@ -437,6 +449,23 @@ export function Header({ showAnnouncement = true }) {
                 <span className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
                   <span>Bullion Gallery</span>
+                </span>
+                <span className="text-[#D4AF37] text-xs">→</span>
+              </Link>
+
+              {/* Blogs Link */}
+              <Link
+                href="/blogs"
+                onClick={() => setMobileOpen(false)}
+                className={`py-3 px-3.5 rounded-xl font-body text-sm border-b border-white/5 transition-colors flex items-center justify-between ${
+                  pathname.startsWith('/blogs')
+                    ? 'text-[#D4AF37] bg-white/5 font-semibold'
+                    : 'text-white/90 hover:text-[#D4AF37] hover:bg-white/5 font-medium'
+                }`}
+              >
+                <span className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
+                  <span>Blogs &amp; Insights</span>
                 </span>
                 <span className="text-[#D4AF37] text-xs">→</span>
               </Link>
