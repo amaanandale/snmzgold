@@ -105,7 +105,7 @@ export async function fetchLiveGoldRates() {
       status: 'live',
       currency: 'AED',
       updatedAt: data.date ? new Date(data.date).toISOString() : new Date().toISOString(),
-      source: 'fawazahmed0/exchange-api (XAU→AED) via jsDelivr',
+      source: 'Live Spot Benchmark (XAU/AED)',
       rates: PURITY_DEFINITIONS.map((p) => ({
         ...p,
         perGram: round2(perGram24k * PURITY_MULTIPLIERS[p.karat]),

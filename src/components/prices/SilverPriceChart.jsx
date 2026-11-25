@@ -317,7 +317,7 @@ export function SilverPriceChart({ initialData, currentSpotGram }) {
 
           {/* Disclaimer */}
           <div className="mt-6 pt-4 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-white/40 font-mono">
-            <span>Data source: Verified daily exchange archives (XAG→AED)</span>
+            <span>Market Benchmark: Physical Silver (AED)</span>
             <span className="italic text-center sm:text-right">
               Historical performance is indicative and does not predict future prices.
             </span>

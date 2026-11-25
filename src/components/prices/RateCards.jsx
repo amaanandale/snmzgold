@@ -28,13 +28,15 @@ export function RateCards({ rates, status, source }) {
             </h2>
             <div className="gold-rule mt-3" />
           </div>
-          {/* Data source badge */}
+          {/* Data status badge - no external API exposure */}
           <div className="flex items-center gap-2 shrink-0">
             <span
-              className={`w-2 h-2 rounded-full ${status === 'live' ? 'bg-green-400' : 'bg-white/30'}`}
+              className={`w-2 h-2 rounded-full ${status === 'live' ? 'bg-green-400 animate-pulse' : 'bg-white/30'}`}
               aria-hidden="true"
             />
-            <span className="text-white/45 text-xs font-body">{source}</span>
+            <span className="text-white/60 text-xs font-mono font-medium">
+              {status === 'live' ? 'Live Spot Rates' : 'Rates connecting…'}
+            </span>
           </div>
         </div>
 

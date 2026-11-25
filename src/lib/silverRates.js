@@ -69,7 +69,7 @@ export async function fetchLiveSilverRates() {
         status: 'live',
         currency: 'AED',
         updatedAt: data.date ? new Date(data.date).toISOString() : new Date().toISOString(),
-        source: 'fawazahmed0/exchange-api (XAG→AED)',
+        source: 'Live Spot Benchmark (XAG/AED)',
         spotOz: round2(perOz),
         spotKg: round2(perKg),
         spotGram: round2(perGramBase),

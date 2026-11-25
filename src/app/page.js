@@ -27,6 +27,11 @@ export default async function HomePage() {
     fetchLiveSilverRates(),
   ]);
 
+  const liveGoldRate24k =
+    ratesData?.rates?.find((r) => r.karat === '24K')?.perGram || 480.09;
+  const liveSilverRate =
+    silverData?.rates?.find((r) => r.grade === '999')?.perGram || 6.13;
+
   return (
     <>
       {/* Header with responsive official logo and laptop announcement */}
@@ -43,7 +48,10 @@ export default async function HomePage() {
         <BullionCategories />
 
         {/* 4. Featured Products Preview with Link to /shop */}
-        <FeaturedProducts />
+        <FeaturedProducts
+          liveGoldRate24k={liveGoldRate24k}
+          liveSilverRate={liveSilverRate}
+        />
 
         {/* 5. Live Gold & Silver Price Preview */}
         <GoldRatePreview

@@ -207,7 +207,10 @@ export default async function SilverPricesPage() {
             </div>
 
             <div className="p-4 bg-emerald-dark/60 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
-              <div>Data source: {silverData.source}</div>
+              <div className="flex items-center gap-2">
+                <span className={`w-2 h-2 rounded-full ${isLive ? 'bg-emerald-400 animate-pulse' : 'bg-white/30'}`} />
+                <span className="font-mono text-white/60">{isLive ? 'Live Spot Benchmark · Dubai' : 'Rates connecting…'}</span>
+              </div>
               <PricesRefreshButton />
             </div>
           </div>

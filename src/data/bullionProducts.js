@@ -1,29 +1,25 @@
 /**
- * SNMZ Gold & Diamonds — Comprehensive Bullion Product Dataset.
+ * SNMZ Gold & Diamonds — Standard Bullion Inventory Dataset.
  *
- * Replicating the strict card architecture, inventory, and pricing structure
- * of the Tora Bullion catalog, tailored to SNMZ's Dubai precious metals desk.
+ * All products specify exact physical weights, industry standard purities,
+ * clean titles, and pricing parameters for client-side live spot valuation.
  *
- * Spot Benchmark Basis:
- * - Gold 24K: AED 480.09 / gram
- * - Silver 999: AED 6.13 / gram
+ * Formula:
+ * productPrice = Math.round(weightInGrams * liveRate + premiumPerUnit)
  */
 
 export const BULLION_CATEGORIES = [
   { id: 'all', label: 'All Products' },
   { id: 'gold-bars', label: 'Gold Bars' },
   { id: 'tt-bars', label: '10 Tola TT Bars' },
-  { id: 'gold-coins', label: 'Gold Coins' },
   { id: 'silver-bars', label: 'Silver Bars' },
-  { id: 'silver-coins', label: 'Silver Coins' },
 ];
 
-export const BULLION_PRODUCTS = [
-  // ─── Gold Bars in Assay Blister Cards ──────────────────────────────────────
+export const STANDARD_INVENTORY = [
+  // ─── Minted Gold Bars ──────────────────────────────────────────────────────
   {
     id: 'gold-bar-1g',
-    name: 'SNMZ Bars',
-    subtitle: 'Minted Bullion Bar',
+    title: 'Minted Gold Bar',
     brand: 'SNMZ Minted',
     category: 'gold-bars',
     weight: '1g',
@@ -32,17 +28,13 @@ export const BULLION_PRODUCTS = [
     spec: '1g • 999.9',
     metal: 'gold',
     form: 'bar',
-    priceAED: 'AED 485.00',
-    numericPrice: 485.0,
-    serialPrefix: 'SNMZ-01G',
-    inStock: true,
-    badge: 'SNMZ Minted',
-    description: '1 Gram 999.9 fine gold minted bar in tamper-evident security certipack with official assay hallmark.',
+    premium: 5,
+    featured: false,
+    description: '1 Gram 999.9 fine gold investment bar in high-security tamper-evident assay blister card.',
   },
   {
     id: 'gold-bar-2-5g',
-    name: 'SNMZ Bars',
-    subtitle: 'Minted Bullion Bar',
+    title: 'Minted Gold Bar',
     brand: 'SNMZ Minted',
     category: 'gold-bars',
     weight: '2.5g',
@@ -51,17 +43,13 @@ export const BULLION_PRODUCTS = [
     spec: '2.5g • 999.9',
     metal: 'gold',
     form: 'bar',
-    priceAED: 'AED 1,215.00',
-    numericPrice: 1215.0,
-    serialPrefix: 'SNMZ-25G',
-    inStock: true,
-    badge: 'SNMZ Minted',
-    description: '2.5 Gram 24K gold investment bar sealed in high-security black & gold certipack assay card.',
+    premium: 15,
+    featured: false,
+    description: '2.5 Gram 999.9 fine gold bar sealed in tamper-evident certipack with individual serial number.',
   },
   {
     id: 'gold-bar-5g',
-    name: 'SNMZ Bars',
-    subtitle: 'Minted Bullion Bar',
+    title: 'Minted Gold Bar',
     brand: 'SNMZ Minted',
     category: 'gold-bars',
     weight: '5g',
@@ -70,17 +58,13 @@ export const BULLION_PRODUCTS = [
     spec: '5g • 999.9',
     metal: 'gold',
     form: 'bar',
-    priceAED: 'AED 2,425.00',
-    numericPrice: 2425.0,
-    serialPrefix: 'SNMZ-05G',
-    inStock: true,
-    badge: 'SNMZ Minted',
-    description: '5 Gram 999.9 investment gold ingot in tamper-evident blister packaging with individual serial number.',
+    premium: 25,
+    featured: false,
+    description: '5 Gram 999.9 pure gold investment bar with polished mirror finish and assay certification.',
   },
   {
     id: 'gold-bar-10g',
-    name: 'SNMZ Bars',
-    subtitle: 'Minted Bullion Bar',
+    title: 'Minted Gold Bar',
     brand: 'SNMZ Minted',
     category: 'gold-bars',
     weight: '10g',
@@ -89,17 +73,13 @@ export const BULLION_PRODUCTS = [
     spec: '10g • 999.9',
     metal: 'gold',
     form: 'bar',
-    priceAED: 'AED 4,835.00',
-    numericPrice: 4835.0,
-    serialPrefix: 'SNMZ-10G',
-    inStock: true,
-    badge: 'SNMZ Minted',
-    description: '10 Gram pure 24K gold minted bar, standard liquid denomination sealed in certipack with QR verification.',
+    premium: 35,
+    featured: true,
+    description: '10 Gram high-liquidity 999.9 gold minted bar sealed in security blister packaging.',
   },
   {
     id: 'gold-bar-20g',
-    name: 'SNMZ Bars',
-    subtitle: 'Minted Bullion Bar',
+    title: 'Minted Gold Bar',
     brand: 'SNMZ Minted',
     category: 'gold-bars',
     weight: '20g',
@@ -108,17 +88,13 @@ export const BULLION_PRODUCTS = [
     spec: '20g • 999.9',
     metal: 'gold',
     form: 'bar',
-    priceAED: 'AED 8,423.80',
-    numericPrice: 8423.8,
-    serialPrefix: 'SNMZ-20G',
-    inStock: true,
-    badge: 'SNMZ Minted',
-    description: '20 Gram 999.9 investment gold minted bar, identical in design and blister architecture to the Dubai hallmark.',
+    premium: 50,
+    featured: false,
+    description: '20 Gram 999.9 fine gold bar, standard portable wealth asset with verifiable assay hallmark.',
   },
   {
     id: 'gold-bar-1oz',
-    name: 'SNMZ Bars',
-    subtitle: 'Troy Ounce Bullion Bar',
+    title: 'Minted Gold Bar',
     brand: 'SNMZ Minted',
     category: 'gold-bars',
     weight: '31.1g (1oz)',
@@ -127,17 +103,13 @@ export const BULLION_PRODUCTS = [
     spec: '31.1g • 999.9',
     metal: 'gold',
     form: 'bar',
-    priceAED: 'AED 13,117.67',
-    numericPrice: 13117.67,
-    serialPrefix: 'SNMZ-1OZ',
-    inStock: true,
-    badge: 'SNMZ Minted',
-    description: '1 Troy Ounce (31.1g) 24K 999.9 fine gold bar, international standard weight in security blister card.',
+    premium: 65,
+    featured: true,
+    description: '1 Troy Ounce (31.103g) 999.9 investment gold ingot in airtight security certipack card.',
   },
   {
     id: 'gold-bar-50g',
-    name: 'SNMZ Bars',
-    subtitle: 'Minted Bullion Bar',
+    title: 'Minted Gold Bar',
     brand: 'SNMZ Minted',
     category: 'gold-bars',
     weight: '50g',
@@ -146,17 +118,13 @@ export const BULLION_PRODUCTS = [
     spec: '50g • 999.9',
     metal: 'gold',
     form: 'bar',
-    priceAED: 'AED 21,059.50',
-    numericPrice: 21059.5,
-    serialPrefix: 'SNMZ-50G',
-    inStock: true,
-    badge: 'SNMZ Minted',
-    description: '50 Gram high-purity gold bar sealed in tamper-evident certipack with verified assay certificate.',
+    premium: 80,
+    featured: false,
+    description: '50 Gram high-purity gold bullion bar sealed with official SNMZ refinery hallmark.',
   },
   {
     id: 'gold-bar-100g',
-    name: 'SNMZ Bars',
-    subtitle: 'Minted Bullion Bar',
+    title: 'Minted Gold Bar',
     brand: 'SNMZ Minted',
     category: 'gold-bars',
     weight: '100g',
@@ -165,18 +133,14 @@ export const BULLION_PRODUCTS = [
     spec: '100g • 999.9',
     metal: 'gold',
     form: 'bar',
-    priceAED: 'AED 42,089.00',
-    numericPrice: 42089.0,
-    serialPrefix: 'SNMZ-100G',
-    inStock: true,
-    badge: 'SNMZ Minted',
-    description: '100 Gram 999.9 fine gold bar in luxury black & gold certipack card. High-liquidity physical wealth asset.',
+    premium: 100,
+    featured: true,
+    description: '100 Gram 999.9 fine gold bar in luxury certipack. The gold standard for institutional trading.',
   },
   {
     id: 'gold-bar-250g',
-    name: 'SNMZ Bars',
-    subtitle: 'Cast Bullion Bar',
-    brand: 'Dubai Benchmark',
+    title: 'Minted Gold Bar',
+    brand: 'SNMZ Minted',
     category: 'gold-bars',
     weight: '250g',
     weightGrams: 250,
@@ -184,18 +148,14 @@ export const BULLION_PRODUCTS = [
     spec: '250g • 999.9',
     metal: 'gold',
     form: 'bar',
-    priceAED: 'AED 120,250.00',
-    numericPrice: 120250.0,
-    serialPrefix: 'SNMZ-250G',
-    inStock: true,
-    badge: 'Dubai Benchmark',
-    description: '250 Gram physical 24K gold investment bar with engraved serial number and refinery hallmark.',
+    premium: 180,
+    featured: false,
+    description: '250 Gram precision minted gold bar with serial identification and official refinery hallmarks.',
   },
   {
     id: 'gold-bar-1kg',
-    name: 'SNMZ 1kg Cast Bar',
-    subtitle: 'Kilogram Institutional Bar',
-    brand: 'Dubai Benchmark',
+    title: 'Minted Gold Bar',
+    brand: 'SNMZ Minted',
     category: 'gold-bars',
     weight: '1kg',
     weightGrams: 1000,
@@ -203,19 +163,15 @@ export const BULLION_PRODUCTS = [
     spec: '1kg • 999.9',
     metal: 'gold',
     form: 'bar',
-    priceAED: 'AED 480,090.00',
-    numericPrice: 480090.0,
-    serialPrefix: 'SNMZ-1KG',
-    inStock: true,
-    badge: 'Dubai Benchmark',
-    description: '1 Kilogram (1,000g) 999.9 fine cast gold bullion bar. Benchmark asset for institutional treasuries.',
+    premium: 250,
+    featured: true,
+    description: '1 Kilogram (1,000g) 999.9 fine gold bullion bar. Benchmark asset for wealth preservation.',
   },
 
   // ─── Dubai Regional Benchmark: 10 Tola TT Bar ──────────────────────────────
   {
     id: 'gold-bar-10tola',
-    name: '10 Tola TT Bar',
-    subtitle: 'GCC Regional Benchmark',
+    title: '10 Tola TT Bar',
     brand: 'Dubai Benchmark',
     category: 'tt-bars',
     weight: '116.64g (10 Tola)',
@@ -224,116 +180,15 @@ export const BULLION_PRODUCTS = [
     spec: '10 Tola • 999.0',
     metal: 'gold',
     form: 'bar',
-    priceAED: 'AED 55,680.00',
-    numericPrice: 55680.0,
-    serialPrefix: 'SNMZ-10TT',
-    inStock: true,
-    badge: 'Dubai Benchmark',
-    description: '10 Tola (116.64g) 999.0 traditional TT cast bar. The definitive bullion trading format of Dubai Gold Souk.',
-  },
-  {
-    id: 'gold-bar-5tola',
-    name: '5 Tola TT Bar',
-    subtitle: 'GCC Regional Benchmark',
-    brand: 'Dubai Benchmark',
-    category: 'tt-bars',
-    weight: '58.32g (5 Tola)',
-    weightGrams: 58.32,
-    purity: '999.0',
-    spec: '5 Tola • 999.0',
-    metal: 'gold',
-    form: 'bar',
-    priceAED: 'AED 27,850.00',
-    numericPrice: 27850.0,
-    serialPrefix: 'SNMZ-05TT',
-    inStock: true,
-    badge: 'Dubai Benchmark',
-    description: '5 Tola (58.32g) 999.0 pure gold cast bar. Highly coveted for GCC physical delivery and portability.',
+    premium: 120,
+    featured: true,
+    description: '10 Tola (116.64g) 999.0 traditional TT cast bar. The premier bullion format of Dubai Gold Souk.',
   },
 
-  // ─── Gold Coins ────────────────────────────────────────────────────────────
-  {
-    id: 'gold-coin-maple-1oz',
-    name: '1oz Gold Maple Leaf',
-    subtitle: 'Royal Canadian Mint Coin',
-    brand: 'SNMZ Minted',
-    category: 'gold-coins',
-    weight: '31.1g (1oz)',
-    weightGrams: 31.1035,
-    purity: '999.9',
-    spec: '1oz • 999.9',
-    metal: 'gold',
-    form: 'coin',
-    priceAED: 'AED 15,120.00',
-    numericPrice: 15120.0,
-    serialPrefix: 'SNMZ-RCM1',
-    inStock: true,
-    badge: 'SNMZ Minted',
-    description: '1 Troy Ounce 99.99% pure gold bullion coin in airtight acrylic capsule with radial line security.',
-  },
-  {
-    id: 'gold-coin-britannia-1oz',
-    name: '1oz Gold Britannia',
-    subtitle: 'The Royal Mint UK Coin',
-    brand: 'SNMZ Minted',
-    category: 'gold-coins',
-    weight: '31.1g (1oz)',
-    weightGrams: 31.1035,
-    purity: '999.9',
-    spec: '1oz • 999.9',
-    metal: 'gold',
-    form: 'coin',
-    priceAED: 'AED 15,100.00',
-    numericPrice: 15100.0,
-    serialPrefix: 'SNMZ-BRIT',
-    inStock: true,
-    badge: 'SNMZ Minted',
-    description: '1 Troy Ounce 24K gold coin featuring modern anti-counterfeit holographic latent security elements.',
-  },
-  {
-    id: 'gold-coin-sovereign',
-    name: 'Full Sovereign Coin',
-    subtitle: 'British Gold Sovereign',
-    brand: 'Dubai Benchmark',
-    category: 'gold-coins',
-    weight: '7.98g',
-    weightGrams: 7.988,
-    purity: '916.7',
-    spec: '8g • 916.7 (22K)',
-    metal: 'gold',
-    form: 'coin',
-    priceAED: 'AED 3,550.00',
-    numericPrice: 3550.0,
-    serialPrefix: 'SNMZ-SOV',
-    inStock: true,
-    badge: 'Dubai Benchmark',
-    description: 'Historic 22K (916.7 purity) gold sovereign coin. Universally traded physical format across the Middle East.',
-  },
-  {
-    id: 'gold-coin-philharmonic-1oz',
-    name: '1oz Gold Philharmonic',
-    subtitle: 'Austrian Mint Bullion Coin',
-    brand: 'SNMZ Minted',
-    category: 'gold-coins',
-    weight: '31.1g (1oz)',
-    weightGrams: 31.1035,
-    purity: '999.9',
-    spec: '1oz • 999.9',
-    metal: 'gold',
-    form: 'coin',
-    priceAED: 'AED 15,080.00',
-    numericPrice: 15080.0,
-    serialPrefix: 'SNMZ-PHIL',
-    inStock: true,
-    badge: 'SNMZ Minted',
-    description: '1 Troy Ounce 999.9 fine gold European legal tender bullion coin sealed in security capsule.',
-  },
-
-  // ─── Silver Bars ───────────────────────────────────────────────────────────
+  // ─── Silver Bullion ────────────────────────────────────────────────────────
   {
     id: 'silver-bar-100g',
-    name: 'SNMZ Silver Bars',
-    subtitle: 'Minted Silver Bar',
+    title: 'Fine Silver Bar',
     brand: 'SNMZ Minted',
     category: 'silver-bars',
     weight: '100g',
@@ -342,17 +197,13 @@ export const BULLION_PRODUCTS = [
     spec: '100g • 999.0',
     metal: 'silver',
     form: 'bar',
-    priceAED: 'AED 645.00',
-    numericPrice: 645.0,
-    serialPrefix: 'SNMZ-AG100',
-    inStock: true,
-    badge: 'SNMZ Minted',
-    description: '100 Gram 999 fine silver minted ingot sealed in protective certipack with assay documentation.',
+    premium: 32,
+    featured: false,
+    description: '100 Gram 999 fine physical silver minted ingot with security packaging.',
   },
   {
     id: 'silver-bar-500g',
-    name: 'SNMZ Silver Bars',
-    subtitle: 'Cast Bullion Bar',
+    title: 'Fine Silver Bar',
     brand: 'Dubai Benchmark',
     category: 'silver-bars',
     weight: '500g',
@@ -361,17 +212,13 @@ export const BULLION_PRODUCTS = [
     spec: '500g • 999.0',
     metal: 'silver',
     form: 'bar',
-    priceAED: 'AED 3,180.00',
-    numericPrice: 3180.0,
-    serialPrefix: 'SNMZ-AG500',
-    inStock: true,
-    badge: 'Dubai Benchmark',
-    description: '500 Gram physical silver cast bar. Ideal intermediate denomination for precious metals portfolio balance.',
+    premium: 115,
+    featured: false,
+    description: '500 Gram investment-grade physical silver bar for portfolio allocation.',
   },
   {
     id: 'silver-bar-1kg',
-    name: 'SNMZ 1kg Silver Ingot',
-    subtitle: 'Kilogram Cast Ingot',
+    title: 'Fine Silver Cast Ingot',
     brand: 'Dubai Benchmark',
     category: 'silver-bars',
     weight: '1kg',
@@ -380,51 +227,56 @@ export const BULLION_PRODUCTS = [
     spec: '1kg • 999.0',
     metal: 'silver',
     form: 'bar',
-    priceAED: 'AED 6,280.00',
-    numericPrice: 6280.0,
-    serialPrefix: 'SNMZ-AG1KG',
-    inStock: true,
-    badge: 'Dubai Benchmark',
-    description: '1 Kilogram (1,000g) physical 999 fine silver cast ingot stamped with refinery serial number and hallmark.',
-  },
-
-  // ─── Silver Coins & Rounds ────────────────────────────────────────────────
-  {
-    id: 'silver-round-1oz',
-    name: '1oz Silver Round',
-    subtitle: 'SNMZ Bullion Round',
-    brand: 'SNMZ Minted',
-    category: 'silver-coins',
-    weight: '31.1g (1oz)',
-    weightGrams: 31.1035,
-    purity: '999.0',
-    spec: '1oz • 999.0',
-    metal: 'silver',
-    form: 'coin',
-    priceAED: 'AED 215.00',
-    numericPrice: 215.0,
-    serialPrefix: 'SNMZ-AGR1',
-    inStock: true,
-    badge: 'SNMZ Minted',
-    description: '1 Troy Ounce 999 pure fine silver bullion round in airtight protective acrylic capsule.',
-  },
-  {
-    id: 'silver-coin-britannia-1oz',
-    name: '1oz Silver Britannia',
-    subtitle: 'The Royal Mint UK Coin',
-    brand: 'SNMZ Minted',
-    category: 'silver-coins',
-    weight: '31.1g (1oz)',
-    weightGrams: 31.1035,
-    purity: '999.0',
-    spec: '1oz • 999.0',
-    metal: 'silver',
-    form: 'coin',
-    priceAED: 'AED 225.00',
-    numericPrice: 225.0,
-    serialPrefix: 'SNMZ-AGBR',
-    inStock: true,
-    badge: 'SNMZ Minted',
-    description: '1 Troy Ounce 999 fine silver bullion coin with micro-engraved security waves and latent image.',
+    premium: 150,
+    featured: true,
+    description: '1 Kilogram (1,000g) physical 999 fine silver cast ingot with refinery serial number.',
   },
 ];
+
+/**
+ * Calculates dynamic client-side live price in AED based on passed spot rates.
+ * No extra API calls triggered.
+ *
+ * Formula:
+ * productPrice = Math.round(weightInGrams * liveRate + premiumPerUnit)
+ *
+ * @param {typeof STANDARD_INVENTORY[0]} product
+ * @param {number} [liveGoldRate24k]
+ * @param {number} [liveSilverRate]
+ * @returns {number}
+ */
+export function calculateDynamicPrice(product, liveGoldRate24k = 480.09, liveSilverRate = 6.13) {
+  const isSilver = product.metal === 'silver';
+  const baseRate = isSilver ? (liveSilverRate || 6.13) : (liveGoldRate24k || 480.09);
+  const purityFraction = product.purity === '999.0' ? (isSilver ? 1 : 999.0 / 999.9) : 1;
+  const rawTotal = product.weightGrams * baseRate * purityFraction + (product.premium || 0);
+  return Math.round(rawTotal);
+}
+
+/**
+ * Formats a number as clean AED currency with comma separators and two decimals.
+ * e.g., 48009 => "AED 48,009.00"
+ *
+ * @param {number} amount
+ * @returns {string}
+ */
+export function formatCurrencyAED(amount) {
+  if (amount == null || !isFinite(amount)) return 'AED —';
+  return `AED ${amount.toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })}`;
+}
+
+/**
+ * Generates the direct WhatsApp enquiry URL matching the exact prompt specification:
+ * https://wa.me/971527549259?text=Hello%20SNMZ%20Bullion%20Desk,%20I%20would%20like%20to%20enquire%20about%20the%20live%20rate%20for%20[PRODUCT_TITLE]%20([WEIGHT])
+ *
+ * @param {string} productTitle
+ * @param {string} weight
+ * @returns {string}
+ */
+export function getProductWhatsAppUrl(productTitle, weight) {
+  const message = `Hello SNMZ Bullion Desk, I would like to enquire about the live rate for ${productTitle} (${weight})`;
+  return `https://wa.me/971527549259?text=${encodeURIComponent(message)}`;
+}
