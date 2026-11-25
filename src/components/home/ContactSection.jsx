@@ -102,10 +102,10 @@ export function ContactSection() {
 
               <div>
                 <p className="text-amber-400 text-xs uppercase tracking-widest font-mono mb-1 font-semibold">
-                  Trade Licence
+                  Settlement Desk
                 </p>
                 <p className="text-gray-300 text-xs font-mono font-bold">
-                  #{SiteConfig.tradeLicence}
+                  Deira Gold Souq Handover
                 </p>
                 <span className="text-[10px] text-white/50 block mt-0.5">Est. {SiteConfig.establishedYear} · Dubai</span>
               </div>

@@ -290,7 +290,7 @@ export function BullionShop({ liveGoldRate24k = 480.09, liveSilverRate = 6.13 })
               </div>
               <div>
                 <div className="font-heading font-bold text-xs sm:text-sm text-[#1A202C] leading-tight">
-                  DET Licensed #1531797
+                  DET Licensed Bullion Desk
                 </div>
                 <div className="text-[10px] sm:text-[11px] text-[#718096] font-mono mt-0.5">
                   Dubai Economic Authority

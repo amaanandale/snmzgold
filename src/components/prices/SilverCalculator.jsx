@@ -17,35 +17,35 @@ export function SilverCalculator({ rates = [] }) {
   const waUrl = getWhatsAppUrl('silverRates');
 
   return (
-    <section className="section-padding bg-emerald-light/20 border-t border-gold/15">
-      <div className="section-container max-w-4xl mx-auto">
+    <section className="py-12 sm:py-16 bg-[#F8F5EE] border-t border-[#E5D8B8]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         <div className="text-center mb-8">
-          <span className="text-gold text-xs font-mono uppercase tracking-widest block mb-1">
+          <span className="text-[#997300] text-xs font-mono uppercase tracking-widest font-bold block mb-1">
             Estimation Tool
           </span>
-          <h2 className="font-heading font-bold text-2xl sm:text-3xl text-white">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#1A202C]">
             Physical Silver Value Calculator
           </h2>
-          <p className="text-white/60 text-xs sm:text-sm mt-1">
+          <p className="text-[#4A5568] text-xs sm:text-sm mt-1 font-body">
             Calculate the indicative spot value of physical silver in UAE Dirhams (AED).
           </p>
         </div>
 
-        <div className="bg-emerald-dark/90 border border-gold/20 rounded-2xl p-6 sm:p-8 shadow-2xl">
+        <div className="bg-white border border-[#E5D8B8] rounded-2xl p-6 sm:p-8 shadow-sm">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
             {/* Purity selector */}
             <div>
-              <label htmlFor="silver-purity-select" className="block text-xs font-mono text-white/70 mb-2 uppercase">
+              <label htmlFor="silver-purity-select" className="block text-xs font-mono text-[#718096] mb-2 uppercase font-semibold">
                 Silver Purity / Grade
               </label>
               <select
                 id="silver-purity-select"
                 value={selectedPurity}
                 onChange={(e) => setSelectedPurity(e.target.value)}
-                className="w-full bg-emerald-light/40 border border-gold/25 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-gold"
+                className="w-full bg-[#F8F5EE] border border-[#E5D8B8] rounded-xl px-4 py-3 text-[#1A202C] text-sm focus:outline-none focus:border-[#D4AF37]"
               >
                 {rates.map((r) => (
-                  <option key={r.grade} value={r.grade} className="bg-emerald-dark text-white">
+                  <option key={r.grade} value={r.grade} className="bg-white text-[#1A202C]">
                     {r.label} ({r.purity})
                   </option>
                 ))}
@@ -54,7 +54,7 @@ export function SilverCalculator({ rates = [] }) {
 
             {/* Weight input */}
             <div>
-              <label htmlFor="silver-weight-input" className="block text-xs font-mono text-white/70 mb-2 uppercase">
+              <label htmlFor="silver-weight-input" className="block text-xs font-mono text-[#718096] mb-2 uppercase font-semibold">
                 Weight in Grams (g)
               </label>
               <div className="relative">
@@ -66,9 +66,9 @@ export function SilverCalculator({ rates = [] }) {
                   value={weight}
                   onChange={(e) => setWeight(e.target.value)}
                   placeholder="e.g. 1000"
-                  className="w-full bg-emerald-light/40 border border-gold/25 rounded-xl px-4 py-3 text-white font-mono text-sm focus:outline-none focus:border-gold"
+                  className="w-full bg-[#F8F5EE] border border-[#E5D8B8] rounded-xl px-4 py-3 text-[#1A202C] font-mono text-sm focus:outline-none focus:border-[#D4AF37]"
                 />
-                <span className="absolute right-4 top-3.5 text-xs text-white/40 font-mono">
+                <span className="absolute right-4 top-3.5 text-xs text-[#718096] font-mono">
                   Grams
                 </span>
               </div>
@@ -77,7 +77,7 @@ export function SilverCalculator({ rates = [] }) {
 
           {/* Quick preset buttons */}
           <div className="flex flex-wrap items-center gap-2 mb-8">
-            <span className="text-[11px] text-white/50 font-mono uppercase mr-1">Presets:</span>
+            <span className="text-[11px] text-[#718096] font-mono uppercase mr-1">Presets:</span>
             {[
               { label: '1 Troy Oz (31.1g)', val: '31.1035' },
               { label: '100g Bar', val: '100' },
@@ -88,7 +88,7 @@ export function SilverCalculator({ rates = [] }) {
                 key={preset.val}
                 type="button"
                 onClick={() => setWeight(preset.val)}
-                className="px-3 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-white/70 text-xs font-mono border border-white/10 transition-colors"
+                className="px-3 py-1 rounded-lg bg-[#F8F5EE] hover:bg-[#EFEAE0] text-[#1A202C] text-xs font-mono border border-[#E5D8B8] transition-colors"
               >
                 {preset.label}
               </button>
@@ -96,15 +96,15 @@ export function SilverCalculator({ rates = [] }) {
           </div>
 
           {/* Calculated Output Box */}
-          <div className="p-6 rounded-xl bg-emerald-light/30 border border-gold/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="p-6 rounded-xl bg-[#FAF8F3] border border-[#E5D8B8] flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-              <span className="text-xs uppercase font-mono text-gold tracking-wider block mb-1">
+              <span className="text-xs uppercase font-mono text-[#997300] font-bold tracking-wider block mb-1">
                 Estimated Spot Value (AED)
               </span>
-              <div className="font-heading font-bold text-2xl sm:text-3xl text-white">
+              <div className="font-heading font-extrabold text-2xl sm:text-3xl text-[#1A202C]">
                 {calculation.value != null ? formatAED(calculation.value) : '—'}
               </div>
-              <span className="text-[11px] text-white/50 block mt-1">
+              <span className="text-[11px] text-[#718096] font-mono block mt-1">
                 Spot rate:{' '}
                 {ratePerGram != null ? `${formatAED(ratePerGram)} / gram` : 'Unavailable'}
               </span>
@@ -114,7 +114,7 @@ export function SilverCalculator({ rates = [] }) {
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gold hover:bg-gold-light text-emerald-dark font-body font-semibold text-xs uppercase tracking-wider text-center transition-all shadow-md"
+              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] text-[#0B0F17] font-body font-bold text-xs uppercase tracking-wider text-center transition-all shadow-md"
             >
               Enquire Live Silver Rate
             </a>

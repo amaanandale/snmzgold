@@ -10,7 +10,7 @@
 export function TrustBadgesRow({ className = '' }) {
   const badges = [
     {
-      title: 'DET Licensed #1531797',
+      title: 'DET Licensed Bullion House',
       subtitle: 'Dubai Economic Authority',
       icon: <ShieldCheckIcon />,
     },

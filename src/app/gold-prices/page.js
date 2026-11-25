@@ -41,25 +41,24 @@ export default async function GoldPricesPage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="bg-emerald-dark">
-
-        {/* Compact page header — rates visible without scrolling */}
+      <main id="main-content" className="bg-[#F8F5EE] text-[#1A202C] min-h-screen selection:bg-[#D4AF37]/30 selection:text-[#0B0F17]">
+        {/* Compact page header — luxury champagne styling */}
         <section
-          className="pt-28 pb-6 bg-hero-gradient border-b border-gold/10"
+          className="pt-24 sm:pt-28 pb-8 bg-white border-b border-[#E5D8B8]"
           aria-labelledby="prices-page-heading"
         >
-          <div className="section-container">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
               <div>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-6 h-px bg-gold/60" aria-hidden="true" />
-                  <span className="text-gold/70 text-xs font-body font-semibold uppercase tracking-[0.2em]">
-                    Live Rates · AED
+                <div className="flex items-center gap-3 mb-2.5">
+                  <div className="w-6 h-0.5 bg-[#D4AF37]" aria-hidden="true" />
+                  <span className="text-[#997300] text-xs font-mono font-bold uppercase tracking-[0.2em]">
+                    Live Rates · AED Spot Benchmark
                   </span>
                 </div>
                 <h1
                   id="prices-page-heading"
-                  className="font-display text-3xl sm:text-4xl text-white"
+                  className="font-heading font-extrabold text-3xl sm:text-4xl text-[#1A202C]"
                 >
                   Gold Rates in Dubai
                 </h1>
@@ -68,17 +67,17 @@ export default async function GoldPricesPage() {
               <div className="flex flex-col items-start sm:items-end gap-1">
                 <div className="flex items-center gap-2">
                   <span
-                    className={`w-2 h-2 rounded-full ${isLive ? 'bg-green-400 animate-pulse' : 'bg-white/20'}`}
+                    className={`w-2 h-2 rounded-full ${isLive ? 'bg-emerald-500 animate-pulse' : 'bg-slate-300'}`}
                     aria-hidden="true"
                   />
-                  <span className="text-white/45 text-xs font-body">
+                  <span className="text-[#4A5568] text-xs font-mono">
                     {isLive && formattedDate
-                      ? `Updated ${formattedDate} (Dubai)`
-                      : 'Rates not connected'}
+                      ? `Updated ${formattedDate} (Dubai GST)`
+                      : 'Rates connecting…'}
                   </span>
                 </div>
-                <span className="text-white/25 text-xs font-body italic">
-                  Indicative spot rates · AED / gram · Not a trade offer
+                <span className="text-[#718096] text-[11px] font-mono italic">
+                  Indicative spot rates · AED / gram · Physical handover in Deira
                 </span>
               </div>
             </div>
@@ -95,9 +94,9 @@ export default async function GoldPricesPage() {
         {/* Rates table */}
         <RatesTable rates={ratesData.rates} status={ratesData.status} />
 
-        {/* Refresh */}
-        <div className="bg-emerald-dark py-5 border-t border-gold/10">
-          <div className="section-container flex justify-center">
+        {/* Refresh button */}
+        <div className="bg-[#F8F5EE] py-5 border-t border-[#E5D8B8]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
             <PricesRefreshButton />
           </div>
         </div>
@@ -105,45 +104,47 @@ export default async function GoldPricesPage() {
         {/* Calculator */}
         <GoldCalculator rates={ratesData.rates} />
 
-        {/* Simple enquiry CTA — replaces removed PricesEnquiryCTA + PricesDisclaimer */}
-        <section className="section-padding bg-emerald border-t border-gold/15">
-          <div className="section-container max-w-3xl">
+        {/* Simple enquiry CTA */}
+        <section className="py-14 sm:py-16 bg-white border-t border-[#E5D8B8]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
               <div>
-                <h2 className="font-display text-2xl sm:text-3xl text-white mb-3">
-                  Trade Gold with <span className="text-gradient-gold">SNMZ</span>
+                <span className="text-[#997300] text-xs font-mono font-bold uppercase tracking-widest block mb-1">
+                  DEIRA TRADING DESK
+                </span>
+                <h2 className="font-heading font-bold text-2xl sm:text-3xl text-[#1A202C] mb-3">
+                  Trade Bullion with <span className="text-[#997300]">SNMZ</span>
                 </h2>
-                <p className="text-white/60 font-body text-sm leading-relaxed mb-6">
-                  SNMZ Gold & Diamonds deals in gold TT bars and precious metals for institutional and corporate buyers in the UAE and internationally. Rates shown are indicative — contact us to discuss verified trading rates, quantities, and settlement terms.
+                <p className="text-[#4A5568] font-body text-xs sm:text-sm leading-relaxed mb-6">
+                  SNMZ Gold &amp; Diamonds deals in certified gold TT bars and wholesale precious metals for institutional, corporate, and private buyers in Dubai. Rates shown are indicative — connect with our desk for verified lock-in rates and immediate Al Dhagaya settlement.
                 </p>
                 <a
                   href={getWhatsAppUrl('goldRates')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-gold-gradient text-emerald-dark rounded-lg text-sm font-body font-semibold hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#D4AF37] hover:bg-[#E5C158] text-[#0B0F17] rounded-xl text-xs sm:text-sm font-body font-bold uppercase tracking-wider shadow-md transition-all"
                 >
                   Enquire Gold Rates on WhatsApp
                 </a>
               </div>
-              <div className="bg-white/5 border border-gold/15 rounded-xl p-5 space-y-3">
-                <p className="text-gold text-xs uppercase tracking-widest font-body font-semibold">Rate Disclaimer</p>
+              <div className="bg-[#F8F5EE] border border-[#E5D8B8] rounded-2xl p-6 space-y-3 shadow-xs">
+                <p className="text-[#997300] text-xs uppercase tracking-widest font-mono font-bold">Trading Governance</p>
                 {[
-                  'Rates derived from live XAU/AED international spot data.',
-                  'Rates are indicative only — not a trade offer or guaranteed price.',
-                  'Retail prices include making charges, VAT (5%), and other fees.',
-                  'Always confirm final pricing directly with your trading counterparty.',
-                  'Not investment or financial advice. Consult a UAE-licensed advisor.',
+                  'Rates derived from live XAU/AED international spot benchmarks.',
+                  'Rates are indicative only — spot lock occurs at counterparty order confirmation.',
+                  'Physical 999.9 investment gold bars are 0% VAT under UAE Federal Tax Law.',
+                  'Immediate counterparty assay verification and handover in Al Dhagaya, Deira.',
+                  'Documented AML/KYC adherence with statutory compliance.',
                 ].map((point) => (
                   <div key={point} className="flex gap-2.5 items-start">
-                    <span className="text-gold/40 mt-0.5 flex-shrink-0" aria-hidden="true">◆</span>
-                    <p className="text-white/50 text-xs font-body leading-relaxed">{point}</p>
+                    <span className="text-[#997300] font-bold text-xs mt-0.5 shrink-0" aria-hidden="true">◆</span>
+                    <p className="text-[#4A5568] text-xs font-mono leading-relaxed">{point}</p>
                   </div>
                 ))}
               </div>
             </div>
           </div>
         </section>
-
       </main>
       <Footer />
     </>

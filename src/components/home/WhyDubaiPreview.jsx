@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { getWhatsAppUrl } from '@/lib/whatsapp';
 
@@ -5,15 +6,14 @@ import { getWhatsAppUrl } from '@/lib/whatsapp';
  * Homepage — "Why Dubai Leads the Global Gold Market" section.
  *
  * Implements:
- * - Removed all generic gold bar icons
- * - Prominent stylized UAE flag emblem badge (Red #FF0000, Green #00732F, White #FFFFFF, Black #000000) inside a metallic gold-bordered circle
- * - Headline: "Why Dubai Leads the Global Gold Market"
- * - 4 concise pillar cards:
- *   1. 0% Customs Duty
- *   2. Al Dhagaya Souq Settlement
- *   3. Global DXB Logistics
- *   4. UAE Central Bank/Assay Standards
- * - Fully responsive, dark luxury aesthetic
+ * - Real photographic visual cards:
+ *   1. Dubai Gold Souq Trading Floor (/images/hero-gold-bars.jpg)
+ *   2. Automated Vault Storage (/images/products/gold-kilo-bar.jpg)
+ *   3. DXB Secure Air Transit (/images/products/gold-minted-bar.jpg)
+ *   4. Assay Testing Laboratories (/images/gold-bar-close.jpg)
+ * - Prominent circular UAE flag emblem badge with metallic gold ring
+ * - Responsive 4-column desktop (lg:grid-cols-4), 2-column tablet/mobile (grid-cols-1 sm:grid-cols-2)
+ * - Dark luxury aesthetic matching homepage (#0B0F17, #111622, #161C26)
  */
 export function WhyDubaiPreview() {
   const whyDubaiWaUrl = getWhatsAppUrl('whyDubai');
@@ -21,8 +21,11 @@ export function WhyDubaiPreview() {
   const pillars = [
     {
       step: '01',
-      title: '0% Customs Duty',
+      title: '0% Customs Duty & Tariffs',
       badge: 'Zero Tariffs',
+      image: '/images/hero-gold-bars.jpg',
+      imageAlt: 'Dubai Gold Souq physical bullion trading floor and treasury bars',
+      caption: 'Gold Souq Trading Floor',
       description:
         'Zero import and export tariffs on 999.9 investment gold and silver bars, providing institutional counterparties and private investors with true global spot parity.',
     },
@@ -30,20 +33,29 @@ export function WhyDubaiPreview() {
       step: '02',
       title: 'Al Dhagaya Souq Settlement',
       badge: 'Physical Handover',
+      image: '/images/products/gold-kilo-bar.jpg',
+      imageAlt: 'High-security automated bullion vault storage in Dubai',
+      caption: 'Automated Vault Storage',
       description:
         'Immediate physical counterparty handover, assay verification, and wire settlement executed at our Gold Souq trading desk in the historic heart of Deira, Dubai.',
     },
     {
       step: '03',
-      title: 'Global DXB Logistics',
+      title: 'Global DXB Air Transit',
       badge: 'Airside Transit',
+      image: '/images/products/gold-minted-bar.jpg',
+      imageAlt: 'DXB secure international air cargo logistics corridor',
+      caption: 'DXB Secure Air Transit',
       description:
         'Direct airside connectivity via DXB air cargo corridors and institutional high-security vaulting depositories, connecting international refiners with Gulf markets.',
     },
     {
       step: '04',
-      title: 'UAE Central Bank/Assay Standards',
+      title: 'Central Bank Assay Standards',
       badge: 'Federal Compliance',
+      image: '/images/gold-bar-close.jpg',
+      imageAlt: 'Certified metallurgical assay testing laboratory and hallmark verification',
+      caption: 'Assay Testing Laboratories',
       description:
         'Full statutory compliance under UAE Ministry of Economy frameworks, verified hallmarking, and registered goAML reporting for every physical bar traded.',
     },
@@ -108,39 +120,62 @@ export function WhyDubaiPreview() {
           </p>
         </div>
 
-        {/* 4 Concise Pillar Cards (Zero generic gold icons) */}
+        {/* 4 Photographic Visual Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-10">
           {pillars.map((card) => (
             <div
               key={card.step}
-              className="bg-[#161C26] border border-[#252F3F] hover:border-amber-400/50 rounded-2xl p-5 sm:p-6 transition-all duration-300 flex flex-col justify-between shadow-sm group hover:shadow-[0_8px_30px_rgba(212,175,55,0.08)] hover:-translate-y-0.5"
+              className="bg-[#161C26] border border-[#252F3F] hover:border-amber-400/50 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-sm group hover:shadow-[0_8px_30px_rgba(212,175,55,0.08)] hover:-translate-y-1"
             >
               <div>
-                {/* Step number & Badge */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono font-bold text-amber-400/70 group-hover:text-amber-400 transition-colors">
-                    {card.step}
-                  </span>
-                  <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/25">
-                    {card.badge}
-                  </span>
+                {/* Photographic Container */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#0B0F17]">
+                  <Image
+                    src={card.image}
+                    alt={card.imageAlt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90 contrast-105"
+                  />
+                  {/* Subtle dark gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#161C26] via-[#161C26]/30 to-transparent" />
+
+                  {/* Top Floating Badge & Step */}
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-mono font-semibold uppercase tracking-wider text-amber-300 bg-[#0B0F17]/80 backdrop-blur-md border border-amber-400/30">
+                      {card.badge}
+                    </span>
+                    <span className="font-mono text-xs font-bold text-white/80 bg-[#0B0F17]/80 backdrop-blur-md px-2 py-0.5 rounded border border-white/10">
+                      {card.step}
+                    </span>
+                  </div>
+
+                  {/* Bottom Image Caption */}
+                  <div className="absolute bottom-2 left-3 right-3">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-amber-400/90 font-semibold drop-shadow-sm">
+                      {card.caption}
+                    </span>
+                  </div>
                 </div>
 
-                {/* Card Title */}
-                <h3 className="font-heading font-bold text-base sm:text-lg text-white group-hover:text-amber-400 transition-colors mb-2.5 leading-snug">
-                  {card.title}
-                </h3>
+                {/* Content Details */}
+                <div className="p-5 sm:p-6">
+                  {/* Card Title */}
+                  <h3 className="font-heading font-bold text-base sm:text-lg text-white group-hover:text-amber-400 transition-colors mb-2.5 leading-snug">
+                    {card.title}
+                  </h3>
 
-                {/* Card Description */}
-                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-body">
-                  {card.description}
-                </p>
+                  {/* Card Description */}
+                  <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-body">
+                    {card.description}
+                  </p>
+                </div>
               </div>
 
-              {/* Bottom subtle indicator */}
-              <div className="pt-4 mt-4 border-t border-[#252F3F]/60 flex items-center justify-between text-[11px] font-mono text-white/40 group-hover:text-amber-400/80 transition-colors">
+              {/* Bottom indicator */}
+              <div className="px-5 sm:px-6 pb-5 pt-3 border-t border-[#252F3F]/60 flex items-center justify-between text-[11px] font-mono text-white/40 group-hover:text-amber-400/80 transition-colors">
                 <span>Dubai Trading Standard</span>
-                <span className="group-hover:translate-x-0.5 transition-transform">→</span>
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
               </div>
             </div>
           ))}

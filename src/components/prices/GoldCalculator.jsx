@@ -6,6 +6,7 @@ import { getWhatsAppUrl } from '@/lib/whatsapp';
 
 /**
  * Interactive gold value calculator.
+ * Luxury Champagne/Beige Theme.
  * Client Component — handles purity selection, weight input, live calculation.
  *
  * @param {{ rates: import('@/lib/goldRates').PurityRate[] }} props
@@ -40,58 +41,60 @@ export function GoldCalculator({ rates }) {
 
   return (
     <section
-      className="section-padding bg-emerald"
+      className="py-12 sm:py-16 bg-[#F8F5EE]"
       aria-labelledby="calc-heading"
     >
-      <div className="section-container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
           {/* Left — heading + explainer */}
           <div className="flex flex-col gap-5">
-            <span className="section-label">Gold Calculator</span>
-            <h2
-              id="calc-heading"
-              className="font-display text-3xl sm:text-4xl text-white leading-tight"
-            >
-              Estimate Your Gold Value
-            </h2>
-            <div className="gold-rule" />
-            <p className="text-white/65 font-body leading-relaxed">
-              Select a gold purity and enter a weight in grams to see an indicative
-              value based on the available rate.
+            <div>
+              <span className="text-[#997300] text-xs font-mono font-bold uppercase tracking-widest block mb-1">
+                Value Estimator
+              </span>
+              <h2
+                id="calc-heading"
+                className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#1A202C] leading-tight"
+              >
+                Estimate Your Gold Value
+              </h2>
+              <div className="w-12 h-0.5 bg-[#D4AF37] mt-3" />
+            </div>
+
+            <p className="text-[#4A5568] font-body text-sm sm:text-base leading-relaxed">
+              Select a gold purity benchmark and enter the total weight in grams to calculate an immediate indicative spot value in UAE Dirhams (AED).
             </p>
 
             {/* Disclaimer box */}
-            <div className="card-dark mt-2">
-              <h3 className="text-gold text-xs uppercase tracking-widest font-body font-semibold mb-3">
-                Important Notice
+            <div className="bg-white border border-[#E5D8B8] rounded-2xl p-6 shadow-sm">
+              <h3 className="text-[#997300] text-xs uppercase tracking-widest font-mono font-bold mb-3">
+                Trading Desk Guidance
               </h3>
-              <ul className="space-y-2 text-white/55 text-sm font-body leading-relaxed">
+              <ul className="space-y-2.5 text-[#4A5568] text-xs sm:text-sm font-body leading-relaxed">
                 <li className="flex gap-2">
-                  <span className="text-gold/60 mt-0.5" aria-hidden="true">·</span>
-                  This estimate is <strong className="text-white/75">indicative only</strong>
-                  {' '}and not a trade offer or guaranteed price.
+                  <span className="text-[#997300] font-bold" aria-hidden="true">·</span>
+                  <span>This estimate is <strong className="text-[#1A202C]">indicative only</strong> based on live benchmark spot feeds.</span>
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-gold/60 mt-0.5" aria-hidden="true">·</span>
-                  Making charges, VAT (5%), stones and other fees are <strong className="text-white/75">not included</strong>.
+                  <span className="text-[#997300] font-bold" aria-hidden="true">·</span>
+                  <span>Physical bullion bars (999.9 fine) are exempt from 5% VAT under UAE Federal tax regulations.</span>
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-gold/60 mt-0.5" aria-hidden="true">·</span>
-                  Retail jewellery prices in the UAE may differ significantly from gold spot rates.
+                  <span className="text-[#997300] font-bold" aria-hidden="true">·</span>
+                  <span>Retail jewellery may incur fabrication making charges and statutory retail duties.</span>
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-gold/60 mt-0.5" aria-hidden="true">·</span>
-                  Contact SNMZ for actual B2B trading rates and terms.
+                  <span className="text-[#997300] font-bold" aria-hidden="true">·</span>
+                  <span>Direct settlement is executed at our trading desk in Al Dhagaya, Deira.</span>
                 </li>
               </ul>
             </div>
           </div>
 
           {/* Right — calculator form */}
-          <div className="card-dark">
-            <h3 className="text-white font-display font-semibold text-lg mb-6">
-              Calculator
+          <div className="bg-white border border-[#E5D8B8] rounded-2xl p-6 sm:p-8 shadow-sm">
+            <h3 className="text-[#1A202C] font-heading font-bold text-lg mb-6">
+              Live Calculation Tool
             </h3>
 
             <form
@@ -101,7 +104,7 @@ export function GoldCalculator({ rates }) {
             >
               {/* Purity selector */}
               <fieldset className="mb-6">
-                <legend className="text-gold/80 text-xs font-body font-semibold uppercase tracking-widest mb-3">
+                <legend className="text-[#718096] text-xs font-mono font-semibold uppercase tracking-widest mb-3">
                   Select Purity
                 </legend>
                 <div
@@ -123,21 +126,21 @@ export function GoldCalculator({ rates }) {
                           setSelectedKarat(rate.karat);
                           setTouched(false);
                         }}
-                        className={`relative rounded-xl py-3 px-2 text-center transition-all duration-200 border focus-visible:ring-2 focus-visible:ring-gold ${
+                        className={`relative rounded-xl py-3 px-2 text-center transition-all duration-200 border focus-visible:ring-2 focus-visible:ring-[#D4AF37] ${
                           isSelected
-                            ? 'bg-gold border-gold text-emerald-dark shadow-gold'
-                            : 'bg-white/5 border-white/10 text-white/70 hover:border-gold/40 hover:text-white'
+                            ? 'bg-[#D4AF37] border-[#D4AF37] text-[#0B0F17] shadow-sm font-bold'
+                            : 'bg-[#F8F5EE] border-[#E5D8B8] text-[#1A202C] hover:border-[#D4AF37]'
                         }`}
                       >
-                        <span className="block font-display font-bold text-base leading-tight">
+                        <span className="block font-heading font-bold text-base leading-tight">
                           {rate.karat}
                         </span>
-                        <span className="block text-xs font-body opacity-70 leading-tight mt-0.5">
+                        <span className="block text-[10px] font-mono opacity-80 leading-tight mt-0.5">
                           {rate.purityLabel}
                         </span>
                         {!hasRate && (
                           <span
-                            className="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-white/25"
+                            className="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-slate-300"
                             aria-hidden="true"
                             title="Rate unavailable"
                           />
@@ -152,7 +155,7 @@ export function GoldCalculator({ rates }) {
               <div className="mb-6">
                 <label
                   htmlFor={`${formId}-weight`}
-                  className="block text-gold/80 text-xs font-body font-semibold uppercase tracking-widest mb-2"
+                  className="block text-[#718096] text-xs font-mono font-semibold uppercase tracking-widest mb-2"
                 >
                   Weight (grams)
                 </label>
@@ -172,14 +175,14 @@ export function GoldCalculator({ rates }) {
                     onBlur={() => setTouched(true)}
                     aria-describedby={showWeightError ? `${formId}-weight-error` : `${formId}-weight-hint`}
                     aria-invalid={showWeightError}
-                    className={`w-full bg-white/5 border rounded-xl px-4 py-3.5 text-white font-body text-base placeholder-white/25 focus:outline-none focus:ring-2 focus:ring-gold transition-colors duration-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none ${
+                    className={`w-full bg-[#F8F5EE] border rounded-xl px-4 py-3.5 text-[#1A202C] font-mono text-base placeholder-[#A0AEC0] focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition-colors duration-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none ${
                       showWeightError
-                        ? 'border-red-400/50 focus:ring-red-400/50'
-                        : 'border-white/15 focus:border-gold/50'
+                        ? 'border-red-400 focus:ring-red-400'
+                        : 'border-[#E5D8B8] focus:border-[#D4AF37]'
                     }`}
                   />
                   <span
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-white/35 text-sm font-body"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-[#718096] text-sm font-mono font-semibold"
                     aria-hidden="true"
                   >
                     g
@@ -188,17 +191,17 @@ export function GoldCalculator({ rates }) {
                 {showWeightError ? (
                   <p
                     id={`${formId}-weight-error`}
-                    className="mt-2 text-red-400/80 text-xs font-body"
+                    className="mt-2 text-red-600 text-xs font-mono"
                     role="alert"
                   >
-                    Please enter a positive number (e.g. 10 or 0.5).
+                    Please enter a positive weight (e.g. 10 or 0.5).
                   </p>
                 ) : (
                   <p
                     id={`${formId}-weight-hint`}
-                    className="mt-2 text-white/30 text-xs font-body"
+                    className="mt-2 text-[#718096] text-xs font-mono"
                   >
-                    Enter the gold weight in grams.
+                    Enter weight in grams (e.g., 100g, 116.64g for 10 Tola, or 1000g).
                   </p>
                 )}
               </div>
@@ -207,21 +210,21 @@ export function GoldCalculator({ rates }) {
               <div
                 className={`rounded-xl border p-5 mb-5 transition-all duration-300 ${
                   showResult
-                    ? 'border-gold/35 bg-gold/10'
-                    : 'border-white/10 bg-white/5'
+                    ? 'border-[#D4AF37] bg-[#FAF8F3] shadow-xs'
+                    : 'border-[#E5D8B8] bg-[#F8F5EE]'
                 }`}
                 aria-live="polite"
                 aria-atomic="true"
               >
-                <p className="text-white/40 text-xs font-body uppercase tracking-widest mb-2">
-                  Indicative Value
+                <p className="text-[#718096] text-xs font-mono uppercase tracking-widest mb-1.5">
+                  Indicative Spot Value
                 </p>
                 {showResult ? (
                   <>
-                    <p className="font-display font-bold text-3xl text-gold leading-tight">
+                    <p className="font-display font-bold text-3xl text-[#997300] leading-tight">
                       {formatAED(calcValue)}
                     </p>
-                    <p className="text-white/40 text-xs font-body mt-2 mb-3">
+                    <p className="text-[#718096] text-xs font-mono mt-1.5 mb-3.5">
                       {weight}g of {selectedKarat} ({selectedRate?.purityLabel}) ×{' '}
                       {formatAED(selectedRate.perGram)}/g
                     </p>
@@ -229,13 +232,13 @@ export function GoldCalculator({ rates }) {
                       href={getWhatsAppUrl('goldRates')}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1.5 w-full py-2 px-3 rounded-lg bg-gold text-emerald-dark font-body font-semibold text-xs transition-opacity hover:opacity-95"
+                      className="inline-flex items-center justify-center gap-1.5 w-full py-2.5 px-4 rounded-lg bg-[#D4AF37] hover:bg-[#E5C158] text-[#0B0F17] font-body font-bold text-xs uppercase tracking-wider transition-all shadow-md"
                     >
                       Enquire Current Rate on WhatsApp
                     </a>
                   </>
                 ) : (
-                  <p className="font-display text-2xl text-white/20">
+                  <p className="font-display text-xl text-[#A0AEC0]">
                     {!rateAvailable
                       ? 'Rate unavailable for this purity'
                       : weightInput === ''
@@ -249,7 +252,7 @@ export function GoldCalculator({ rates }) {
               <button
                 type="button"
                 onClick={handleReset}
-                className="w-full text-center text-white/40 hover:text-gold text-sm font-body transition-colors duration-200 py-2"
+                className="w-full text-center text-[#718096] hover:text-[#1A202C] text-xs font-mono transition-colors duration-200 py-1"
               >
                 Reset calculator
               </button>

@@ -81,8 +81,8 @@ export function TrustStandardsSection() {
             <div className="bg-[#161C26] border border-[#252F3F] rounded-2xl p-6 mb-8 shadow-sm">
               <div className="grid grid-cols-2 gap-4 pb-4 border-b border-white/10 font-mono text-xs">
                 <div>
-                  <span className="text-white/40 block text-[10px] uppercase">UAE Trade Licence</span>
-                  <span className="text-amber-400 font-bold text-sm sm:text-base">#{SiteConfig.tradeLicence}</span>
+                  <span className="text-white/40 block text-[10px] uppercase">Governance &amp; Authority</span>
+                  <span className="text-amber-400 font-bold text-sm sm:text-base">Dubai Registered Bullion Desk</span>
                 </div>
                 <div>
                   <span className="text-white/40 block text-[10px] uppercase">Established</span>

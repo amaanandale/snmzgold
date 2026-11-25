@@ -150,7 +150,7 @@ export default async function HomePage() {
       </main>
 
       {/* 10. Clean Footer with Verified Details */}
-      <Footer />
+      <Footer isDarkHome={true} />
     </>
   );
 }

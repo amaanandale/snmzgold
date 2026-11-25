@@ -193,22 +193,16 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
               </div>
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-3 w-full lg:w-auto">
-              <Link
-                href="/silver-prices"
-                className="flex-1 sm:flex-initial text-center px-5 py-2.5 rounded-xl bg-slate-200 hover:bg-white text-[#0B0F17] font-body font-semibold text-xs tracking-wider uppercase transition-all shadow-md"
-              >
-                View Silver Rates
-              </Link>
+            {/* CTA */}
+            <div className="w-full lg:w-auto">
               <a
                 href={silverHomepageWaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="whitespace-nowrap inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400/15 hover:bg-amber-400 text-amber-400 hover:text-[#0B0F17] border border-amber-400/30 text-xs font-body font-semibold transition-all"
+                className="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-[#D4AF37] hover:bg-[#E5C158] text-[#0B0F17] font-body font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 whitespace-nowrap shadow-md transition-all"
               >
-                <WhatsAppIcon className="w-3.5 h-3.5 shrink-0" />
-                <span>Enquire Silver on WhatsApp</span>
+                <WhatsAppIcon className="w-4 h-4 shrink-0 fill-current text-[#0B0F17]" />
+                <span>Enquire Now</span>
               </a>
             </div>
           </div>

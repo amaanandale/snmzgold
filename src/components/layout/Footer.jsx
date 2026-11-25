@@ -15,12 +15,19 @@ import { getWhatsAppUrl } from '@/lib/whatsapp';
  * - Mobile View: Stacks vertically with clear left alignment (text-left items-start), zero centered misalignment.
  * - Cleaned up: Removed bulky registration paragraphs & legal boilerplate. Discreet single-line bottom copyright.
  */
-export function Footer() {
+export function Footer({ isDarkHome = false }) {
   const currentYear = new Date().getFullYear();
   const waUrl = getWhatsAppUrl('contact');
 
   return (
-    <footer className="bg-[#0B0F17] border-t border-[#252F3F] w-full max-w-full overflow-hidden text-left" role="contentinfo">
+    <footer
+      className={`w-full max-w-full overflow-hidden text-left ${
+        isDarkHome
+          ? 'bg-[#06090E] border-t-2 border-[#1E2633]'
+          : 'bg-[#0B0F17] border-t border-[#252F3F]'
+      }`}
+      role="contentinfo"
+    >
       {/* Main footer content container */}
       <div className="section-container py-12 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 text-left items-start">
@@ -144,7 +151,13 @@ export function Footer() {
       </div>
 
       {/* ── Discreet Single-Line Bottom Copyright ──────────────────────────── */}
-      <div className="border-t border-[#252F3F] bg-[#070A0F]">
+      <div
+        className={`${
+          isDarkHome
+            ? 'border-t border-[#1E2633] bg-[#04060A]'
+            : 'border-t border-[#252F3F] bg-[#070A0F]'
+        }`}
+      >
         <div className="section-container py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-xs text-white/50 font-body text-left">
           <p className="text-left">
             &copy; {currentYear} SNMZ Gold &amp; Diamonds. All rights reserved.
