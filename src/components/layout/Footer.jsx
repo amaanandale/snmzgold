@@ -1,23 +1,28 @@
 import Link from 'next/link';
 import { SiteConfig } from '@/config/site';
 import { LogoIcon } from '@/components/ui/LogoIcon';
-import { getWhatsAppUrl } from '@/lib/whatsapp';
+import { getWhatsAppUrl, getOfficePhoneUrl } from '@/lib/whatsapp';
 
 /**
- * Footer Component — Aligned like Tora Bullion.
+ * Footer Component — Aligned with Tora Bullion Mobile & Desktop Architecture.
  *
  * Implements:
- * - 4 clean left-aligned columns:
- *   * Col 1 (Brand): "SNMZ Gold & Diamonds", tagline "Licensed precious metals & physical bullion trading desk in Dubai."
- *   * Col 2 (Bullion): "Gold Bars (24K)", "10 Tola TT Bars", "Silver Bullion (999)", "Minted Coins", "Shop Catalogue".
- *   * Col 3 (Live Rates): "Gold Spot Rate (AED)", "Silver Spot Rate (AED)", "Why Dubai?", "Buyback Policy".
- *   * Col 4 (Trading Desk): Office location (F03, Al Fadan Building, Al Dhagaya, Deira, Dubai), WhatsApp desk (+971 52 754 9259), Hours (Mon–Sat: 9:00 AM – 7:00 PM GST).
- * - Mobile View: Stacks vertically with clear left alignment (text-left items-start), zero centered misalignment.
- * - Cleaned up: Removed bulky registration paragraphs & legal boilerplate. Discreet single-line bottom copyright.
+ * - Mobile Format:
+ *   * Top brand block: Official logo + established description + row of 4 rounded social icon buttons
+ *   * 2-Column Grid: QUICK LINKS (left) and OUR LOCATIONS (right, with gold map pin icons)
+ *   * Dedicated CONTACT Block: WhatsApp, Email, and Open Hours with gold outline icons
+ * - Desktop Format (lg:grid-cols-4):
+ *   * Col 1: Brand, established year, description, social icons
+ *   * Col 2: Quick Links
+ *   * Col 3: Our Locations (Dubai Trading Office & Gold Souq Handover)
+ *   * Col 4: Contact (WhatsApp, Email, Open Hours)
+ * - Single-line minimal bottom copyright: "© 2026 SNMZ Gold & Diamonds. All rights reserved."
+ * - Segregated dark theme support for homepage (`isDarkHome`)
  */
 export function Footer({ isDarkHome = false }) {
   const currentYear = new Date().getFullYear();
   const waUrl = getWhatsAppUrl('contact');
+  const officePhone = getOfficePhoneUrl();
 
   return (
     <footer
@@ -30,8 +35,8 @@ export function Footer({ isDarkHome = false }) {
     >
       {/* Main footer content container */}
       <div className="section-container py-12 lg:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 text-left items-start">
-          {/* ── Col 1: Brand ────────────────────────────────────────────────── */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-10 text-left items-start">
+          {/* ── Col 1: Brand & Socials ────────────────────────────────────────── */}
           <div className="flex flex-col items-start text-left">
             <Link
               href="/"
@@ -41,109 +46,220 @@ export function Footer({ isDarkHome = false }) {
               <LogoIcon size="md" className="hover:opacity-95 transition-opacity" />
             </Link>
 
-            <h3 className="font-heading font-bold text-base text-white tracking-tight mb-1.5">
-              SNMZ Gold &amp; Diamonds
-            </h3>
+            <div className="w-12 h-0.5 bg-[#D4AF37]/50 mb-3" />
 
-            <p className="text-gray-400 text-xs sm:text-sm leading-relaxed max-w-xs font-body">
-              Licensed precious metals &amp; physical bullion trading desk in Dubai.
+            <p className="text-gray-300 text-xs sm:text-sm leading-relaxed max-w-xs font-body mb-5">
+              Established in {SiteConfig.establishedYear || '2025'} in Dubai. Certified gold &amp; silver bullion with expert investment guidance and competitive pricing.
             </p>
+
+            {/* Social Media Buttons Row */}
+            <div className="flex items-center gap-2.5">
+              <a
+                href={SiteConfig.social?.instagram || 'https://instagram.com'}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="w-10 h-10 rounded-xl border border-[#252F3F] bg-[#161C26] hover:border-[#D4AF37] hover:bg-[#1C2330] flex items-center justify-center text-[#D4AF37] transition-all shadow-xs"
+              >
+                <InstagramIcon />
+              </a>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="w-10 h-10 rounded-xl border border-[#252F3F] bg-[#161C26] hover:border-[#D4AF37] hover:bg-[#1C2330] flex items-center justify-center text-[#D4AF37] transition-all shadow-xs"
+              >
+                <FacebookIcon />
+              </a>
+              <a
+                href={SiteConfig.social?.twitter || 'https://x.com'}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X (formerly Twitter)"
+                className="w-10 h-10 rounded-xl border border-[#252F3F] bg-[#161C26] hover:border-[#D4AF37] hover:bg-[#1C2330] flex items-center justify-center text-[#D4AF37] transition-all shadow-xs"
+              >
+                <XIcon />
+              </a>
+              <a
+                href={SiteConfig.social?.linkedin || 'https://linkedin.com'}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-10 h-10 rounded-xl border border-[#252F3F] bg-[#161C26] hover:border-[#D4AF37] hover:bg-[#1C2330] flex items-center justify-center text-[#D4AF37] transition-all shadow-xs"
+              >
+                <LinkedInIcon />
+              </a>
+            </div>
           </div>
 
-          {/* ── Col 2: Bullion ──────────────────────────────────────────────── */}
-          <div className="flex flex-col items-start text-left">
-            <h3 className="text-amber-400 text-xs font-semibold uppercase tracking-widest font-mono mb-3.5">
-              Bullion
-            </h3>
-            <ul className="space-y-2 text-xs sm:text-sm font-body text-left">
-              <li>
-                <Link href="/shop" className="text-gray-300 hover:text-amber-400 transition-colors">
-                  Gold Bars (24K)
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop" className="text-gray-300 hover:text-amber-400 transition-colors">
-                  10 Tola TT Bars
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop" className="text-gray-300 hover:text-amber-400 transition-colors">
-                  Silver Bullion (999)
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop" className="text-gray-300 hover:text-amber-400 transition-colors">
-                  Minted Coins
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop" className="text-gray-300 hover:text-amber-400 transition-colors">
-                  Shop Catalogue
-                </Link>
-              </li>
-            </ul>
+          {/* ── 2-Column Container on Mobile / 2 Separate Columns on Desktop ── */}
+          <div className="grid grid-cols-2 gap-6 sm:gap-8 lg:contents">
+            {/* ── Col 2: QUICK LINKS ────────────────────────────────────────── */}
+            <div className="flex flex-col items-start text-left">
+              <h3 className="text-[#D4AF37] text-xs font-semibold uppercase tracking-widest font-mono mb-4">
+                QUICK LINKS
+              </h3>
+              <ul className="space-y-2.5 text-xs sm:text-sm font-body text-left">
+                <li>
+                  <Link href="/why-dubai" className="text-gray-300 hover:text-[#D4AF37] transition-colors">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/gold-prices#buyback" className="text-gray-300 hover:text-[#D4AF37] transition-colors">
+                    Buyback Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/privacy" className="text-gray-300 hover:text-[#D4AF37] transition-colors">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms" className="text-gray-300 hover:text-[#D4AF37] transition-colors">
+                    Terms &amp; Conditions
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blogs" className="text-gray-300 hover:text-[#D4AF37] transition-colors">
+                    Blogs
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/shop" className="text-gray-300 hover:text-[#D4AF37] transition-colors">
+                    Shop Catalogue
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/gold-prices" className="text-gray-300 hover:text-[#D4AF37] transition-colors">
+                    Gold Rates (24K)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/silver-prices" className="text-gray-300 hover:text-[#D4AF37] transition-colors">
+                    Silver Rates (999)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/gallery" className="text-gray-300 hover:text-[#D4AF37] transition-colors">
+                    Gallery
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#contact" className="text-gray-300 hover:text-[#D4AF37] transition-colors">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* ── Col 3: OUR LOCATIONS ──────────────────────────────────────── */}
+            <div className="flex flex-col items-start text-left">
+              <h3 className="text-[#D4AF37] text-xs font-semibold uppercase tracking-widest font-mono mb-4">
+                OUR LOCATIONS
+              </h3>
+              <div className="space-y-5 text-xs sm:text-sm font-body text-left">
+                {/* Location 1: Dubai Office */}
+                <div className="flex items-start gap-2.5">
+                  <MapPinIcon className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-heading font-bold text-white text-sm leading-tight mb-1">
+                      Dubai
+                    </h4>
+                    <p className="text-gray-300 text-xs font-body leading-relaxed max-w-[200px] sm:max-w-xs">
+                      {SiteConfig.address || 'F03, Al Fadan Building, Al Dhagaya, Deira, Dubai'}
+                    </p>
+                    <a
+                      href={waUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#D4AF37] hover:underline font-mono text-xs block mt-1"
+                    >
+                      {SiteConfig.whatsappDisplay || '+971 52 754 9259'}
+                    </a>
+                  </div>
+                </div>
+
+                {/* Location 2: Gold Souq Handover Desk */}
+                <div className="flex items-start gap-2.5">
+                  <MapPinIcon className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-heading font-bold text-white text-sm leading-tight mb-1">
+                      Deira Gold Souq
+                    </h4>
+                    <p className="text-gray-300 text-xs font-body leading-relaxed max-w-[200px] sm:max-w-xs">
+                      Physical Settlement Desk, Historic Gold Souq, Deira, Dubai
+                    </p>
+                    <a
+                      href={officePhone}
+                      className="text-[#D4AF37] hover:underline font-mono text-xs block mt-1"
+                    >
+                      {SiteConfig.phoneDisplay || '+971 4 344 1832'}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* ── Col 3: Live Rates ───────────────────────────────────────────── */}
-          <div className="flex flex-col items-start text-left">
-            <h3 className="text-amber-400 text-xs font-semibold uppercase tracking-widest font-mono mb-3.5">
-              Live Rates
+          {/* ── Col 4: CONTACT (Dedicated Block with Icons) ────────────────── */}
+          <div className="flex flex-col items-start text-left pt-6 lg:pt-0 border-t lg:border-t-0 border-[#252F3F] w-full">
+            <h3 className="text-[#D4AF37] text-xs font-semibold uppercase tracking-widest font-mono mb-4">
+              CONTACT
             </h3>
-            <ul className="space-y-2 text-xs sm:text-sm font-body text-left">
-              <li>
-                <Link href="/gold-prices" className="text-gray-300 hover:text-amber-400 transition-colors">
-                  Gold Spot Rate (AED)
-                </Link>
-              </li>
-              <li>
-                <Link href="/silver-prices" className="text-gray-300 hover:text-amber-400 transition-colors">
-                  Silver Spot Rate (AED)
-                </Link>
-              </li>
-              <li>
-                <Link href="/why-dubai" className="text-gray-300 hover:text-amber-400 transition-colors">
-                  Why Dubai?
-                </Link>
-              </li>
-              <li>
-                <Link href="/gold-prices#buyback" className="text-gray-300 hover:text-amber-400 transition-colors">
-                  Buyback Policy
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* ── Col 4: Trading Desk ─────────────────────────────────────────── */}
-          <div className="flex flex-col items-start text-left">
-            <h3 className="text-amber-400 text-xs font-semibold uppercase tracking-widest font-mono mb-3.5">
-              Trading Desk
-            </h3>
-            <div className="space-y-2.5 text-xs sm:text-sm font-body text-left">
-              <div>
-                <span className="text-[10px] uppercase font-mono text-white/40 block">Office Location</span>
-                <span className="text-gray-300 text-xs leading-relaxed font-mono block">
-                  {SiteConfig.address}
-                </span>
+            <div className="space-y-4 text-xs sm:text-sm font-body text-left w-full">
+              {/* WhatsApp */}
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-[#161C26] border border-[#252F3F] flex items-center justify-center text-[#D4AF37] shrink-0">
+                  <PhoneOutlineIcon className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="font-heading font-bold text-white text-sm leading-tight">
+                    WhatsApp
+                  </h4>
+                  <a
+                    href={waUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-[#D4AF37] font-mono text-xs block mt-0.5 transition-colors"
+                  >
+                    {SiteConfig.whatsappDisplay || '+971 52 754 9259'}
+                  </a>
+                </div>
               </div>
 
-              <div>
-                <span className="text-[10px] uppercase font-mono text-white/40 block">WhatsApp Desk</span>
-                <a
-                  href={waUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-mono text-amber-400 hover:underline inline-flex items-center gap-1.5"
-                >
-                  <WhatsAppSmallIcon />
-                  <span>{SiteConfig.whatsappDisplay}</span>
-                </a>
+              {/* Email */}
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-[#161C26] border border-[#252F3F] flex items-center justify-center text-[#D4AF37] shrink-0">
+                  <EmailOutlineIcon className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="font-heading font-bold text-white text-sm leading-tight">
+                    Email
+                  </h4>
+                  <a
+                    href={`mailto:${SiteConfig.email || 'desk@snmzgold.com'}`}
+                    className="text-gray-300 hover:text-[#D4AF37] font-mono text-xs block mt-0.5 transition-colors"
+                  >
+                    {SiteConfig.email || 'desk@snmzgold.com'}
+                  </a>
+                </div>
               </div>
 
-              <div>
-                <span className="text-[10px] uppercase font-mono text-white/40 block">Hours</span>
-                <span className="text-gray-300 text-xs font-mono block">
-                  Mon–Sat: 9:00 AM – 7:00 PM GST
-                </span>
+              {/* Open Hours */}
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-[#161C26] border border-[#252F3F] flex items-center justify-center text-[#D4AF37] shrink-0">
+                  <ClockOutlineIcon className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="font-heading font-bold text-white text-sm leading-tight">
+                    Open Hours
+                  </h4>
+                  <span className="text-gray-300 font-mono text-xs block mt-0.5">
+                    Monday – Saturday: 9:00 AM – 7:00 PM GST
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -164,11 +280,11 @@ export function Footer({ isDarkHome = false }) {
           </p>
 
           <div className="flex items-center gap-4 text-xs text-white/40">
-            <Link href="/privacy" className="hover:text-amber-400 transition-colors">
+            <Link href="/privacy" className="hover:text-[#D4AF37] transition-colors">
               Privacy Policy
             </Link>
             <span className="text-white/20">•</span>
-            <Link href="/terms" className="hover:text-amber-400 transition-colors">
+            <Link href="/terms" className="hover:text-[#D4AF37] transition-colors">
               Terms of Use
             </Link>
           </div>
@@ -178,10 +294,75 @@ export function Footer({ isDarkHome = false }) {
   );
 }
 
-function WhatsAppSmallIcon() {
+/* ── Inline SVG Icons ──────────────────────────────────────────────────────── */
+
+function MapPinIcon({ className = 'w-4 h-4' }) {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
+
+function PhoneOutlineIcon({ className = 'w-4 h-4' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
+
+function EmailOutlineIcon({ className = 'w-4 h-4' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+    </svg>
+  );
+}
+
+function ClockOutlineIcon({ className = 'w-4 h-4' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </svg>
+  );
+}
+
+function InstagramIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    </svg>
+  );
+}
+
+function FacebookIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  );
+}
+
+function XIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
+
+function LinkedInIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect x="2" y="9" width="4" height="12" />
+      <circle cx="4" cy="4" r="2" />
     </svg>
   );
 }
