@@ -1,169 +1,138 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getWhatsAppUrl } from '@/lib/whatsapp';
 
+/**
+ * Visual Product Category Showcase for SNMZ Gold & Diamonds.
+ *
+ * Implements:
+ * - Responsive Section Title: text-xl sm:text-2xl lg:text-3xl font-semibold
+ * - 1:1 visual containers featuring certipack bullion bars and TT bars
+ * - Replaces text-heavy blocks with eCommerce visual category cards
+ * - Descriptive SEO alt tags for search visibility
+ */
 export function BullionCategories() {
-  const goldWaUrl = getWhatsAppUrl('goldRates');
-  const silverWaUrl = getWhatsAppUrl('silverRates');
+  const categories = [
+    {
+      id: 'minted-gold',
+      title: 'Minted Gold Bars',
+      purity: '999.9 Fine Gold',
+      specs: '1g to 1kg Certipack Formats',
+      image: '/images/products/gold-minted-bar.jpg',
+      alt: 'SNMZ 100g 24K Gold Bullion Bar Dubai — Investment Bullion in Tamper Evident Assay Packaging',
+      href: '/shop',
+      badge: 'Assay Certipack',
+      popular: true,
+    },
+    {
+      id: 'tt-bars',
+      title: '10 Tola TT Bars',
+      purity: '999.0 Purity Standard',
+      specs: '116.64g Traditional Cast Format',
+      image: '/images/products/gold-kilo-bar.jpg',
+      alt: '10 Tola TT Bar Dubai Gold Souk — 999.0 Cast Bullion Benchmark Handover',
+      href: '/shop',
+      badge: 'GCC Benchmark',
+      popular: false,
+    },
+    {
+      id: 'silver-bars',
+      title: 'Fine Silver Bullion',
+      purity: '999.0 Physical Silver',
+      specs: '100g to 1kg Cast Ingot Formats',
+      image: '/images/products/silver-kilo-bar.jpg',
+      alt: 'Fine Silver Bullion Bars Dubai — 1kg Ingot and Minted Silver at Live Spot',
+      href: '/shop',
+      badge: 'Portfolio Balance',
+      popular: false,
+    },
+    {
+      id: 'bullion-coins',
+      title: 'Legal Tender Coins',
+      purity: '22K & 24K Sovereign / Maple',
+      specs: 'Airtight Protective Capsule',
+      image: '/images/gold-bar-close.jpg',
+      alt: '1oz Gold Bullion Coins Dubai — Royal Mint Britannia and Sovereign Coins',
+      href: '/shop',
+      badge: 'High Liquidity',
+      popular: false,
+    },
+  ];
 
   return (
-    <section className="section-padding bg-emerald-dark" aria-labelledby="bullion-categories-heading">
-      <div className="section-container">
-        {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/20 mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-            <span className="text-xs font-mono uppercase tracking-widest text-gold">
-              Precious Metals Trading
+    <section
+      id="bullion-categories"
+      className="section-padding bg-[#0B0F17] border-t border-[#252F3F]/80 relative overflow-hidden"
+      aria-labelledby="bullion-categories-heading"
+    >
+      <div className="section-container relative z-10">
+        {/* Section Heading with Responsive Typography (text-xl sm:text-2xl lg:text-3xl font-semibold) */}
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/25 mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
+            <span className="text-xs font-mono uppercase tracking-[0.22em] text-[#D4AF37] font-semibold">
+              Precious Metals Categories
             </span>
           </div>
           <h2
             id="bullion-categories-heading"
-            className="font-heading font-bold text-3xl sm:text-4xl text-white mb-4"
+            className="font-heading text-xl sm:text-2xl lg:text-3xl font-semibold text-white tracking-tight leading-snug"
           >
-            Physical Bullion <span className="text-gold italic font-serif">Categories</span>
+            Physical Bullion <span className="text-[#D4AF37] italic font-serif">Categories</span>
           </h2>
-          <p className="text-white/70 text-sm sm:text-base leading-relaxed">
-            Institutional quality physical gold and silver bullion. Traded transparently in Dubai,
-            settled against prevailing international spot rates, and available for direct collection.
+          <p className="text-white/65 text-xs sm:text-sm font-body mt-2 leading-relaxed">
+            Standardized 999.9 gold certipack ingots, regional 10 tola TT bars, and physical silver traded at live spot rates in Dubai.
           </p>
         </div>
 
-        {/* Categories Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Gold Bullion Card */}
-          <div className="bg-gradient-to-br from-emerald-light/40 to-emerald-dark border border-gold/25 rounded-3xl p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden group hover:border-gold/50 transition-all duration-300 shadow-xl">
-            {/* Ambient gold glow */}
-            <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-gold/10 blur-3xl pointer-events-none" />
-
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <span className="text-[11px] font-mono uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-gold/15 text-gold border border-gold/30">
-                  24K · 999.9 Purity
+        {/* ── 1:1 Image Container Grid (Strict 4 Columns Desktop / 2 Columns Mobile) ── */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+          {categories.map((cat) => (
+            <Link
+              key={cat.id}
+              href={cat.href}
+              className="group bg-[#161C26] rounded-2xl border border-[#252F3F] hover:border-[#D4AF37]/50 transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between hover:shadow-[0_8px_30px_rgba(212,175,55,0.1)] hover:-translate-y-0.5"
+            >
+              {/* Category Badge */}
+              <div className="flex items-center justify-between mb-2.5">
+                <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#D4AF37] bg-[#D4AF37]/10 px-2 py-0.5 rounded border border-[#D4AF37]/25">
+                  {cat.badge}
                 </span>
-                <span className="text-xs font-mono text-white/50">AED Spot Linked</span>
+                <span className="text-[10px] text-white/40 font-mono hidden sm:inline">
+                  Dubai Spot
+                </span>
               </div>
 
-              <h3 className="font-heading font-bold text-2xl sm:text-3xl text-white mb-3 group-hover:text-gold transition-colors">
-                Gold Bullion &amp; TT Bars
-              </h3>
-              <p className="text-white/75 text-sm sm:text-base mb-6 leading-relaxed">
-                Specialising in traditional 10 Tola TT bars, 1 kilogram cast bars, and minted investment ingots.
-                Standardized purity, international liquidity, and direct settlement from our Dubai desk.
-              </p>
-
-              {/* Product list */}
-              <ul className="space-y-2.5 mb-8 text-xs sm:text-sm text-white/80 font-body">
-                <li className="flex items-center gap-2">
-                  <span className="text-gold">✓</span>
-                  <span>1 Kilogram 999.9 Fine Gold Bars</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-gold">✓</span>
-                  <span>10 Tola TT Bars (Dubai &amp; GCC Benchmark)</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-gold">✓</span>
-                  <span>100g, 50g &amp; 1oz Minted Ingot Formats</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Visual & CTAs */}
-            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden mb-6 bg-emerald-dark/60 border border-gold/15 flex items-center justify-center">
-              <Image
-                src="/images/products/gold-kilo-bar.jpg"
-                alt="24K Gold Bullion Bars Dubai"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <Link
-                href="/shop"
-                className="flex-1 text-center px-6 py-3 rounded-xl bg-gold hover:bg-gold-light text-emerald-dark font-body font-semibold text-xs tracking-wider uppercase transition-all shadow-md"
-              >
-                View Gold Bullion
-              </Link>
-              <a
-                href={goldWaUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-center px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-white font-body font-medium text-xs border border-white/10 transition-colors"
-              >
-                Enquire Live Rate
-              </a>
-            </div>
-          </div>
-
-          {/* Silver Bullion Card */}
-          <div className="bg-gradient-to-br from-emerald-light/40 to-emerald-dark border border-slate-300/25 rounded-3xl p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden group hover:border-slate-300/50 transition-all duration-300 shadow-xl">
-            {/* Ambient silver glow */}
-            <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-slate-300/10 blur-3xl pointer-events-none" />
-
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <span className="text-[11px] font-mono uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-slate-200/15 text-slate-200 border border-slate-300/30">
-                  Fine Silver · 999.0
-                </span>
-                <span className="text-xs font-mono text-white/50">AED Spot Linked</span>
+              {/* 1:1 Image Container with object-contain */}
+              <div className="relative aspect-square w-full rounded-xl bg-gradient-to-b from-[#1C2330] via-[#141924] to-[#0E121A] border border-[#252F3F]/60 overflow-hidden flex items-center justify-center p-3 mb-3 shadow-inner">
+                <Image
+                  src={cat.image}
+                  alt={cat.alt}
+                  fill
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  className="object-contain p-2 group-hover:scale-105 transition-transform duration-300 ease-out drop-shadow-lg"
+                />
               </div>
 
-              <h3 className="font-heading font-bold text-2xl sm:text-3xl text-white mb-3 group-hover:text-slate-200 transition-colors">
-                Silver Bullion &amp; Ingots
-              </h3>
-              <p className="text-white/75 text-sm sm:text-base mb-6 leading-relaxed">
-                Industrial and investment-grade physical silver bars. Denominations ranging from 1 kg cast ingots
-                to 1 oz investment rounds for diversified precious metal asset allocation.
-              </p>
+              {/* Typography Details */}
+              <div className="mt-1">
+                <h3 className="font-heading font-bold text-sm sm:text-base text-white group-hover:text-[#D4AF37] transition-colors leading-tight mb-1 truncate">
+                  {cat.title}
+                </h3>
+                <div className="text-[11px] font-mono text-[#D4AF37] font-medium mb-1">
+                  {cat.purity}
+                </div>
+                <div className="text-[10px] sm:text-[11px] text-white/55 font-body line-clamp-1 mb-3">
+                  {cat.specs}
+                </div>
+              </div>
 
-              {/* Product list */}
-              <ul className="space-y-2.5 mb-8 text-xs sm:text-sm text-white/80 font-body">
-                <li className="flex items-center gap-2">
-                  <span className="text-slate-300">✓</span>
-                  <span>1 Kilogram 999 Fine Silver Cast Bars</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-slate-300">✓</span>
-                  <span>500g &amp; 100g Minted Silver Ingots</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-slate-300">✓</span>
-                  <span>1 Troy Ounce Silver Coins &amp; Rounds</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Visual & CTAs */}
-            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden mb-6 bg-emerald-dark/60 border border-slate-300/15 flex items-center justify-center">
-              <Image
-                src="/images/products/silver-kilo-bar.jpg"
-                alt="Fine Silver Bullion Bars Dubai"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <Link
-                href="/shop"
-                className="flex-1 text-center px-6 py-3 rounded-xl bg-slate-200 hover:bg-white text-emerald-dark font-body font-semibold text-xs tracking-wider uppercase transition-all shadow-md"
-              >
-                View Silver Bullion
-              </Link>
-              <a
-                href={silverWaUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-center px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-white font-body font-medium text-xs border border-white/10 transition-colors"
-              >
-                Enquire Live Rate
-              </a>
-            </div>
-          </div>
+              {/* Action Link */}
+              <div className="pt-2 border-t border-[#252F3F]/60 flex items-center justify-between text-xs font-body font-semibold text-[#D4AF37] group-hover:text-[#E5C158] transition-colors">
+                <span>View Products</span>
+                <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>

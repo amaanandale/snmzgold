@@ -25,7 +25,7 @@ export function WhyDubaiPreview() {
             <div className="relative aspect-[4/3] sm:aspect-square w-full rounded-3xl overflow-hidden border border-gold/30 shadow-2xl group">
               <Image
                 src="/images/gold-bar-close.jpg"
-                alt="Physical Gold Bullion Trading in Dubai — Verified Purity and Hallmarks"
+                alt="SNMZ 100g 24K Gold Bullion Bar Dubai — Physical Gold Bullion Trading at Al Dhagaya Deira"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -55,7 +55,7 @@ export function WhyDubaiPreview() {
 
             <h2
               id="why-dubai-heading"
-              className="font-display font-bold text-3xl sm:text-4xl lg:text-[42px] leading-tight text-white mb-5"
+              className="font-display font-semibold text-xl sm:text-2xl lg:text-3xl leading-tight text-white mb-4"
             >
               Why Dubai Leads the{' '}
               <span

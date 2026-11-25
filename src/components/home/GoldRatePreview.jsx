@@ -61,7 +61,7 @@ export function GoldRatePreview({ rates, status, updatedAt, silverData }) {
             </div>
             <h2
               id="rates-preview-heading"
-              className="font-display text-3xl sm:text-4xl lg:text-5xl text-white leading-tight font-bold"
+              className="font-display text-xl sm:text-2xl lg:text-3xl text-white leading-tight font-semibold"
             >
               Today&apos;s Gold &amp; Silver Rates
             </h2>

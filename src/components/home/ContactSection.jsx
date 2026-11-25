@@ -31,7 +31,7 @@ export function ContactSection() {
 
           <h2
             id="contact-heading"
-            className="font-display text-4xl sm:text-5xl text-white leading-tight font-bold"
+            className="font-display text-xl sm:text-2xl lg:text-3xl text-white leading-tight font-semibold"
           >
             Connect with Our{' '}
             <span

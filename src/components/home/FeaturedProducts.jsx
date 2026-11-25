@@ -48,7 +48,7 @@ export function FeaturedProducts({ liveGoldRate24k = 480.09, liveSilverRate = 6.
             </div>
             <h2
               id="featured-products-heading"
-              className="font-heading font-extrabold text-3xl sm:text-4xl text-white tracking-tight"
+              className="font-heading text-xl sm:text-2xl lg:text-3xl font-semibold text-white tracking-tight leading-snug"
             >
               Featured Bullion <span className="text-[#D4AF37] italic font-serif">Products</span>
             </h2>

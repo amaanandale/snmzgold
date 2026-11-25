@@ -56,7 +56,7 @@ export function TrustStandardsSection() {
 
             <h2
               id="standards-heading"
-              className="font-display font-bold text-3xl sm:text-4xl lg:text-[40px] text-white leading-tight mb-5"
+              className="font-display font-semibold text-xl sm:text-2xl lg:text-3xl text-white leading-tight mb-4"
             >
               Built on Verifiable{' '}
               <span
