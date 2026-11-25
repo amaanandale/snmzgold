@@ -37,7 +37,7 @@ export default async function GalleryPage() {
       <Header />
       <main
         id="main-content"
-        className="min-h-screen bg-[#F8F5EE] text-[#1A202C] pt-24 sm:pt-28 lg:pt-32 pb-20 selection:bg-[#D4AF37]/30 selection:text-[#0B0F17]"
+        className="min-h-screen bg-[#F4EFE6] text-[#1A1E24] pt-24 sm:pt-28 lg:pt-32 pb-20 selection:bg-[#D4AF37]/30 selection:text-[#1A1E24]"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb navigation */}
@@ -48,7 +48,7 @@ export default async function GalleryPage() {
             <Link href="/" className="hover:text-[#997300] transition-colors">
               Home
             </Link>
-            <span className="text-[#CBD5E1]" aria-hidden="true">/</span>
+            <span className="text-[#D2C5B0]" aria-hidden="true">/</span>
             <span className="text-[#997300] font-semibold">Bullion Gallery</span>
           </nav>
 
@@ -59,10 +59,10 @@ export default async function GalleryPage() {
                 CURATED BULLION SHOWCASE
               </span>
             </div>
-            <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#1A202C] tracking-tight mb-4 leading-tight">
+            <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#1A1E24] tracking-tight mb-4 leading-tight">
               Precious Metals &amp; Bullion Gallery
             </h1>
-            <p className="text-[#4A5568] font-body text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+            <p className="text-[#615849] font-body text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
               Visual archive of investment-grade 24K gold bars, regional 10 tola TT bars, minted coins, and physical silver ingots. Sealed in tamper-evident assay certipack packaging and priced against live Dubai spot benchmarks.
             </p>
           </div>
@@ -81,14 +81,14 @@ export default async function GalleryPage() {
           </div>
 
           {/* Bottom Trust & Direct Desk Enquiry Banner */}
-          <div className="bg-white border border-[#E5D8B8] rounded-2xl p-6 sm:p-10 shadow-sm text-center max-w-4xl mx-auto">
+          <div className="bg-[#EFE8DC] border border-[#E2D7C5] rounded-2xl p-6 sm:p-10 shadow-xs text-center max-w-4xl mx-auto">
             <span className="text-[#997300] text-xs font-mono font-bold uppercase tracking-widest block mb-2">
               DUBAI BULLION DESK SPECIFICATIONS
             </span>
-            <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#1A202C] mb-3">
+            <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#1A1E24] mb-3">
               Looking for Custom Allocations or Wholesale Volume?
             </h2>
-            <p className="text-[#4A5568] text-xs sm:text-sm max-w-xl mx-auto leading-relaxed mb-6 font-body">
+            <p className="text-[#615849] text-xs sm:text-sm max-w-xl mx-auto leading-relaxed mb-6 font-body">
               Our trading desk at Al Dhagaya, Deira executes spot-linked wholesale orders, institutional kilo bar deliveries, and sovereign bullion handovers with full invoice traceability.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -96,13 +96,13 @@ export default async function GalleryPage() {
                 href={galleryWaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] text-[#0B0F17] font-body font-bold text-xs uppercase tracking-wider transition-all shadow-md inline-flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#D4AF37] hover:bg-[#C5A059] text-[#1A1E24] font-body font-bold text-xs uppercase tracking-wider transition-all shadow-md inline-flex items-center justify-center gap-2"
               >
                 <span>Direct WhatsApp Enquiry</span>
               </a>
               <Link
                 href="/shop"
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#F8F5EE] hover:bg-[#EFEAE0] text-[#1A202C] font-body font-semibold text-xs border border-[#E5D8B8] transition-colors inline-flex items-center justify-center"
+                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#F4EFE6] hover:bg-[#E8DFC9] text-[#1A1E24] font-body font-semibold text-xs border border-[#E2D7C5] transition-colors inline-flex items-center justify-center"
               >
                 <span>Browse Full Catalogue →</span>
               </Link>

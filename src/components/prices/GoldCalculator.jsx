@@ -6,7 +6,8 @@ import { getWhatsAppUrl } from '@/lib/whatsapp';
 
 /**
  * Interactive gold value calculator.
- * Luxury Champagne/Beige Theme.
+ * Strict 2-Color Palette: Warm Beige / Ivory (#F4EFE6, #EFE8DC, #E2D7C5) and Metallic Champagne Gold (#D4AF37).
+ * Zero Pure White.
  * Client Component — handles purity selection, weight input, live calculation.
  *
  * @param {{ rates: import('@/lib/goldRates').PurityRate[] }} props
@@ -41,7 +42,7 @@ export function GoldCalculator({ rates }) {
 
   return (
     <section
-      className="py-12 sm:py-16 bg-[#F8F5EE]"
+      className="py-12 sm:py-16 bg-[#F4EFE6]"
       aria-labelledby="calc-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,26 +55,26 @@ export function GoldCalculator({ rates }) {
               </span>
               <h2
                 id="calc-heading"
-                className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#1A202C] leading-tight"
+                className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#1A1E24] leading-tight"
               >
                 Estimate Your Gold Value
               </h2>
               <div className="w-12 h-0.5 bg-[#D4AF37] mt-3" />
             </div>
 
-            <p className="text-[#4A5568] font-body text-sm sm:text-base leading-relaxed">
+            <p className="text-[#615849] font-body text-sm sm:text-base leading-relaxed">
               Select a gold purity benchmark and enter the total weight in grams to calculate an immediate indicative spot value in UAE Dirhams (AED).
             </p>
 
             {/* Disclaimer box */}
-            <div className="bg-white border border-[#E5D8B8] rounded-2xl p-6 shadow-sm">
+            <div className="bg-[#EFE8DC] border border-[#E2D7C5] rounded-2xl p-6 shadow-xs">
               <h3 className="text-[#997300] text-xs uppercase tracking-widest font-mono font-bold mb-3">
                 Trading Desk Guidance
               </h3>
-              <ul className="space-y-2.5 text-[#4A5568] text-xs sm:text-sm font-body leading-relaxed">
+              <ul className="space-y-2.5 text-[#615849] text-xs sm:text-sm font-body leading-relaxed">
                 <li className="flex gap-2">
                   <span className="text-[#997300] font-bold" aria-hidden="true">·</span>
-                  <span>This estimate is <strong className="text-[#1A202C]">indicative only</strong> based on live benchmark spot feeds.</span>
+                  <span>This estimate is <strong className="text-[#1A1E24]">indicative only</strong> based on live benchmark spot feeds.</span>
                 </li>
                 <li className="flex gap-2">
                   <span className="text-[#997300] font-bold" aria-hidden="true">·</span>
@@ -92,8 +93,8 @@ export function GoldCalculator({ rates }) {
           </div>
 
           {/* Right — calculator form */}
-          <div className="bg-white border border-[#E5D8B8] rounded-2xl p-6 sm:p-8 shadow-sm">
-            <h3 className="text-[#1A202C] font-heading font-bold text-lg mb-6">
+          <div className="bg-[#EFE8DC] border border-[#E2D7C5] rounded-2xl p-6 sm:p-8 shadow-xs">
+            <h3 className="text-[#1A1E24] font-heading font-bold text-lg mb-6">
               Live Calculation Tool
             </h3>
 
@@ -128,8 +129,8 @@ export function GoldCalculator({ rates }) {
                         }}
                         className={`relative rounded-xl py-3 px-2 text-center transition-all duration-200 border focus-visible:ring-2 focus-visible:ring-[#D4AF37] ${
                           isSelected
-                            ? 'bg-[#D4AF37] border-[#D4AF37] text-[#0B0F17] shadow-sm font-bold'
-                            : 'bg-[#F8F5EE] border-[#E5D8B8] text-[#1A202C] hover:border-[#D4AF37]'
+                            ? 'bg-[#D4AF37] border-[#D4AF37] text-[#1A1E24] shadow-xs font-bold'
+                            : 'bg-[#F4EFE6] border-[#E2D7C5] text-[#1A1E24] hover:border-[#D4AF37]'
                         }`}
                       >
                         <span className="block font-heading font-bold text-base leading-tight">
@@ -140,7 +141,7 @@ export function GoldCalculator({ rates }) {
                         </span>
                         {!hasRate && (
                           <span
-                            className="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-slate-300"
+                            className="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-[#8C8275]"
                             aria-hidden="true"
                             title="Rate unavailable"
                           />
@@ -175,10 +176,10 @@ export function GoldCalculator({ rates }) {
                     onBlur={() => setTouched(true)}
                     aria-describedby={showWeightError ? `${formId}-weight-error` : `${formId}-weight-hint`}
                     aria-invalid={showWeightError}
-                    className={`w-full bg-[#F8F5EE] border rounded-xl px-4 py-3.5 text-[#1A202C] font-mono text-base placeholder-[#A0AEC0] focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition-colors duration-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none ${
+                    className={`w-full bg-[#F4EFE6] border rounded-xl px-4 py-3.5 text-[#1A1E24] font-mono text-base placeholder-[#8C8275] focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition-colors duration-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none ${
                       showWeightError
-                        ? 'border-red-400 focus:ring-red-400'
-                        : 'border-[#E5D8B8] focus:border-[#D4AF37]'
+                        ? 'border-red-500 focus:ring-red-500'
+                        : 'border-[#E2D7C5] focus:border-[#D4AF37]'
                     }`}
                   />
                   <span
@@ -210,8 +211,8 @@ export function GoldCalculator({ rates }) {
               <div
                 className={`rounded-xl border p-5 mb-5 transition-all duration-300 ${
                   showResult
-                    ? 'border-[#D4AF37] bg-[#FAF8F3] shadow-xs'
-                    : 'border-[#E5D8B8] bg-[#F8F5EE]'
+                    ? 'border-[#D4AF37] bg-[#F4EFE6] shadow-2xs'
+                    : 'border-[#E2D7C5] bg-[#F4EFE6]'
                 }`}
                 aria-live="polite"
                 aria-atomic="true"
@@ -232,13 +233,13 @@ export function GoldCalculator({ rates }) {
                       href={getWhatsAppUrl('goldRates')}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1.5 w-full py-2.5 px-4 rounded-lg bg-[#D4AF37] hover:bg-[#E5C158] text-[#0B0F17] font-body font-bold text-xs uppercase tracking-wider transition-all shadow-md"
+                      className="inline-flex items-center justify-center gap-1.5 w-full py-2.5 px-4 rounded-lg bg-[#D4AF37] hover:bg-[#C5A059] text-[#1A1E24] font-body font-bold text-xs uppercase tracking-wider transition-all shadow-md"
                     >
                       Enquire Current Rate on WhatsApp
                     </a>
                   </>
                 ) : (
-                  <p className="font-display text-xl text-[#A0AEC0]">
+                  <p className="font-display text-xl text-[#8C8275]">
                     {!rateAvailable
                       ? 'Rate unavailable for this purity'
                       : weightInput === ''
@@ -252,7 +253,7 @@ export function GoldCalculator({ rates }) {
               <button
                 type="button"
                 onClick={handleReset}
-                className="w-full text-center text-[#718096] hover:text-[#1A202C] text-xs font-mono transition-colors duration-200 py-1"
+                className="w-full text-center text-[#718096] hover:text-[#1A1E24] text-xs font-mono transition-colors duration-200 py-1"
               >
                 Reset calculator
               </button>

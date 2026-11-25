@@ -41,10 +41,10 @@ export default async function GoldPricesPage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="bg-[#F8F5EE] text-[#1A202C] min-h-screen selection:bg-[#D4AF37]/30 selection:text-[#0B0F17]">
-        {/* Compact page header — luxury champagne styling */}
+      <main id="main-content" className="bg-[#F4EFE6] text-[#1A1E24] min-h-screen selection:bg-[#D4AF37]/30 selection:text-[#1A1E24]">
+        {/* Compact page header — warm beige & champagne gold */}
         <section
-          className="pt-24 sm:pt-28 pb-8 bg-white border-b border-[#E5D8B8]"
+          className="pt-24 sm:pt-28 pb-8 bg-[#EFE8DC] border-b border-[#E2D7C5]"
           aria-labelledby="prices-page-heading"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,7 +58,7 @@ export default async function GoldPricesPage() {
                 </div>
                 <h1
                   id="prices-page-heading"
-                  className="font-heading font-extrabold text-3xl sm:text-4xl text-[#1A202C]"
+                  className="font-heading font-extrabold text-3xl sm:text-4xl text-[#1A1E24]"
                 >
                   Gold Rates in Dubai
                 </h1>
@@ -67,10 +67,10 @@ export default async function GoldPricesPage() {
               <div className="flex flex-col items-start sm:items-end gap-1">
                 <div className="flex items-center gap-2">
                   <span
-                    className={`w-2 h-2 rounded-full ${isLive ? 'bg-emerald-500 animate-pulse' : 'bg-slate-300'}`}
+                    className={`w-2 h-2 rounded-full ${isLive ? 'bg-emerald-500 animate-pulse' : 'bg-[#8C8275]'}`}
                     aria-hidden="true"
                   />
-                  <span className="text-[#4A5568] text-xs font-mono">
+                  <span className="text-[#1A1E24] text-xs font-mono">
                     {isLive && formattedDate
                       ? `Updated ${formattedDate} (Dubai GST)`
                       : 'Rates connecting…'}
@@ -95,7 +95,7 @@ export default async function GoldPricesPage() {
         <RatesTable rates={ratesData.rates} status={ratesData.status} />
 
         {/* Refresh button */}
-        <div className="bg-[#F8F5EE] py-5 border-t border-[#E5D8B8]">
+        <div className="bg-[#F4EFE6] py-5 border-t border-[#E2D7C5]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
             <PricesRefreshButton />
           </div>
@@ -105,29 +105,29 @@ export default async function GoldPricesPage() {
         <GoldCalculator rates={ratesData.rates} />
 
         {/* Simple enquiry CTA */}
-        <section className="py-14 sm:py-16 bg-white border-t border-[#E5D8B8]">
+        <section className="py-14 sm:py-16 bg-[#EFE8DC] border-t border-[#E2D7C5]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
               <div>
                 <span className="text-[#997300] text-xs font-mono font-bold uppercase tracking-widest block mb-1">
                   DEIRA TRADING DESK
                 </span>
-                <h2 className="font-heading font-bold text-2xl sm:text-3xl text-[#1A202C] mb-3">
+                <h2 className="font-heading font-bold text-2xl sm:text-3xl text-[#1A1E24] mb-3">
                   Trade Bullion with <span className="text-[#997300]">SNMZ</span>
                 </h2>
-                <p className="text-[#4A5568] font-body text-xs sm:text-sm leading-relaxed mb-6">
+                <p className="text-[#615849] font-body text-xs sm:text-sm leading-relaxed mb-6">
                   SNMZ Gold &amp; Diamonds deals in certified gold TT bars and wholesale precious metals for institutional, corporate, and private buyers in Dubai. Rates shown are indicative — connect with our desk for verified lock-in rates and immediate Al Dhagaya settlement.
                 </p>
                 <a
                   href={getWhatsAppUrl('goldRates')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#D4AF37] hover:bg-[#E5C158] text-[#0B0F17] rounded-xl text-xs sm:text-sm font-body font-bold uppercase tracking-wider shadow-md transition-all"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#D4AF37] hover:bg-[#C5A059] text-[#1A1E24] rounded-xl text-xs sm:text-sm font-body font-bold uppercase tracking-wider shadow-md transition-all"
                 >
                   Enquire Gold Rates on WhatsApp
                 </a>
               </div>
-              <div className="bg-[#F8F5EE] border border-[#E5D8B8] rounded-2xl p-6 space-y-3 shadow-xs">
+              <div className="bg-[#F4EFE6] border border-[#E2D7C5] rounded-2xl p-6 space-y-3 shadow-2xs">
                 <p className="text-[#997300] text-xs uppercase tracking-widest font-mono font-bold">Trading Governance</p>
                 {[
                   'Rates derived from live XAU/AED international spot benchmarks.',
@@ -138,7 +138,7 @@ export default async function GoldPricesPage() {
                 ].map((point) => (
                   <div key={point} className="flex gap-2.5 items-start">
                     <span className="text-[#997300] font-bold text-xs mt-0.5 shrink-0" aria-hidden="true">◆</span>
-                    <p className="text-[#4A5568] text-xs font-mono leading-relaxed">{point}</p>
+                    <p className="text-[#615849] text-xs font-mono leading-relaxed">{point}</p>
                   </div>
                 ))}
               </div>

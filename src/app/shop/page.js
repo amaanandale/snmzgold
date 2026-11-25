@@ -39,7 +39,7 @@ export default async function ShopPage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="min-h-screen bg-[#F8F5EE] pt-16 lg:pt-20">
+      <main id="main-content" className="min-h-screen bg-[#F4EFE6] pt-16 lg:pt-20">
         <BullionShop
           liveGoldRate24k={liveGoldRate24k}
           liveSilverRate={liveSilverRate}

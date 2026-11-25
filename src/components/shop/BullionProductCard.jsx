@@ -43,7 +43,7 @@ export function BullionProductCard({
     <article
       className={`group relative rounded-2xl transition-all duration-300 flex flex-col p-3 sm:p-4 overflow-hidden ${
         isBeige
-          ? 'bg-white border border-[#E5D8B8] hover:border-[#D4AF37] shadow-sm hover:shadow-[0_12px_36px_rgba(212,175,55,0.18)]'
+          ? 'bg-[#EFE8DC] border border-[#E2D7C5] hover:border-[#D4AF37] shadow-sm hover:shadow-[0_12px_36px_rgba(212,175,55,0.18)]'
           : 'bg-[#161C26] border border-[#252F3F] hover:border-amber-400/50 hover:shadow-[0_10px_35px_rgba(212,175,55,0.12)]'
       } ${className}`}
     >
@@ -52,7 +52,7 @@ export function BullionProductCard({
         <span
           className={`text-[10px] sm:text-[11px] font-mono font-semibold uppercase tracking-wider px-2 py-0.5 rounded border ${
             isBeige
-              ? 'text-[#997300] bg-[#F8F5EE] border-[#E5D8B8]'
+              ? 'text-[#997300] bg-[#F4EFE6] border-[#E2D7C5]'
               : 'text-[#D4AF37] bg-[#D4AF37]/10 border-[#D4AF37]/25'
           }`}
         >
@@ -79,7 +79,7 @@ export function BullionProductCard({
       <div
         className={`relative aspect-[4/5] sm:h-56 w-full flex items-center justify-center p-3 sm:p-4 rounded-xl overflow-hidden mb-3.5 border shadow-inner ${
           isBeige
-            ? 'bg-[#F8F5EE] border-[#E5D8B8]/80'
+            ? 'bg-[#F4EFE6] border-[#E2D7C5]'
             : 'bg-[#111622]/60 border-[#252F3F]/60'
         }`}
       >
@@ -101,7 +101,7 @@ export function BullionProductCard({
       <h3
         className={`font-heading font-bold text-sm sm:text-base transition-colors leading-snug line-clamp-1 mb-1 ${
           isBeige
-            ? 'text-[#1A202C] group-hover:text-[#997300]'
+            ? 'text-[#1A1E24] group-hover:text-[#997300]'
             : 'text-white group-hover:text-[#D4AF37]'
         }`}
       >
@@ -111,10 +111,10 @@ export function BullionProductCard({
       {/* ── 4. WEIGHT & FINENESS (Clean Minimal Subtitle Pill) ───────────────── */}
       <div
         className={`font-mono text-[11px] sm:text-xs tracking-wide mb-3 flex items-center gap-1.5 ${
-          isBeige ? 'text-[#4A5568]' : 'text-white/65'
+          isBeige ? 'text-[#615849]' : 'text-white/65'
         }`}
       >
-        <span className={`font-medium ${isBeige ? 'text-[#1A202C]' : 'text-white/80'}`}>
+        <span className={`font-medium ${isBeige ? 'text-[#1A1E24]' : 'text-white/80'}`}>
           {product.spec}
         </span>
         <span className="opacity-30">•</span>
@@ -146,7 +146,7 @@ export function BullionProductCard({
         href={waUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-full py-2.5 px-3 text-xs sm:text-sm font-semibold rounded-lg bg-[#D4AF37] hover:bg-[#E5C158] text-[#0B0F17] transition-all duration-200 active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5 whitespace-nowrap overflow-hidden"
+        className="w-full py-2.5 px-3 text-xs sm:text-sm font-bold rounded-lg bg-[#D4AF37] hover:bg-[#C5A059] text-[#1A1E24] transition-all duration-200 active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5 whitespace-nowrap overflow-hidden"
         aria-label={`Enquire now for ${product.title} ${product.weight} on WhatsApp`}
       >
         <WhatsAppSmallIcon className="w-4 h-4 shrink-0 fill-current" />

@@ -17,21 +17,21 @@ export function SilverCalculator({ rates = [] }) {
   const waUrl = getWhatsAppUrl('silverRates');
 
   return (
-    <section className="py-12 sm:py-16 bg-[#F8F5EE] border-t border-[#E5D8B8]">
+    <section className="py-12 sm:py-16 bg-[#F4EFE6] border-t border-[#E2D7C5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         <div className="text-center mb-8">
           <span className="text-[#997300] text-xs font-mono uppercase tracking-widest font-bold block mb-1">
             Estimation Tool
           </span>
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#1A202C]">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#1A1E24]">
             Physical Silver Value Calculator
           </h2>
-          <p className="text-[#4A5568] text-xs sm:text-sm mt-1 font-body">
+          <p className="text-[#615849] text-xs sm:text-sm mt-1 font-body">
             Calculate the indicative spot value of physical silver in UAE Dirhams (AED).
           </p>
         </div>
 
-        <div className="bg-white border border-[#E5D8B8] rounded-2xl p-6 sm:p-8 shadow-sm">
+        <div className="bg-[#EFE8DC] border border-[#E2D7C5] rounded-2xl p-6 sm:p-8 shadow-xs">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
             {/* Purity selector */}
             <div>
@@ -42,10 +42,10 @@ export function SilverCalculator({ rates = [] }) {
                 id="silver-purity-select"
                 value={selectedPurity}
                 onChange={(e) => setSelectedPurity(e.target.value)}
-                className="w-full bg-[#F8F5EE] border border-[#E5D8B8] rounded-xl px-4 py-3 text-[#1A202C] text-sm focus:outline-none focus:border-[#D4AF37]"
+                className="w-full bg-[#F4EFE6] border border-[#E2D7C5] rounded-xl px-4 py-3 text-[#1A1E24] text-sm focus:outline-none focus:border-[#D4AF37]"
               >
                 {rates.map((r) => (
-                  <option key={r.grade} value={r.grade} className="bg-white text-[#1A202C]">
+                  <option key={r.grade} value={r.grade} className="bg-[#EFE8DC] text-[#1A1E24]">
                     {r.label} ({r.purity})
                   </option>
                 ))}
@@ -66,7 +66,7 @@ export function SilverCalculator({ rates = [] }) {
                   value={weight}
                   onChange={(e) => setWeight(e.target.value)}
                   placeholder="e.g. 1000"
-                  className="w-full bg-[#F8F5EE] border border-[#E5D8B8] rounded-xl px-4 py-3 text-[#1A202C] font-mono text-sm focus:outline-none focus:border-[#D4AF37]"
+                  className="w-full bg-[#F4EFE6] border border-[#E2D7C5] rounded-xl px-4 py-3 text-[#1A1E24] font-mono text-sm focus:outline-none focus:border-[#D4AF37]"
                 />
                 <span className="absolute right-4 top-3.5 text-xs text-[#718096] font-mono">
                   Grams
@@ -88,7 +88,7 @@ export function SilverCalculator({ rates = [] }) {
                 key={preset.val}
                 type="button"
                 onClick={() => setWeight(preset.val)}
-                className="px-3 py-1 rounded-lg bg-[#F8F5EE] hover:bg-[#EFEAE0] text-[#1A202C] text-xs font-mono border border-[#E5D8B8] transition-colors"
+                className="px-3 py-1 rounded-lg bg-[#F4EFE6] hover:bg-[#E8DFC9] text-[#1A1E24] text-xs font-mono border border-[#E2D7C5] transition-colors"
               >
                 {preset.label}
               </button>
@@ -96,12 +96,12 @@ export function SilverCalculator({ rates = [] }) {
           </div>
 
           {/* Calculated Output Box */}
-          <div className="p-6 rounded-xl bg-[#FAF8F3] border border-[#E5D8B8] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="p-6 rounded-xl bg-[#F4EFE6] border border-[#E2D7C5] flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
               <span className="text-xs uppercase font-mono text-[#997300] font-bold tracking-wider block mb-1">
                 Estimated Spot Value (AED)
               </span>
-              <div className="font-heading font-extrabold text-2xl sm:text-3xl text-[#1A202C]">
+              <div className="font-heading font-extrabold text-2xl sm:text-3xl text-[#1A1E24]">
                 {calculation.value != null ? formatAED(calculation.value) : '—'}
               </div>
               <span className="text-[11px] text-[#718096] font-mono block mt-1">
@@ -114,7 +114,7 @@ export function SilverCalculator({ rates = [] }) {
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] text-[#0B0F17] font-body font-bold text-xs uppercase tracking-wider text-center transition-all shadow-md"
+              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#D4AF37] hover:bg-[#C5A059] text-[#1A1E24] font-body font-bold text-xs uppercase tracking-wider text-center transition-all shadow-md"
             >
               Enquire Live Silver Rate
             </a>

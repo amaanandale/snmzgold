@@ -49,12 +49,12 @@ export function PricesRefreshButton() {
         disabled={state === 'loading'}
         aria-busy={state === 'loading'}
         aria-label="Refresh gold rates"
-        className={`inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl border text-sm font-body font-medium transition-all duration-200 focus-visible:ring-2 focus-visible:ring-gold disabled:cursor-not-allowed ${
+        className={`inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl border text-sm font-mono font-semibold transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[#D4AF37] disabled:cursor-not-allowed shadow-2xs ${
           state === 'done'
-            ? 'border-green-400/40 text-green-400 bg-green-400/5'
+            ? 'border-emerald-600/40 text-emerald-700 bg-emerald-500/10'
             : state === 'error'
-            ? 'border-red-400/40 text-red-400 bg-red-400/5'
-            : 'border-gold/30 text-gold hover:bg-gold/10 hover:border-gold/50 bg-transparent disabled:opacity-60'
+            ? 'border-red-500/40 text-red-600 bg-red-500/10'
+            : 'border-[#E2D7C5] text-[#1A1E24] bg-[#EFE8DC] hover:border-[#D4AF37] hover:text-[#997300] disabled:opacity-60'
         }`}
       >
         {state === 'loading' ? (
@@ -67,7 +67,7 @@ export function PricesRefreshButton() {
         {label}
       </button>
       {lastRefreshed && (
-        <p className="text-white/25 text-xs font-body">
+        <p className="text-[#718096] text-xs font-mono">
           Last refreshed:{' '}
           {lastRefreshed.toLocaleTimeString('en-AE', { hour: '2-digit', minute: '2-digit' })}
         </p>

@@ -55,9 +55,9 @@ export default async function SilverPricesPage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="bg-[#F8F5EE] text-[#1A202C] min-h-screen selection:bg-[#D4AF37]/30 selection:text-[#0B0F17]">
+      <main id="main-content" className="bg-[#F4EFE6] text-[#1A1E24] min-h-screen selection:bg-[#D4AF37]/30 selection:text-[#1A1E24]">
         {/* Page Header */}
-        <section className="pt-24 sm:pt-28 pb-8 bg-white border-b border-[#E5D8B8]">
+        <section className="pt-24 sm:pt-28 pb-8 bg-[#EFE8DC] border-b border-[#E2D7C5]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
               <div>
@@ -67,7 +67,7 @@ export default async function SilverPricesPage() {
                     Live Precious Metals Benchmark · Dubai
                   </span>
                 </div>
-                <h1 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#1A202C]">
+                <h1 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#1A1E24]">
                   Silver Prices in Dubai (AED)
                 </h1>
               </div>
@@ -76,11 +76,11 @@ export default async function SilverPricesPage() {
                 <div className="flex items-center gap-2">
                   <span
                     className={`w-2 h-2 rounded-full ${
-                      isLive ? 'bg-emerald-500 animate-pulse' : 'bg-slate-300'
+                      isLive ? 'bg-emerald-500 animate-pulse' : 'bg-[#8C8275]'
                     }`}
                     aria-hidden="true"
                   />
-                  <span className="text-[#4A5568] text-xs font-mono">
+                  <span className="text-[#1A1E24] text-xs font-mono">
                     {isLive && formattedDate
                       ? `Updated ${formattedDate} (Dubai GST)`
                       : 'Rates connecting…'}
@@ -95,51 +95,51 @@ export default async function SilverPricesPage() {
         </section>
 
         {/* Spot Price Cards */}
-        <section className="py-10 sm:py-12 bg-[#F8F5EE]">
+        <section className="py-10 sm:py-12 bg-[#F4EFE6]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {/* 1 Kg Silver Bar */}
-              <div className="bg-white border border-[#E5D8B8] rounded-2xl p-5 hover:border-[#D4AF37] transition-all shadow-sm">
+              <div className="bg-[#EFE8DC] border border-[#E2D7C5] rounded-2xl p-5 hover:border-[#D4AF37] transition-all shadow-xs">
                 <span className="text-[11px] font-mono text-[#718096] uppercase block mb-1">
                   1 Kilogram (1,000g)
                 </span>
-                <div className="font-heading font-extrabold text-xl sm:text-2xl text-[#1A202C] mb-1">
+                <div className="font-heading font-extrabold text-xl sm:text-2xl text-[#1A1E24] mb-1">
                   {fineSilver?.perKg ? formatAED(fineSilver.perKg) : '—'}
                 </div>
                 <span className="text-[11px] text-[#997300] font-mono font-semibold">999 Fine Silver Bar</span>
               </div>
 
               {/* 1 Troy Ounce */}
-              <div className="bg-white border border-[#E5D8B8] rounded-2xl p-5 hover:border-[#D4AF37] transition-all shadow-sm">
+              <div className="bg-[#EFE8DC] border border-[#E2D7C5] rounded-2xl p-5 hover:border-[#D4AF37] transition-all shadow-xs">
                 <span className="text-[11px] font-mono text-[#718096] uppercase block mb-1">
                   1 Troy Ounce (31.103g)
                 </span>
-                <div className="font-heading font-extrabold text-xl sm:text-2xl text-[#1A202C] mb-1">
+                <div className="font-heading font-extrabold text-xl sm:text-2xl text-[#1A1E24] mb-1">
                   {fineSilver?.perOz ? formatAED(fineSilver.perOz) : '—'}
                 </div>
-                <span className="text-[11px] text-[#4A5568] font-mono font-semibold">Spot Ingot / Coin</span>
+                <span className="text-[11px] text-[#615849] font-mono font-semibold">Spot Ingot / Coin</span>
               </div>
 
               {/* Per Gram */}
-              <div className="bg-white border border-[#E5D8B8] rounded-2xl p-5 hover:border-[#D4AF37] transition-all shadow-sm">
+              <div className="bg-[#EFE8DC] border border-[#E2D7C5] rounded-2xl p-5 hover:border-[#D4AF37] transition-all shadow-xs">
                 <span className="text-[11px] font-mono text-[#718096] uppercase block mb-1">
                   Per Gram (1g)
                 </span>
-                <div className="font-heading font-extrabold text-xl sm:text-2xl text-[#1A202C] mb-1">
+                <div className="font-heading font-extrabold text-xl sm:text-2xl text-[#1A1E24] mb-1">
                   {fineSilver?.perGram ? formatAED(fineSilver.perGram) : '—'}
                 </div>
                 <span className="text-[11px] text-[#997300] font-mono font-semibold">Base 999 Fine Rate</span>
               </div>
 
               {/* 100 Grams */}
-              <div className="bg-white border border-[#E5D8B8] rounded-2xl p-5 hover:border-[#D4AF37] transition-all shadow-sm">
+              <div className="bg-[#EFE8DC] border border-[#E2D7C5] rounded-2xl p-5 hover:border-[#D4AF37] transition-all shadow-xs">
                 <span className="text-[11px] font-mono text-[#718096] uppercase block mb-1">
                   100 Grams (100g)
                 </span>
-                <div className="font-heading font-extrabold text-xl sm:text-2xl text-[#1A202C] mb-1">
+                <div className="font-heading font-extrabold text-xl sm:text-2xl text-[#1A1E24] mb-1">
                   {fineSilver?.per100g ? formatAED(fineSilver.per100g) : '—'}
                 </div>
-                <span className="text-[11px] text-[#4A5568] font-mono font-semibold">Minted Ingot</span>
+                <span className="text-[11px] text-[#615849] font-mono font-semibold">Minted Ingot</span>
               </div>
             </div>
           </div>
@@ -149,12 +149,12 @@ export default async function SilverPricesPage() {
         <SilverPriceChart initialData={historyData} currentSpotGram={silverData.spotGram} />
 
         {/* Silver Breakdown Table */}
-        <section className="py-12 bg-white border-y border-[#E5D8B8]">
+        <section className="py-12 bg-[#F4EFE6] border-y border-[#E2D7C5]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="border border-[#E5D8B8] rounded-2xl overflow-hidden shadow-sm">
-              <div className="p-5 sm:p-6 bg-[#F8F5EE] border-b border-[#E5D8B8] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div className="border border-[#E2D7C5] rounded-2xl overflow-hidden shadow-xs bg-[#EFE8DC]">
+              <div className="p-5 sm:p-6 bg-[#E8DFC9] border-b border-[#E2D7C5] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div>
-                  <h2 className="font-heading font-bold text-xl text-[#1A202C]">
+                  <h2 className="font-heading font-bold text-xl text-[#1A1E24]">
                     Physical Silver Rates by Weight &amp; Purity
                   </h2>
                   <p className="text-xs text-[#718096] mt-0.5 font-mono">
@@ -172,8 +172,8 @@ export default async function SilverPricesPage() {
               </div>
 
               <div className="overflow-x-auto">
-                <table className="w-full text-left text-sm text-[#1A202C]">
-                  <thead className="bg-[#FAF8F3] text-xs font-mono uppercase text-[#718096] border-b border-[#E5D8B8]">
+                <table className="w-full text-left text-sm text-[#1A1E24]">
+                  <thead className="bg-[#EFE8DC] text-xs font-mono uppercase text-[#718096] border-b border-[#E2D7C5]">
                     <tr>
                       <th className="py-4 px-6">Grade / Purity</th>
                       <th className="py-4 px-6 text-right">Per Gram</th>
@@ -183,23 +183,23 @@ export default async function SilverPricesPage() {
                       <th className="py-4 px-6 text-right">1 Kilogram</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#E5D8B8]/60 font-mono text-xs sm:text-sm">
-                    {silverData.rates.map((rate) => (
-                      <tr key={rate.grade} className="hover:bg-[#F8F5EE] transition-colors">
-                        <td className="py-4 px-6 font-semibold text-[#1A202C]">
+                  <tbody className="divide-y divide-[#E2D7C5]/60 font-mono text-xs sm:text-sm">
+                    {silverData.rates.map((rate, i) => (
+                      <tr key={rate.grade} className={`transition-colors ${i % 2 === 0 ? 'bg-[#EFE8DC]' : 'bg-[#F4EFE6]'} hover:bg-[#E8DFC9]/60`}>
+                        <td className="py-4 px-6 font-semibold text-[#1A1E24]">
                           <div>{rate.label}</div>
                           <span className="text-[11px] text-[#997300] font-bold">{rate.purity} Purity</span>
                         </td>
-                        <td className="py-4 px-6 text-right text-[#1A202C]">
+                        <td className="py-4 px-6 text-right text-[#1A1E24]">
                           {rate.perGram ? formatAED(rate.perGram) : '—'}
                         </td>
-                        <td className="py-4 px-6 text-right text-[#4A5568]">
+                        <td className="py-4 px-6 text-right text-[#615849]">
                           {rate.per10g ? formatAED(rate.per10g) : '—'}
                         </td>
-                        <td className="py-4 px-6 text-right text-[#4A5568]">
+                        <td className="py-4 px-6 text-right text-[#615849]">
                           {rate.per100g ? formatAED(rate.per100g) : '—'}
                         </td>
-                        <td className="py-4 px-6 text-right text-[#1A202C]">
+                        <td className="py-4 px-6 text-right text-[#1A1E24]">
                           {rate.perOz ? formatAED(rate.perOz) : '—'}
                         </td>
                         <td className="py-4 px-6 text-right font-bold text-[#997300]">
@@ -211,10 +211,10 @@ export default async function SilverPricesPage() {
                 </table>
               </div>
 
-              <div className="p-4 bg-[#F8F5EE] border-t border-[#E5D8B8] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#718096]">
+              <div className="p-4 bg-[#EFE8DC] border-t border-[#E2D7C5] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#718096]">
                 <div className="flex items-center gap-2">
-                  <span className={`w-2 h-2 rounded-full ${isLive ? 'bg-emerald-500 animate-pulse' : 'bg-slate-300'}`} />
-                  <span className="font-mono text-[#4A5568]">{isLive ? 'Live Spot Benchmark · Dubai' : 'Rates connecting…'}</span>
+                  <span className={`w-2 h-2 rounded-full ${isLive ? 'bg-emerald-500 animate-pulse' : 'bg-[#8C8275]'}`} />
+                  <span className="font-mono text-[#1A1E24]">{isLive ? 'Live Spot Benchmark · Dubai' : 'Rates connecting…'}</span>
                 </div>
                 <PricesRefreshButton />
               </div>
@@ -226,14 +226,14 @@ export default async function SilverPricesPage() {
         <SilverCalculator rates={silverData.rates} />
 
         {/* Trading Call-to-Action */}
-        <section className="py-12 sm:py-16 bg-[#F8F5EE]">
+        <section className="py-12 sm:py-16 bg-[#F4EFE6]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="p-8 rounded-2xl bg-white border border-[#E5D8B8] shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="p-8 rounded-2xl bg-[#EFE8DC] border border-[#E2D7C5] shadow-xs flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
-                <h3 className="font-heading font-bold text-2xl text-[#1A202C] mb-2">
+                <h3 className="font-heading font-bold text-2xl text-[#1A1E24] mb-2">
                   Ready to Lock In a Physical Silver Trade?
                 </h3>
-                <p className="text-xs sm:text-sm text-[#4A5568] max-w-xl font-body leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#615849] max-w-xl font-body leading-relaxed">
                   Orders are executed transparently against live spot rates. Contact our Dubai bullion desk for bulk bar volume premiums and immediate physical handover.
                 </p>
               </div>
@@ -242,13 +242,13 @@ export default async function SilverPricesPage() {
                   href={waUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] text-[#0B0F17] font-body font-bold text-xs tracking-wider uppercase transition-all shadow-md"
+                  className="px-6 py-3 rounded-xl bg-[#D4AF37] hover:bg-[#C5A059] text-[#1A1E24] font-body font-bold text-xs tracking-wider uppercase transition-all shadow-md"
                 >
                   Enquire Live Silver Rate
                 </a>
                 <a
                   href={officePhone}
-                  className="px-6 py-3 rounded-xl bg-[#F8F5EE] hover:bg-[#EFEAE0] text-[#1A202C] font-mono text-xs border border-[#E5D8B8] transition-colors"
+                  className="px-6 py-3 rounded-xl bg-[#F4EFE6] hover:bg-[#E8DFC9] text-[#1A1E24] font-mono text-xs border border-[#E2D7C5] transition-colors"
                 >
                   Call {SiteConfig.phoneDisplay}
                 </a>

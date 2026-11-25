@@ -22,7 +22,7 @@ export default function WhyDubaiPage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="bg-[#F8F5EE] text-[#1A202C] min-h-screen selection:bg-[#D4AF37]/30 selection:text-[#0B0F17]">
+      <main id="main-content" className="bg-[#F4EFE6] text-[#1A1E24] min-h-screen selection:bg-[#D4AF37]/30 selection:text-[#1A1E24]">
         {/* Hero Banner — Ultra-Dark Obsidian Luxury Accent */}
         <section
           className="bg-gradient-to-b from-[#0B0F17] via-[#111622] to-[#0B0F17] pt-28 sm:pt-36 pb-20 border-b border-[#252F3F] text-white"
@@ -43,7 +43,7 @@ export default function WhyDubaiPage() {
             </p>
             <div className="flex items-center gap-4">
               <UAEFlag height={22} className="rounded-[3px] shadow-md" />
-              <span className="text-amber-400 text-xs sm:text-sm font-mono font-semibold">
+              <span className="text-[#D4AF37] text-xs sm:text-sm font-mono font-semibold">
                 United Arab Emirates · Dubai Gold Benchmark
               </span>
             </div>
@@ -51,17 +51,17 @@ export default function WhyDubaiPage() {
         </section>
 
         {/* Section 1 — Geographic Position */}
-        <section className="py-14 sm:py-20 bg-[#F8F5EE]" aria-labelledby="dubai-position-heading">
+        <section className="py-14 sm:py-20 bg-[#F4EFE6]" aria-labelledby="dubai-position-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <div>
                 <span className="text-[#997300] text-xs uppercase tracking-widest font-mono font-bold block mb-1">
                   Geography &amp; Trade Flows
                 </span>
-                <h2 id="dubai-position-heading" className="font-heading font-extrabold text-2xl sm:text-3xl text-[#1A202C] mt-2 mb-5">
+                <h2 id="dubai-position-heading" className="font-heading font-extrabold text-2xl sm:text-3xl text-[#1A1E24] mt-2 mb-5">
                   Dubai&apos;s Position in the Global Gold Market
                 </h2>
-                <div className="space-y-4 text-[#4A5568] font-body leading-relaxed text-sm sm:text-base">
+                <div className="space-y-4 text-[#615849] font-body leading-relaxed text-sm sm:text-base">
                   <p>
                     Positioned at the crossroads of Africa, Europe, and Asia, Dubai occupies a strategic geographic vantage between primary gold-producing nations and high-volume consumer markets across the Indian subcontinent and Southeast Asia.
                   </p>
@@ -101,16 +101,16 @@ export default function WhyDubaiPage() {
         </section>
 
         {/* Section 2 — The "City of Gold" & The Gold Souk */}
-        <section className="py-14 sm:py-20 bg-white border-y border-[#E5D8B8]" aria-labelledby="city-of-gold-heading">
+        <section className="py-14 sm:py-20 bg-[#EFE8DC] border-y border-[#E2D7C5]" aria-labelledby="city-of-gold-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
             <span className="text-[#997300] text-xs uppercase tracking-widest font-mono font-bold block mb-1">
               Heritage &amp; Physical Infrastructure
             </span>
-            <h2 id="city-of-gold-heading" className="font-heading font-extrabold text-2xl sm:text-3xl sm:text-4xl text-[#1A202C] mt-2 mb-6">
+            <h2 id="city-of-gold-heading" className="font-heading font-extrabold text-2xl sm:text-3xl sm:text-4xl text-[#1A1E24] mt-2 mb-6">
               The &ldquo;City of Gold&rdquo; &amp; The Deira Bullion District
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              <div className="lg:col-span-2 space-y-4 text-[#4A5568] font-body leading-relaxed text-sm sm:text-base">
+              <div className="lg:col-span-2 space-y-4 text-[#615849] font-body leading-relaxed text-sm sm:text-base">
                 <p>
                   Dubai&apos;s standing as the &ldquo;City of Gold&rdquo; has deep historical origins. In the mid-twentieth century, as international trade flourished along Dubai Creek, merchants in Deira established open bazaars specialising in gold and precious stones.
                 </p>
@@ -129,9 +129,9 @@ export default function WhyDubaiPage() {
                   { label: 'Benchmark Purity', value: '999.9 Fine', note: '24K TT & Cast' },
                   { label: 'Settlement Standard', value: 'Physical Handover', note: 'Immediate assay' },
                 ].map((stat) => (
-                  <div key={stat.label} className="bg-[#F8F5EE] border border-[#E5D8B8] rounded-xl p-4 shadow-xs">
+                  <div key={stat.label} className="bg-[#F4EFE6] border border-[#E2D7C5] rounded-xl p-4 shadow-2xs">
                     <p className="text-[#997300] font-heading font-bold text-xl">{stat.value}</p>
-                    <p className="text-[#1A202C] text-xs font-heading font-bold mt-0.5">{stat.label}</p>
+                    <p className="text-[#1A1E24] text-xs font-heading font-bold mt-0.5">{stat.label}</p>
                     <p className="text-[#718096] text-[11px] font-mono">{stat.note}</p>
                   </div>
                 ))}
@@ -141,21 +141,21 @@ export default function WhyDubaiPage() {
         </section>
 
         {/* Section 3 — Market Infrastructure & Development */}
-        <section className="py-14 sm:py-20 bg-[#F8F5EE]" aria-labelledby="infrastructure-heading">
+        <section className="py-14 sm:py-20 bg-[#F4EFE6]" aria-labelledby="infrastructure-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
             <span className="text-[#997300] text-xs uppercase tracking-widest font-mono font-bold block mb-1">
               Market Architecture
             </span>
-            <h2 id="infrastructure-heading" className="font-heading font-extrabold text-2xl sm:text-3xl text-[#1A202C] mt-2 mb-6">
+            <h2 id="infrastructure-heading" className="font-heading font-extrabold text-2xl sm:text-3xl text-[#1A1E24] mt-2 mb-6">
               Infrastructure, Standards &amp; Good Delivery
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-              <div className="bg-white rounded-2xl p-7 border border-[#E5D8B8] shadow-sm">
-                <h3 className="font-heading font-bold text-xl text-[#1A202C] mb-3">
+              <div className="bg-[#EFE8DC] rounded-2xl p-7 border border-[#E2D7C5] shadow-xs">
+                <h3 className="font-heading font-bold text-xl text-[#1A1E24] mb-3">
                   Standardised Good Delivery
                 </h3>
-                <p className="text-[#4A5568] font-body text-sm leading-relaxed mb-4">
+                <p className="text-[#615849] font-body text-sm leading-relaxed mb-4">
                   The UAE Good Delivery standard establishes strict benchmarks for gold bar fineness, weight tolerances, and refinery accreditation. This standard aligns local physical bars with international London Bullion Market Association (LBMA) standards.
                 </p>
                 <span className="text-xs font-mono text-[#997300] font-semibold">
@@ -163,11 +163,11 @@ export default function WhyDubaiPage() {
                 </span>
               </div>
 
-              <div className="bg-white rounded-2xl p-7 border border-[#E5D8B8] shadow-sm">
-                <h3 className="font-heading font-bold text-xl text-[#1A202C] mb-3">
+              <div className="bg-[#EFE8DC] rounded-2xl p-7 border border-[#E2D7C5] shadow-xs">
+                <h3 className="font-heading font-bold text-xl text-[#1A1E24] mb-3">
                   Regulatory Integrity &amp; AML/CFT
                 </h3>
-                <p className="text-[#4A5568] font-body text-sm leading-relaxed mb-4">
+                <p className="text-[#615849] font-body text-sm leading-relaxed mb-4">
                   Trading counterparties in Dubai operate under rigorous Know-Your-Customer (KYC) and Anti-Money Laundering (AML) statutory frameworks enforced by the UAE Ministry of Economy and the Executive Office for Control and Non-Proliferation (EOCN).
                 </p>
                 <span className="text-xs font-mono text-[#997300] font-semibold">
@@ -177,14 +177,14 @@ export default function WhyDubaiPage() {
             </div>
 
             {/* Clear distinction box: General Market vs SNMZ Commercial Role */}
-            <div className="bg-white text-[#1A202C] rounded-2xl p-7 border border-[#E5D8B8] shadow-sm">
+            <div className="bg-[#EFE8DC] text-[#1A1E24] rounded-2xl p-7 border border-[#E2D7C5] shadow-xs">
               <span className="text-[#997300] text-xs font-mono uppercase tracking-widest block mb-2 font-bold">
                 Transparency Notice · SNMZ Gold &amp; Diamonds
               </span>
-              <h3 className="font-heading font-bold text-xl text-[#1A202C] mb-2">
+              <h3 className="font-heading font-bold text-xl text-[#1A1E24] mb-2">
                 General Market Information vs. SNMZ Bullion Services
               </h3>
-              <p className="text-[#4A5568] text-xs sm:text-sm font-body leading-relaxed mb-4">
+              <p className="text-[#615849] text-xs sm:text-sm font-body leading-relaxed mb-4">
                 The market information above describes the general commercial environment and historical development of Dubai as an international commodities hub. SNMZ Gold &amp; Diamonds is an established precious metals trading house operating from Al Dhagaya, Deira, Dubai.
               </p>
               <p className="text-[#718096] text-xs font-body leading-relaxed italic">
@@ -195,9 +195,9 @@ export default function WhyDubaiPage() {
         </section>
 
         {/* Section 4 — Sources & References */}
-        <section className="py-14 sm:py-16 bg-white border-t border-[#E5D8B8]" aria-labelledby="sources-heading">
+        <section className="py-14 sm:py-16 bg-[#EFE8DC] border-t border-[#E2D7C5]" aria-labelledby="sources-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-            <h2 id="sources-heading" className="font-heading font-bold text-2xl text-[#1A202C] mb-6">
+            <h2 id="sources-heading" className="font-heading font-bold text-2xl text-[#1A1E24] mb-6">
               Authoritative Market References
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -214,12 +214,12 @@ export default function WhyDubaiPage() {
                   href={source.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block bg-[#F8F5EE] border border-[#E5D8B8] rounded-xl p-4 hover:border-[#D4AF37] transition-colors group shadow-2xs"
+                  className="block bg-[#F4EFE6] border border-[#E2D7C5] rounded-xl p-4 hover:border-[#D4AF37] transition-colors group shadow-2xs"
                 >
                   <p className="text-[#997300] font-heading font-bold text-sm mb-1 group-hover:text-[#D4AF37]">
                     {source.name}
                   </p>
-                  <p className="text-[#4A5568] text-xs font-body leading-relaxed">{source.desc}</p>
+                  <p className="text-[#615849] text-xs font-body leading-relaxed">{source.desc}</p>
                 </a>
               ))}
             </div>
@@ -227,12 +227,12 @@ export default function WhyDubaiPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-14 sm:py-20 bg-[#F8F5EE] border-t border-[#E5D8B8]">
+        <section className="py-14 sm:py-20 bg-[#F4EFE6] border-t border-[#E2D7C5]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#1A202C] mb-4">
+            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#1A1E24] mb-4">
               Trade Physical Bullion in Dubai
             </h2>
-            <p className="text-[#4A5568] font-body text-sm sm:text-base mb-8 max-w-xl mx-auto leading-relaxed">
+            <p className="text-[#615849] font-body text-sm sm:text-base mb-8 max-w-xl mx-auto leading-relaxed">
               Contact our Dubai bullion desk to discuss real-time AED pricing for 24K gold TT bars and physical silver allocations.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
@@ -240,19 +240,19 @@ export default function WhyDubaiPage() {
                 href={whyDubaiWaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3.5 rounded-xl bg-[#D4AF37] hover:bg-[#E5C158] text-[#0B0F17] font-body font-bold text-xs uppercase tracking-wider transition-all shadow-md"
+                className="px-6 py-3.5 rounded-xl bg-[#D4AF37] hover:bg-[#C5A059] text-[#1A1E24] font-body font-bold text-xs uppercase tracking-wider transition-all shadow-md"
               >
                 Enquire on WhatsApp
               </a>
               <Link
                 href="/gold-prices"
-                className="px-6 py-3.5 rounded-xl bg-white hover:bg-[#FAF8F3] text-[#1A202C] border border-[#E5D8B8] font-body font-semibold text-xs tracking-wider uppercase transition-all shadow-xs"
+                className="px-6 py-3.5 rounded-xl bg-[#EFE8DC] hover:bg-[#E8DFC9] text-[#1A1E24] border border-[#E2D7C5] font-body font-semibold text-xs tracking-wider uppercase transition-all shadow-2xs"
               >
                 View Live Gold Rates
               </Link>
               <Link
                 href="/silver-prices"
-                className="px-6 py-3.5 rounded-xl bg-white hover:bg-[#FAF8F3] text-[#1A202C] border border-[#E5D8B8] font-body font-semibold text-xs tracking-wider uppercase transition-all shadow-xs"
+                className="px-6 py-3.5 rounded-xl bg-[#EFE8DC] hover:bg-[#E8DFC9] text-[#1A1E24] border border-[#E2D7C5] font-body font-semibold text-xs tracking-wider uppercase transition-all shadow-2xs"
               >
                 View Live Silver Rates
               </Link>
@@ -267,11 +267,11 @@ export default function WhyDubaiPage() {
 
 function FactCard({ icon, title, body }) {
   return (
-    <div className="bg-white rounded-xl p-4 border border-[#E5D8B8] shadow-xs flex gap-3.5">
+    <div className="bg-[#EFE8DC] rounded-xl p-4 border border-[#E2D7C5] shadow-2xs flex gap-3.5">
       <span className="text-2xl flex-shrink-0">{icon}</span>
       <div>
-        <p className="text-[#1A202C] font-heading font-bold text-sm mb-1">{title}</p>
-        <p className="text-[#4A5568] text-xs font-body leading-relaxed">{body}</p>
+        <p className="text-[#1A1E24] font-heading font-bold text-sm mb-1">{title}</p>
+        <p className="text-[#615849] text-xs font-body leading-relaxed">{body}</p>
       </div>
     </div>
   );

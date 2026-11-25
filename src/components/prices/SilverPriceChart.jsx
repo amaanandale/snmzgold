@@ -80,7 +80,7 @@ export function SilverPriceChart({ initialData, currentSpotGram }) {
   const activePoint = hoverIndex !== null ? points[hoverIndex] : points[points.length - 1];
 
   return (
-    <section className="py-12 sm:py-16 bg-[#F8F5EE] border-t border-[#E5D8B8]" aria-labelledby="chart-heading">
+    <section className="py-12 sm:py-16 bg-[#F4EFE6] border-t border-[#E2D7C5]" aria-labelledby="chart-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with Title and Range Filters */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
@@ -91,16 +91,16 @@ export function SilverPriceChart({ initialData, currentSpotGram }) {
                 Market Trends · AED per Gram
               </span>
             </div>
-            <h2 id="chart-heading" className="font-heading font-extrabold text-2xl sm:text-3xl text-[#1A202C]">
+            <h2 id="chart-heading" className="font-heading font-extrabold text-2xl sm:text-3xl text-[#1A1E24]">
               Silver Price Trends
             </h2>
-            <p className="text-[#4A5568] text-xs sm:text-sm mt-1 font-body">
+            <p className="text-[#615849] text-xs sm:text-sm mt-1 font-body">
               Historical spot benchmark observations in UAE Dirhams.
             </p>
           </div>
 
           {/* Timeframe Switcher */}
-          <div className="flex items-center gap-1.5 bg-white p-1.5 rounded-xl border border-[#E5D8B8] self-start md:self-auto shadow-xs">
+          <div className="flex items-center gap-1.5 bg-[#EFE8DC] p-1.5 rounded-xl border border-[#E2D7C5] self-start md:self-auto shadow-2xs">
             {ranges.map((r) => {
               const active = range === r.id;
               return (
@@ -111,8 +111,8 @@ export function SilverPriceChart({ initialData, currentSpotGram }) {
                   disabled={loading}
                   className={`px-3.5 py-1.5 rounded-lg text-xs font-mono transition-all ${
                     active
-                      ? 'bg-[#D4AF37] text-[#0B0F17] font-bold shadow-xs'
-                      : 'text-[#4A5568] hover:text-[#1A202C] hover:bg-[#F8F5EE]'
+                      ? 'bg-[#D4AF37] text-[#1A1E24] font-bold shadow-xs'
+                      : 'text-[#1A1E24] hover:bg-[#E8DFC9]'
                   }`}
                 >
                   {r.id}
@@ -123,16 +123,16 @@ export function SilverPriceChart({ initialData, currentSpotGram }) {
         </div>
 
         {/* Chart Container Card */}
-        <div className="bg-white border border-[#E5D8B8] rounded-2xl p-6 sm:p-8 shadow-sm relative overflow-hidden">
+        <div className="bg-[#EFE8DC] border border-[#E2D7C5] rounded-2xl p-6 sm:p-8 shadow-xs relative overflow-hidden">
           {/* Top summary stats */}
           {hasData ? (
-            <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-6 border-b border-[#E5D8B8]">
+            <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-6 border-b border-[#E2D7C5]">
               <div>
                 <span className="text-[10px] font-mono uppercase text-[#718096] block">
                   {hoverIndex !== null ? `Observed on ${activePoint.date}` : `Latest Observation (${data.lastUpdated})`}
                 </span>
                 <div className="flex items-baseline gap-3">
-                  <span className="font-display font-bold text-2xl sm:text-3xl text-[#1A202C]">
+                  <span className="font-display font-bold text-2xl sm:text-3xl text-[#1A1E24]">
                     {formatAED(activePoint.perGram)} <span className="text-xs font-normal text-[#718096]">/ g</span>
                   </span>
                   <span className="text-xs font-mono text-[#997300]">
@@ -150,11 +150,11 @@ export function SilverPriceChart({ initialData, currentSpotGram }) {
                 </div>
                 <div>
                   <span className="text-[#718096] block text-[10px] uppercase">Low</span>
-                  <span className="text-[#1A202C] font-semibold">{minPrice.toFixed(2)} AED</span>
+                  <span className="text-[#1A1E24] font-semibold">{minPrice.toFixed(2)} AED</span>
                 </div>
                 <div>
                   <span className="text-[#718096] block text-[10px] uppercase">High</span>
-                  <span className="text-[#1A202C] font-semibold">{maxPrice.toFixed(2)} AED</span>
+                  <span className="text-[#1A1E24] font-semibold">{maxPrice.toFixed(2)} AED</span>
                 </div>
               </div>
             </div>
@@ -163,7 +163,7 @@ export function SilverPriceChart({ initialData, currentSpotGram }) {
           {/* Chart Rendering */}
           {loading ? (
             <div className="h-64 sm:h-80 flex flex-col items-center justify-center gap-3">
-              <div className="w-8 h-8 rounded-full border-2 border-[#E5D8B8] border-t-[#D4AF37] animate-spin" />
+              <div className="w-8 h-8 rounded-full border-2 border-[#E2D7C5] border-t-[#D4AF37] animate-spin" />
               <span className="text-xs font-mono text-[#718096]">
                 Fetching historical observations for {range}…
               </span>
@@ -193,7 +193,7 @@ export function SilverPriceChart({ initialData, currentSpotGram }) {
                         y1={y}
                         x2={width - margin.right}
                         y2={y}
-                        stroke="#E5D8B8"
+                        stroke="#E2D7C5"
                         strokeDasharray="4 4"
                       />
                       <text
@@ -235,7 +235,7 @@ export function SilverPriceChart({ initialData, currentSpotGram }) {
                         cx={x}
                         cy={y}
                         r={isHovered ? 6 : 3}
-                        fill={isHovered ? '#D4AF37' : '#FFFFFF'}
+                        fill={isHovered ? '#D4AF37' : '#EFE8DC'}
                         stroke="#997300"
                         strokeWidth="2"
                         className="transition-all duration-150"
@@ -292,14 +292,14 @@ export function SilverPriceChart({ initialData, currentSpotGram }) {
           ) : (
             /* Unavailable State */
             <div className="py-12 px-4 text-center max-w-lg mx-auto">
-              <h3 className="font-heading font-semibold text-[#1A202C] text-lg mb-2">
+              <h3 className="font-heading font-semibold text-[#1A1E24] text-lg mb-2">
                 Historical Series Temporarily Unavailable
               </h3>
-              <p className="text-[#4A5568] text-xs sm:text-sm leading-relaxed mb-6 font-body">
+              <p className="text-[#615849] text-xs sm:text-sm leading-relaxed mb-6 font-body">
                 Historical benchmark observations for this period are being refreshed. Live spot rates continue to update normally.
               </p>
               {currentSpotGram && (
-                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-[#F8F5EE] border border-[#E5D8B8] font-mono text-xs text-[#1A202C]">
+                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-[#F4EFE6] border border-[#E2D7C5] font-mono text-xs text-[#1A1E24]">
                   <span>Current Spot:</span>
                   <span className="font-bold text-[#997300]">{formatAED(currentSpotGram)} / g</span>
                 </div>
@@ -308,7 +308,7 @@ export function SilverPriceChart({ initialData, currentSpotGram }) {
           )}
 
           {/* Disclaimer */}
-          <div className="mt-6 pt-4 border-t border-[#E5D8B8] flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-[#718096] font-mono">
+          <div className="mt-6 pt-4 border-t border-[#E2D7C5] flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-[#718096] font-mono">
             <span>Market Benchmark: Physical Silver (AED)</span>
             <span className="italic text-center sm:text-right">
               Historical performance is indicative and does not predict future prices.
